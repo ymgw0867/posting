@@ -1,0 +1,101 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="posting.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="sServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">YMGW-PC\MSSQLSERVER2</Value>
+    </Setting>
+    <Setting Name="sDataBase" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">darwin</Value>
+    </Setting>
+    <Setting Name="sUI" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sa</Value>
+    </Setting>
+    <Setting Name="sPs" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sqlpass</Value>
+    </Setting>
+    <Setting Name="darwinConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=YMGW-PC\MSSQLSERVER2;Initial Catalog=darwin;Persist Security Info=True;User ID=sa;Password=sqlpass&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=YMGW-PC\MSSQLSERVER2;Initial Catalog=darwin;Persist Security Info=True;User ID=sa;Password=sqlpass</Value>
+    </Setting>
+    <Setting Name="エクセル発注書シート名" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">発注書.xls</Value>
+    </Setting>
+    <Setting Name="エクセル入庫管理表シート名" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">入庫管理表.xls</Value>
+    </Setting>
+    <Setting Name="エクセル営業担当者別受注一覧シート名" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">営業担当者別受注一覧ヨコ.xls</Value>
+    </Setting>
+    <Setting Name="エクセル配布指示報告書" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">配布指示報告書.xls</Value>
+    </Setting>
+    <Setting Name="エクセル配布完了報告書" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">配布完了報告書.xls</Value>
+    </Setting>
+    <Setting Name="エクセル配布進捗状況" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">配布進捗状況.xls</Value>
+    </Setting>
+    <Setting Name="エクセル配布員稼動数一覧" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">配布員稼動数一覧.xls</Value>
+    </Setting>
+    <Setting Name="エクセル配布料請求書受領証" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">配布料請求書受領証.xls</Value>
+    </Setting>
+    <Setting Name="エクセル配布料請求書" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">配布料請求書.xls</Value>
+    </Setting>
+    <Setting Name="エクセル請求書" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">請求書2015.xls</Value>
+    </Setting>
+    <Setting Name="エクセルクライアント別請求一覧" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">クライアント別請求一覧ヨコ.xls</Value>
+    </Setting>
+    <Setting Name="販促手当率" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="エクセル販売促進手当" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">販売促進手当.xls</Value>
+    </Setting>
+    <Setting Name="エクセル配布スケジュール" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">配布スケジュール.xls</Value>
+    </Setting>
+    <Setting Name="エクセル対比表" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">対比表.xls</Value>
+    </Setting>
+    <Setting Name="エクセル累計表" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">累計表.xls</Value>
+    </Setting>
+    <Setting Name="エクセル在庫管理表" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">チラシ在庫管理表.xls</Value>
+    </Setting>
+    <Setting Name="menuCsv" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">メニュータイトル.csv</Value>
+    </Setting>
+    <Setting Name="エクセル振り表" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">振り表.xls</Value>
+    </Setting>
+    <Setting Name="エクセル受注確定書" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">受注確定書.xlsx</Value>
+    </Setting>
+    <Setting Name="エクセル受注確定書印刷" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">受注確定書印刷.xlsx</Value>
+    </Setting>
+    <Setting Name="営業売上表" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">営業売上表.xls</Value>
+    </Setting>
+    <Setting Name="エクセル納品書" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">納品書.xls</Value>
+    </Setting>
+    <Setting Name="エクセルクライアント別受注一覧" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">クライアント別受注一覧.xlsx</Value>
+    </Setting>
+    <Setting Name="エクセルクライアント別受注別集計" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">クライアント別受注別集計.xlsx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

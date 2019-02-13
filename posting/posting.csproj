@@ -1,0 +1,970 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D8C88556-B7AC-4AA9-9A65-CEB2B5BB3390}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>posting</RootNamespace>
+    <AssemblyName>posting</AssemblyName>
+    <StartupObject>posting.Program</StartupObject>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>multiphoto_enhance.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MyLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents and Settings\Yamagiwa\My Documents\Visual Studio 2005\Projects\MyLibrary\MyLibrary\bin\Release\MyLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="MyTextKana, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents and Settings\Yamagiwa\My Documents\Visual Studio 2005\Projects\MyTextKana\MyTextKana\bin\Release\MyTextKana.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Access.cs" />
+    <Compile Include="clsMenu.cs" />
+    <Compile Include="clsSeikyuData.cs" />
+    <Compile Include="Control.cs" />
+    <Compile Include="darwinDataSet.cs">
+      <DependentUpon>darwinDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="darwinDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>darwinDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entity.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClientByOrderGrpRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientByOrderGrpRep.designer.cs">
+      <DependentUpon>frmClientByOrderGrpRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEiUriageRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEiUriageRep.designer.cs">
+      <DependentUpon>frmEiUriageRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNouhinRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNouhinRep.Designer.cs">
+      <DependentUpon>frmNouhinRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClientByOrderRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientByOrderRep.designer.cs">
+      <DependentUpon>frmClientByOrderRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderCopy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderCopy.Designer.cs">
+      <DependentUpon>frmOrderCopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderLock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderLock.Designer.cs">
+      <DependentUpon>frmOrderLock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderRecord.Designer.cs">
+      <DependentUpon>frmOrderRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderRecordXls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderRecordXls.Designer.cs">
+      <DependentUpon>frmOrderRecordXls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrg.designer.cs">
+      <DependentUpon>frmPrg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeikyuShime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeikyuShime.Designer.cs">
+      <DependentUpon>frmSeikyuShime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKaikakeZan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKaikakeZan.Designer.cs">
+      <DependentUpon>frmKaikakeZan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUriageOrderKbn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUriageOrderKbn.Designer.cs">
+      <DependentUpon>frmUriageOrderKbn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUriageGaichu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUriageGaichu.Designer.cs">
+      <DependentUpon>frmUriageGaichu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKaikakeMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKaikakeMenu.Designer.cs">
+      <DependentUpon>frmKaikakeMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUrikakeMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUrikakeMenu.Designer.cs">
+      <DependentUpon>frmUrikakeMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUrikakeNen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUrikakeNen.Designer.cs">
+      <DependentUpon>frmUrikakeNen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUrikakeZan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUrikakeZan.Designer.cs">
+      <DependentUpon>frmUrikakeZan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUrikakeMotocho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUrikakeMotocho.Designer.cs">
+      <DependentUpon>frmUrikakeMotocho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderExcel.Designer.cs">
+      <DependentUpon>frmOrderExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNyukinItem2015.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNyukinItem2015.Designer.cs">
+      <DependentUpon>frmNyukinItem2015.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeikyuItem2015.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeikyuItem2015.Designer.cs">
+      <DependentUpon>frmSeikyuItem2015.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNyukinRep2015.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNyukinRep2015.Designer.cs">
+      <DependentUpon>frmNyukinRep2015.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeikyuRep2015.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeikyuRep2015.Designer.cs">
+      <DependentUpon>frmSeikyuRep2015.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShiharaiYotei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShiharaiYotei.Designer.cs">
+      <DependentUpon>frmShiharaiYotei.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFuriRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFuriRep.Designer.cs">
+      <DependentUpon>frmFuriRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGaichu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGaichu.designer.cs">
+      <DependentUpon>frmGaichu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHaifuShijiSUb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHaifuShijiSUb.Designer.cs">
+      <DependentUpon>frmHaifuShijiSUb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGetOrderNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGetOrderNumber.Designer.cs">
+      <DependentUpon>frmGetOrderNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKaikakeMotocho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKaikakeMotocho.Designer.cs">
+      <DependentUpon>frmKaikakeMotocho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShiharai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShiharai.Designer.cs">
+      <DependentUpon>frmShiharai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderNumber.Designer.cs">
+      <DependentUpon>frmOrderNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoginUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoginUser.Designer.cs">
+      <DependentUpon>frmLoginUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoginType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoginType.Designer.cs">
+      <DependentUpon>frmLoginType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuHaifu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuHaifu.Designer.cs">
+      <DependentUpon>frmMenuHaifu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuMST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuMST.Designer.cs">
+      <DependentUpon>frmMenuMST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuOrder.Designer.cs">
+      <DependentUpon>frmMenuOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOffice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOffice.designer.cs">
+      <DependentUpon>frmOffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPostingTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPostingTree.Designer.cs">
+      <DependentUpon>frmPostingTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProgress.Designer.cs">
+      <DependentUpon>frmProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="global.cs" />
+    <Compile Include="haihuGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="haihuGroup.Designer.cs">
+      <DependentUpon>haihuGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientByOrderGrpRep.resx">
+      <DependentUpon>frmClientByOrderGrpRep.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEiUriageRep.resx">
+      <DependentUpon>frmEiUriageRep.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNouhinRep.resx">
+      <DependentUpon>frmNouhinRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientByOrderRep.resx">
+      <DependentUpon>frmClientByOrderRep.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderCopy.resx">
+      <DependentUpon>frmOrderCopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderLock.resx">
+      <DependentUpon>frmOrderLock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderRecord.resx">
+      <DependentUpon>frmOrderRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderRecordXls.resx">
+      <DependentUpon>frmOrderRecordXls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrg.resx">
+      <DependentUpon>frmPrg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeikyuShime.resx">
+      <DependentUpon>frmSeikyuShime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKaikakeZan.resx">
+      <DependentUpon>frmKaikakeZan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUriageOrderKbn.resx">
+      <DependentUpon>frmUriageOrderKbn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUriageGaichu.resx">
+      <DependentUpon>frmUriageGaichu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKaikakeMenu.resx">
+      <DependentUpon>frmKaikakeMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUrikakeMenu.resx">
+      <DependentUpon>frmUrikakeMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUrikakeNen.resx">
+      <DependentUpon>frmUrikakeNen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUrikakeZan.resx">
+      <DependentUpon>frmUrikakeZan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUrikakeMotocho.resx">
+      <DependentUpon>frmUrikakeMotocho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderExcel.resx">
+      <DependentUpon>frmOrderExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNyukinItem2015.resx">
+      <DependentUpon>frmNyukinItem2015.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeikyuItem2015.resx">
+      <DependentUpon>frmSeikyuItem2015.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNyukinRep2015.resx">
+      <DependentUpon>frmNyukinRep2015.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeikyuRep2015.resx">
+      <DependentUpon>frmSeikyuRep2015.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShiharaiYotei.resx">
+      <DependentUpon>frmShiharaiYotei.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFuriRep.resx">
+      <DependentUpon>frmFuriRep.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGaichu.resx">
+      <DependentUpon>frmGaichu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHaifuShijiSUb.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmHaifuShijiSUb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGetOrderNumber.resx">
+      <DependentUpon>frmGetOrderNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKaikakeMotocho.resx">
+      <DependentUpon>frmKaikakeMotocho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShiharai.resx">
+      <DependentUpon>frmShiharai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderNumber.resx">
+      <DependentUpon>frmOrderNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoginUser.resx">
+      <DependentUpon>frmLoginUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoginType.resx">
+      <DependentUpon>frmLoginType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuHaifu.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMenuHaifu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuMST.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMenuMST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuOrder.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMenuOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOffice.resx">
+      <DependentUpon>frmOffice.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPostingTree.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPostingTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgress.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="haihuGroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>haihuGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShozoku.resx">
+      <DependentUpon>frmShozoku.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmJShubetsu.resx">
+      <DependentUpon>frmJShubetsu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTax.resx">
+      <DependentUpon>frmTax.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTown.resx">
+      <DependentUpon>frmTown.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShimebi.resx">
+      <DependentUpon>frmShimebi.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSize.resx">
+      <DependentUpon>frmSize.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIssueMode.resx">
+      <DependentUpon>frmIssueMode.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShain.resx">
+      <DependentUpon>frmShain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKouza.resx">
+      <DependentUpon>frmKouza.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClient.resx">
+      <DependentUpon>frmClient.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStaff.resx">
+      <DependentUpon>frmStaff.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSystem.resx">
+      <DependentUpon>frmSystem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPosting.resx">
+      <DependentUpon>frmPosting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTantouOrderRep.resx">
+      <DependentUpon>frmTantouOrderRep.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHaifuShiji.resx">
+      <DependentUpon>frmHaifuShiji.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHaifuShijiSUb2.resx">
+      <DependentUpon>frmHaifuShijiSUb2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHaifuKanryoRep.resx">
+      <DependentUpon>frmHaifuKanryoRep.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHaifuShinchoku.resx">
+      <DependentUpon>frmHaifuShinchoku.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKadou2025.resx">
+      <DependentUpon>frmKadou2025.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHaifuTree.resx">
+      <DependentUpon>frmHaifuTree.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTesuuryou.resx">
+      <DependentUpon>frmTesuuryou.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTesuuryouMeisai.resx">
+      <DependentUpon>frmTesuuryouMeisai.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeikyuAdd.resx">
+      <DependentUpon>frmSeikyuAdd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNyukinRep.resx">
+      <DependentUpon>frmNyukinRep.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHansokuTeateRep.resx">
+      <DependentUpon>frmHansokuTeateRep.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHaifuSchedule.resx">
+      <DependentUpon>frmHaifuSchedule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaihiRep.resx">
+      <DependentUpon>frmTaihiRep.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRuikeiRep.resx">
+      <DependentUpon>frmRuikeiRep.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTenkou.resx">
+      <DependentUpon>frmTenkou.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTownSub.resx">
+      <DependentUpon>frmTownSub.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHaifuMax.resx">
+      <DependentUpon>frmHaifuMax.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTesuuryouSub.resx">
+      <DependentUpon>frmTesuuryouSub.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMihaifuRep.resx">
+      <DependentUpon>frmMihaifuRep.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHaifuShijiADD.resx">
+      <DependentUpon>frmHaifuShijiADD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMihaifuMST.resx">
+      <DependentUpon>frmMihaifuMST.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChirashiZaiko.resx">
+      <DependentUpon>frmChirashiZaiko.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHaifuShijiSUb3.resx">
+      <DependentUpon>frmHaifuShijiSUb3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHaifuShijiRep.resx">
+      <DependentUpon>frmHaifuShijiRep.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowTable.resx">
+      <DependentUpon>frmShowTable.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="darwinDataSet.xsc">
+      <DependentUpon>darwinDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="darwinDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>darwinDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="darwinDataSet.xss">
+      <DependentUpon>darwinDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Utility.cs" />
+    <Compile Include="frmShozoku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShozoku.designer.cs">
+      <DependentUpon>frmShozoku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmJShubetsu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJShubetsu.designer.cs">
+      <DependentUpon>frmJShubetsu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTax.designer.cs">
+      <DependentUpon>frmTax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTown.designer.cs">
+      <DependentUpon>frmTown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShimebi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShimebi.designer.cs">
+      <DependentUpon>frmShimebi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSize.designer.cs">
+      <DependentUpon>frmSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIssueMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIssueMode.designer.cs">
+      <DependentUpon>frmIssueMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShain.designer.cs">
+      <DependentUpon>frmShain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKouza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKouza.designer.cs">
+      <DependentUpon>frmKouza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClient.designer.cs">
+      <DependentUpon>frmClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStaff.designer.cs">
+      <DependentUpon>frmStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSystem.designer.cs">
+      <DependentUpon>frmSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrder.designer.cs">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPosting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPosting.designer.cs">
+      <DependentUpon>frmPosting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTantouOrderRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTantouOrderRep.designer.cs">
+      <DependentUpon>frmTantouOrderRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHaifuShiji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHaifuShiji.designer.cs">
+      <DependentUpon>frmHaifuShiji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHaifuShijiSUb2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHaifuShijiSUb2.Designer.cs">
+      <DependentUpon>frmHaifuShijiSUb2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHaifuKanryoRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHaifuKanryoRep.Designer.cs">
+      <DependentUpon>frmHaifuKanryoRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHaifuShinchoku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHaifuShinchoku.Designer.cs">
+      <DependentUpon>frmHaifuShinchoku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKadou2025.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKadou2025.Designer.cs">
+      <DependentUpon>frmKadou2025.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHaifuTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHaifuTree.Designer.cs">
+      <DependentUpon>frmHaifuTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTesuuryou.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTesuuryou.Designer.cs">
+      <DependentUpon>frmTesuuryou.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTesuuryouMeisai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTesuuryouMeisai.designer.cs">
+      <DependentUpon>frmTesuuryouMeisai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeikyuAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeikyuAdd.Designer.cs">
+      <DependentUpon>frmSeikyuAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNyukinRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNyukinRep.designer.cs">
+      <DependentUpon>frmNyukinRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHansokuTeateRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHansokuTeateRep.designer.cs">
+      <DependentUpon>frmHansokuTeateRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHaifuSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHaifuSchedule.Designer.cs">
+      <DependentUpon>frmHaifuSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaihiRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaihiRep.designer.cs">
+      <DependentUpon>frmTaihiRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRuikeiRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRuikeiRep.designer.cs">
+      <DependentUpon>frmRuikeiRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTenkou.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTenkou.designer.cs">
+      <DependentUpon>frmTenkou.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTownSub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTownSub.Designer.cs">
+      <DependentUpon>frmTownSub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHaifuMax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHaifuMax.Designer.cs">
+      <DependentUpon>frmHaifuMax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTesuuryouSub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTesuuryouSub.Designer.cs">
+      <DependentUpon>frmTesuuryouSub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMihaifuRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMihaifuRep.Designer.cs">
+      <DependentUpon>frmMihaifuRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHaifuShijiADD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHaifuShijiADD.Designer.cs">
+      <DependentUpon>frmHaifuShijiADD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMihaifuMST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMihaifuMST.designer.cs">
+      <DependentUpon>frmMihaifuMST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChirashiZaiko.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChirashiZaiko.Designer.cs">
+      <DependentUpon>frmChirashiZaiko.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHaifuShijiSUb3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHaifuShijiSUb3.Designer.cs">
+      <DependentUpon>frmHaifuShijiSUb3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHaifuShijiRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHaifuShijiRep.designer.cs">
+      <DependentUpon>frmHaifuShijiRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowTable.designer.cs">
+      <DependentUpon>frmShowTable.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="multiphoto_enhance.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
