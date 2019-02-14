@@ -5369,6 +5369,10 @@ namespace posting {
             
             private global::System.Data.DataColumn column得意先ID;
             
+            private global::System.Data.DataColumn column請求書発行日;
+            
+            private global::System.Data.DataColumn column判型;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public 受注DataTable() {
@@ -5580,6 +5584,22 @@ namespace posting {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 請求書発行日Column {
+                get {
+                    return this.column請求書発行日;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 判型Column {
+                get {
+                    return this.column判型;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5636,7 +5656,9 @@ namespace posting {
                         string ログインユーザー, 
                         int 受注案件保守, 
                         int 登録ユーザーID, 
-                        string フリガナ) {
+                        string フリガナ, 
+                        System.DateTime 請求書発行日, 
+                        int 判型) {
                 受注Row row受注Row = ((受注Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         受注日,
@@ -5660,7 +5682,9 @@ namespace posting {
                         受注案件保守,
                         登録ユーザーID,
                         フリガナ,
-                        null};
+                        null,
+                        請求書発行日,
+                        判型};
                 if ((parent外注先RowBy外注先_受注 != null)) {
                     columnValuesArray[15] = parent外注先RowBy外注先_受注[0];
                 }
@@ -5715,6 +5739,8 @@ namespace posting {
                 this.column登録ユーザーID = base.Columns["登録ユーザーID"];
                 this.columnフリガナ = base.Columns["フリガナ"];
                 this.column得意先ID = base.Columns["得意先ID"];
+                this.column請求書発行日 = base.Columns["請求書発行日"];
+                this.column判型 = base.Columns["判型"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5764,6 +5790,10 @@ namespace posting {
                 base.Columns.Add(this.columnフリガナ);
                 this.column得意先ID = new global::System.Data.DataColumn("得意先ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column得意先ID);
+                this.column請求書発行日 = new global::System.Data.DataColumn("請求書発行日", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column請求書発行日);
+                this.column判型 = new global::System.Data.DataColumn("判型", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column判型);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.column受注区分.MaxLength = 50;
@@ -5789,6 +5819,7 @@ namespace posting {
                 this.column得意先ID.AutoIncrementSeed = -1;
                 this.column得意先ID.AutoIncrementStep = -1;
                 this.column得意先ID.ReadOnly = true;
+                this.column判型.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19488,6 +19519,33 @@ namespace posting {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime 請求書発行日 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.table受注.請求書発行日Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'受注\' にある列 \'請求書発行日\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table受注.請求書発行日Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int 判型 {
+                get {
+                    return ((int)(this[this.table受注.判型Column]));
+                }
+                set {
+                    this[this.table受注.判型Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public 外注先Row 外注先Row {
                 get {
                     return ((外注先Row)(this.GetParentRow(this.Table.ParentRelations["外注先_受注"])));
@@ -19638,6 +19696,18 @@ namespace posting {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Set得意先IDNull() {
                 this[this.table受注.得意先IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is請求書発行日Null() {
+                return this.IsNull(this.table受注.請求書発行日Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set請求書発行日Null() {
+                this[this.table受注.請求書発行日Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -32666,6 +32736,8 @@ SELECT ID, 名称, 郵便番号, 住所1, 住所2, 電話番号, FAX番号, 備�
             tableMapping.ColumnMappings.Add("登録ユーザーID", "登録ユーザーID");
             tableMapping.ColumnMappings.Add("フリガナ", "フリガナ");
             tableMapping.ColumnMappings.Add("得意先ID", "得意先ID");
+            tableMapping.ColumnMappings.Add("請求書発行日", "請求書発行日");
+            tableMapping.ColumnMappings.Add("判型", "判型");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -32683,7 +32755,7 @@ SELECT ID, 名称, 郵便番号, 住所1, 住所2, 電話番号, FAX番号, 備�
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT            受注.ID, 受注.受注日, 受注.受注区分, 受注.受注種別ID, 受注.チラシ名, 受注.登録年月日, 受注.変更年月日, 受注.単価, 受注.枚数, 受注.金額, 受注.消費税, 受注.税込金額, 
-                        得意先.略称, 得意先.ID as 得意先ID, 得意先.フリガナ,受注種別.名称, 受注.外注先ID営業, 受注.外注先ID支払, ログインユーザー.ログインユーザー, 受注案件保守, 受注.登録ユーザーID
+                        得意先.略称, 得意先.ID as 得意先ID, 得意先.フリガナ,受注種別.名称, 受注.外注先ID営業, 受注.外注先ID支払, ログインユーザー.ログインユーザー, 受注案件保守, 受注.登録ユーザーID, 受注.請求書発行日, 受注.判型 
 FROM              受注 LEFT OUTER JOIN
                         受注種別 ON 受注.受注種別ID = 受注種別.ID LEFT OUTER JOIN
                         得意先 ON 受注.得意先ID = 得意先.ID LEFT OUTER JOIN
@@ -32693,7 +32765,7 @@ ORDER BY       受注.ID DESC";
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT            受注.ID, 受注.受注日, 受注.受注区分, 受注.受注種別ID, 受注.チラシ名, 受注.登録年月日, 受注.変更年月日, 受注.単価, 受注.枚数, 受注.金額, 受注.消費税, 受注.税込金額, 
-                        得意先.略称, 得意先.ID as 得意先ID, 得意先.フリガナ,受注種別.名称, 受注.外注先ID営業, 受注.外注先ID支払, ログインユーザー.ログインユーザー, 受注案件保守, 受注.登録ユーザーID
+                        得意先.略称, 得意先.ID as 得意先ID, 得意先.フリガナ,受注種別.名称, 受注.外注先ID営業, 受注.外注先ID支払, ログインユーザー.ログインユーザー, 受注案件保守, 受注.登録ユーザーID, 受注.請求書発行日, 受注.判型  
 FROM              受注 LEFT OUTER JOIN
                         受注種別 ON 受注.受注種別ID = 受注種別.ID LEFT OUTER JOIN
                         得意先 ON 受注.得意先ID = 得意先.ID LEFT OUTER JOIN
@@ -32703,7 +32775,7 @@ ORDER BY       受注.ID DESC";
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"SELECT            受注.ID, 受注.受注日, 受注.受注区分, 受注.受注種別ID, 受注.チラシ名, 受注.登録年月日, 受注.変更年月日, 受注.単価, 受注.枚数, 受注.金額, 受注.消費税, 受注.税込金額, 
-                        得意先.略称, 得意先.ID as 得意先ID, 得意先.フリガナ,受注種別.名称, 受注.外注先ID営業, 受注.外注先ID支払, ログインユーザー.ログインユーザー, 受注案件保守, 受注.登録ユーザーID
+                        得意先.略称, 得意先.ID as 得意先ID, 得意先.フリガナ,受注種別.名称, 受注.外注先ID営業, 受注.外注先ID支払, ログインユーザー.ログインユーザー, 受注案件保守, 受注.登録ユーザーID, 受注.請求書発行日, 受注.判型  
 FROM              受注 LEFT OUTER JOIN
                         受注種別 ON 受注.受注種別ID = 受注種別.ID LEFT OUTER JOIN
                         得意先 ON 受注.得意先ID = 得意先.ID LEFT OUTER JOIN
@@ -32713,7 +32785,7 @@ ORDER BY       受注.ID DESC";
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = @"SELECT            受注.ID, 受注.受注日, 受注.受注区分, 受注.受注種別ID, 受注.チラシ名, 受注.登録年月日, 受注.変更年月日, 受注.単価, 受注.枚数, 受注.金額, 受注.消費税, 受注.税込金額, 
-                        得意先.略称, 得意先.ID as 得意先ID, 得意先.フリガナ,受注種別.名称, 受注.外注先ID営業, 受注.外注先ID支払, ログインユーザー.ログインユーザー, 受注案件保守, 受注.登録ユーザーID
+                        得意先.略称, 得意先.ID as 得意先ID, 得意先.フリガナ,受注種別.名称, 受注.外注先ID営業, 受注.外注先ID支払, ログインユーザー.ログインユーザー, 受注案件保守, 受注.登録ユーザーID, 受注.請求書発行日, 受注.判型 
 FROM              受注 LEFT OUTER JOIN
                         受注種別 ON 受注.受注種別ID = 受注種別.ID LEFT OUTER JOIN
                         得意先 ON 受注.得意先ID = 得意先.ID LEFT OUTER JOIN
@@ -32726,7 +32798,7 @@ ORDER BY       受注.ID DESC";
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = @"SELECT            受注.ID, 受注.受注日, 受注.受注区分, 受注.チラシ名, 受注.登録年月日, 受注.変更年月日, 受注.単価, 受注.枚数, 受注.金額, 
-                        受注.消費税, 受注.税込金額, 得意先.略称, 得意先.フリガナ, 得意先.ID as 得意先ID,得意先.ID as 得意先ID,受注種別.名称
+                        受注.消費税, 受注.税込金額, 得意先.略称, 得意先.フリガナ, 得意先.ID as 得意先ID,得意先.ID as 得意先ID,受注種別.名称, 受注.請求書発行日, 受注.判型  
 FROM              受注 LEFT OUTER JOIN
                         受注種別 ON 受注.受注種別ID = 受注種別.ID LEFT OUTER JOIN
                         得意先 ON 受注.得意先ID = 得意先.ID
@@ -32737,7 +32809,7 @@ order by 受注.ID desc";
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = @"SELECT            受注.ID, 受注.受注日, 受注.受注区分, 受注.チラシ名, 受注.登録年月日, 受注.変更年月日, 受注.単価, 受注.枚数, 受注.金額, 
-                        受注.消費税, 受注.税込金額, 得意先.略称, 得意先.フリガナ, 受注種別.名称
+                        受注.消費税, 受注.税込金額, 得意先.略称, 得意先.フリガナ, 受注種別.名称, 受注.請求書発行日, 受注.判型  
 FROM              受注 LEFT OUTER JOIN
                         受注種別 ON 受注.受注種別ID = 受注種別.ID LEFT OUTER JOIN
                         得意先 ON 受注.得意先ID = 得意先.ID
@@ -32747,7 +32819,7 @@ order by 受注.ID desc";
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
             this._commandCollection[6].CommandText = @"SELECT            受注.ID, 受注.受注日, 受注.受注区分, 受注.チラシ名, 受注.登録年月日, 受注.変更年月日, 受注.単価, 受注.枚数, 受注.金額, 
-                        受注.消費税, 受注.税込金額, 得意先.略称, 得意先.フリガナ,受注種別.名称
+                        受注.消費税, 受注.税込金額, 得意先.略称, 得意先.フリガナ,受注種別.名称, 受注.請求書発行日, 受注.判型  
 FROM              受注 LEFT OUTER JOIN
                         受注種別 ON 受注.受注種別ID = 受注種別.ID LEFT OUTER JOIN
                         得意先 ON 受注.得意先ID = 得意先.ID

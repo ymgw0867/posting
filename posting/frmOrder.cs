@@ -124,6 +124,7 @@ namespace posting
 
             // 判型コンボ
             Utility.ComboSize.load(cmbSize);
+            Utility.ComboSize.load(cmbsSize);   // 検索サイズ 2019/02/14
 
             // 案件種別コンボ
             Utility.ComboAnshu.load(cmbAnShu);
@@ -929,6 +930,11 @@ namespace posting
                 txtsGaichu.Text = string.Empty;
                 txtsOrderNum.Text = string.Empty;
 
+                // 検索項目追加 2019/02/14
+                txtsMaisu.Text = string.Empty;  // 枚数
+                cmbsSize.SelectedIndex = -1;    // サイズ
+                seDt.Checked = false;           // 請求締日
+
                 // 表示項目
                 fMode.Mode = 0;
 
@@ -984,6 +990,7 @@ namespace posting
                 //checkBox1.Checked = false;
 
                 NouhinDate.Checked = false;
+                NouhinDate.Enabled = true;  // 2019/02/14
 
                 //cmbNkeitai.SelectedIndex = -1;    // 2015/06/23
 
@@ -2873,6 +2880,34 @@ namespace posting
             {
                 s = s.Where(a => (!a.Is得意先IDNull() && a.得意先Row.社員Row != null && a.得意先Row.社員Row.氏名.Contains(txtsTantou.Text)));
             }
+            
+            //サイズ(判型)ID取得 2019/02/14
+            if (cmbsSize.SelectedIndex != -1)
+            {
+                Utility.ComboSize cmbs = new Utility.ComboSize();
+                cmbs = (Utility.ComboSize)cmbsSize.SelectedItem;
+                int sSize = cmbs.ID;
+
+                s = s.Where(a => a.判型 == sSize);
+            }
+
+
+            // 枚数 2019/02/14
+            if (txtsMaisu.Text != string.Empty)
+            {
+                int sMai = Utility.strToInt(txtsMaisu.Text);
+                if (sMai != global.FLGOFF)
+                {
+                    s = s.Where(a => a.枚数 == sMai);
+                }
+            }
+
+            // 請求締日 2019/02/14
+            if (seDt.Checked)
+            {
+                s = s.Where(a => a.請求書発行日 == DateTime.Parse(seDt.Value.ToShortDateString()));
+            }
+
 
             // データグリッドビューにデータソースを設定
             dataGridView1.DataSource = s.ToList();
@@ -3385,8 +3420,9 @@ namespace posting
                     //this.cmbFyuyo.SelectedIndex = -1;
                     //this.cmbFyuyo.Enabled = false;
 
-                    this.NouhinDate.Checked = false;
-                    this.NouhinDate.Enabled = false;
+                    // 2019/02/14 全て入力可能に変更 コメント化
+                    //this.NouhinDate.Checked = false;
+                    //this.NouhinDate.Enabled = false;
 
                     // 2015/06/23
                     //this.cmbNkeitai.SelectedIndex = -1;
@@ -3449,8 +3485,9 @@ namespace posting
                     //this.cmbFyuyo.SelectedIndex = -1;
                     //this.cmbFyuyo.Enabled = true;
 
-                    this.NouhinDate.Checked = false;
-                    this.NouhinDate.Enabled = true;
+                    // 2019/02/14 全て入力可能に変更 コメント化
+                    //this.NouhinDate.Checked = false;
+                    //this.NouhinDate.Enabled = true;
 
                     // 2015/06/23
                     //this.cmbNkeitai.SelectedIndex = -1;

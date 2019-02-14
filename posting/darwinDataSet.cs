@@ -25,3 +25,9 @@
         }
     }
 }
+namespace posting.darwinDataSetTableAdapters {
+    
+    
+    public partial class 受注TableAdapter {
+    }
+}
