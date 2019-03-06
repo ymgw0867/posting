@@ -245,13 +245,31 @@ namespace posting
 
             Control.FreeSql fSql = new Control.FreeSql();
 
-            // 外注先マスターに「支払日」フィールドを追加する：2018/01/03
+            // 受注テーブルに「営業備考」フィールドを追加する : 2019/03/01
             sqlString = "";
-            sqlString += "ALTER TABLE 外注先 add 支払日 int default 0 NOT NULL";
+            sqlString += "ALTER TABLE 受注 add 営業備考 nvarchar(255) default '' NOT NULL";
+            fSql.Execute(sqlString);
 
+            // 得意先テーブルに「請求先・部署名」「請求先・敬称」フィールドを追加する : 2019/02/19
+            sqlString = "";
+            sqlString += "ALTER TABLE 得意先 add 請求先部署名 nvarchar(50) default '' NOT NULL";
+            fSql.Execute(sqlString);
+
+            sqlString = "";
+            sqlString += "ALTER TABLE 得意先 add 請求先敬称 nvarchar(5) default '' NOT NULL";
             fSql.Execute(sqlString);
 
             fSql.Close();
+            
+
+            // 以下、コメント化 2019/02/19
+            // 外注先マスターに「支払日」フィールドを追加する：2018/01/03
+            //sqlString = "";
+            //sqlString += "ALTER TABLE 外注先 add 支払日 int default 0 NOT NULL";
+
+            //fSql.Execute(sqlString);
+
+            //fSql.Close();
 
             // 以下のALTER TABLE SQL コメント化 2018/01/03
             //// 新請求書示テーブルに「口座」フィールドを追加する

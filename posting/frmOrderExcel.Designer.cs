@@ -65,6 +65,9 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtSalesMemo = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.chkKaishuFlg = new System.Windows.Forms.CheckBox();
             this.dtSeikyuShime = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.txtMemo = new System.Windows.Forms.TextBox();
@@ -89,10 +92,20 @@
             this.button2 = new System.Windows.Forms.Button();
             this.txtArari2 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.chk1Year = new System.Windows.Forms.CheckBox();
+            this.btnSel = new System.Windows.Forms.Button();
+            this.txtSClient = new System.Windows.Forms.TextBox();
+            this.sDate = new System.Windows.Forms.DateTimePicker();
+            this.txtSNum = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -484,6 +497,9 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.txtSalesMemo);
+            this.panel2.Controls.Add(this.label30);
+            this.panel2.Controls.Add(this.chkKaishuFlg);
             this.panel2.Controls.Add(this.dtSeikyuShime);
             this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.txtMemo);
@@ -505,6 +521,36 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1076, 109);
             this.panel2.TabIndex = 1;
+            // 
+            // txtSalesMemo
+            // 
+            this.txtSalesMemo.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtSalesMemo.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
+            this.txtSalesMemo.Location = new System.Drawing.Point(638, 55);
+            this.txtSalesMemo.Multiline = true;
+            this.txtSalesMemo.Name = "txtSalesMemo";
+            this.txtSalesMemo.Size = new System.Drawing.Size(431, 48);
+            this.txtSalesMemo.TabIndex = 9;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(574, 57);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(67, 15);
+            this.label30.TabIndex = 54;
+            this.label30.Text = "営業備考：";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // chkKaishuFlg
+            // 
+            this.chkKaishuFlg.AutoSize = true;
+            this.chkKaishuFlg.Location = new System.Drawing.Point(381, 83);
+            this.chkKaishuFlg.Name = "chkKaishuFlg";
+            this.chkKaishuFlg.Size = new System.Drawing.Size(86, 19);
+            this.chkKaishuFlg.TabIndex = 7;
+            this.chkKaishuFlg.Text = "注文書回収";
+            this.chkKaishuFlg.UseVisualStyleBackColor = true;
             // 
             // dtSeikyuShime
             // 
@@ -528,13 +574,13 @@
             // 
             // txtMemo
             // 
-            this.txtMemo.Font = new System.Drawing.Font("Meiryo UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtMemo.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.txtMemo.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.txtMemo.Location = new System.Drawing.Point(638, 6);
+            this.txtMemo.Location = new System.Drawing.Point(638, 5);
             this.txtMemo.Multiline = true;
             this.txtMemo.Name = "txtMemo";
-            this.txtMemo.Size = new System.Drawing.Size(431, 93);
-            this.txtMemo.TabIndex = 7;
+            this.txtMemo.Size = new System.Drawing.Size(431, 48);
+            this.txtMemo.TabIndex = 8;
             // 
             // label12
             // 
@@ -549,7 +595,7 @@
             // cmbJizenseikyusho
             // 
             this.cmbJizenseikyusho.FormattingEnabled = true;
-            this.cmbJizenseikyusho.Location = new System.Drawing.Point(595, 76);
+            this.cmbJizenseikyusho.Location = new System.Drawing.Point(531, 78);
             this.cmbJizenseikyusho.Name = "cmbJizenseikyusho";
             this.cmbJizenseikyusho.Size = new System.Drawing.Size(37, 23);
             this.cmbJizenseikyusho.TabIndex = 6;
@@ -559,7 +605,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(516, 80);
+            this.label10.Location = new System.Drawing.Point(466, 82);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(79, 15);
             this.label10.TabIndex = 49;
@@ -570,7 +616,7 @@
             // txtHaifuhoukoku
             // 
             this.txtHaifuhoukoku.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.txtHaifuhoukoku.Location = new System.Drawing.Point(489, 77);
+            this.txtHaifuhoukoku.Location = new System.Drawing.Point(547, 58);
             this.txtHaifuhoukoku.Name = "txtHaifuhoukoku";
             this.txtHaifuhoukoku.Size = new System.Drawing.Size(21, 23);
             this.txtHaifuhoukoku.TabIndex = 5;
@@ -580,7 +626,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(416, 80);
+            this.label9.Location = new System.Drawing.Point(482, 61);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 15);
             this.label9.TabIndex = 47;
@@ -712,9 +758,9 @@
             // btnRep
             // 
             this.btnRep.Font = new System.Drawing.Font("Meiryo UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnRep.Location = new System.Drawing.Point(742, 637);
+            this.btnRep.Location = new System.Drawing.Point(782, 637);
             this.btnRep.Name = "btnRep";
-            this.btnRep.Size = new System.Drawing.Size(168, 29);
+            this.btnRep.Size = new System.Drawing.Size(148, 29);
             this.btnRep.TabIndex = 2;
             this.btnRep.Text = "受注確定書発行(&F)";
             this.btnRep.UseVisualStyleBackColor = true;
@@ -723,9 +769,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Meiryo UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(912, 637);
+            this.button2.Location = new System.Drawing.Point(932, 637);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 29);
+            this.button2.Size = new System.Drawing.Size(148, 29);
             this.button2.TabIndex = 3;
             this.button2.Text = "終了(&E)";
             this.button2.UseVisualStyleBackColor = true;
@@ -753,11 +799,102 @@
             this.label23.Text = "合計粗利②：";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.chk1Year);
+            this.panel3.Controls.Add(this.btnSel);
+            this.panel3.Controls.Add(this.txtSClient);
+            this.panel3.Controls.Add(this.sDate);
+            this.panel3.Controls.Add(this.txtSNum);
+            this.panel3.Controls.Add(this.label28);
+            this.panel3.Controls.Add(this.label27);
+            this.panel3.Controls.Add(this.label25);
+            this.panel3.Location = new System.Drawing.Point(4, 635);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(772, 32);
+            this.panel3.TabIndex = 2;
+            // 
+            // chk1Year
+            // 
+            this.chk1Year.AutoSize = true;
+            this.chk1Year.Location = new System.Drawing.Point(6, 7);
+            this.chk1Year.Name = "chk1Year";
+            this.chk1Year.Size = new System.Drawing.Size(98, 19);
+            this.chk1Year.TabIndex = 0;
+            this.chk1Year.Text = "過去１年以内";
+            this.chk1Year.UseVisualStyleBackColor = true;
+            // 
+            // btnSel
+            // 
+            this.btnSel.Location = new System.Drawing.Point(696, 2);
+            this.btnSel.Name = "btnSel";
+            this.btnSel.Size = new System.Drawing.Size(71, 26);
+            this.btnSel.TabIndex = 4;
+            this.btnSel.Text = "検索";
+            this.btnSel.UseVisualStyleBackColor = true;
+            this.btnSel.Click += new System.EventHandler(this.btnSel_Click);
+            // 
+            // txtSClient
+            // 
+            this.txtSClient.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
+            this.txtSClient.Location = new System.Drawing.Point(514, 4);
+            this.txtSClient.Name = "txtSClient";
+            this.txtSClient.Size = new System.Drawing.Size(174, 23);
+            this.txtSClient.TabIndex = 3;
+            // 
+            // sDate
+            // 
+            this.sDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.sDate.Location = new System.Drawing.Point(309, 4);
+            this.sDate.Name = "sDate";
+            this.sDate.ShowCheckBox = true;
+            this.sDate.Size = new System.Drawing.Size(128, 23);
+            this.sDate.TabIndex = 2;
+            // 
+            // txtSNum
+            // 
+            this.txtSNum.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtSNum.Location = new System.Drawing.Point(164, 4);
+            this.txtSNum.MaxLength = 12;
+            this.txtSNum.Name = "txtSNum";
+            this.txtSNum.Size = new System.Drawing.Size(95, 23);
+            this.txtSNum.TabIndex = 1;
+            this.txtSNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(442, 8);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(70, 15);
+            this.label28.TabIndex = 2;
+            this.label28.Text = "クライアント名";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(262, 8);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(43, 15);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "受注日";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(108, 8);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(55, 15);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "受注番号";
+            // 
             // frmOrderExcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 672);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.txtArari2);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.button2);
@@ -784,6 +921,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -851,5 +990,17 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtArari2;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnSel;
+        private System.Windows.Forms.TextBox txtSClient;
+        private System.Windows.Forms.DateTimePicker sDate;
+        private System.Windows.Forms.TextBox txtSNum;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.CheckBox chk1Year;
+        private System.Windows.Forms.CheckBox chkKaishuFlg;
+        private System.Windows.Forms.TextBox txtSalesMemo;
+        private System.Windows.Forms.Label label30;
     }
 }

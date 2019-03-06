@@ -57,6 +57,7 @@ namespace posting
 
             // 敬称コンボ
             cmbKeishoSet();
+            cmbKeishoSSet();    // 請求先敬称 2019/02/20
 
             // 税通知コンボ
             cmbTaxSet();
@@ -85,12 +86,18 @@ namespace posting
 
             foreach (var t in dts.得意先)
             {
-                if (t.Is請求先名称Null())
-                {
-                    t.請求先名称 = t.名称;
-                    cnt++;
-                }
-                else if (t.請求先名称.Trim() == string.Empty)
+                //if (t.Is請求先名称Null())
+                //{
+                //    t.請求先名称 = t.名称;
+                //    cnt++;
+                //}
+                //else if (t.請求先名称.Trim() == string.Empty)
+                //{
+                //    t.請求先名称 = t.名称;
+                //    cnt++;
+                //}
+
+                if (t.請求先名称.Trim() == string.Empty)
                 {
                     t.請求先名称 = t.名称;
                     cnt++;
@@ -367,14 +374,16 @@ namespace posting
                         txtShimebi.Text = r.締日.ToString();
                         cmbTax.Text = r.税通知.ToString();
 
-                        if (r.Is請求先名称Null())
-                        {
-                            txtNameSeikyu.Text = string.Empty;
-                        }
-                        else
-                        {
-                            txtNameSeikyu.Text = r.請求先名称;
-                        }
+                        //if (r.Is請求先名称Null())
+                        //{
+                        //    txtNameSeikyu.Text = string.Empty;
+                        //}
+                        //else
+                        //{
+                        //    txtNameSeikyu.Text = r.請求先名称;
+                        //}
+
+                        txtNameSeikyu.Text = r.請求先名称;
 
                         mtxtZipCodeS.Text = r.請求先郵便番号;
                         cmbCityS.Text = r.請求先都道府県;
@@ -392,6 +401,10 @@ namespace posting
                         }
 
                         txtMemo.Text = r.備考;
+
+                        txtBushoS.Text = r.請求先部署名;  // 2019/02/20
+                        cmbKeishoS.Text = r.請求先敬称;  // 2019/02/20
+                        
 
                         //IDテキストボックスは編集不可とする
                         //txtCode.Enabled = false;
@@ -470,6 +483,10 @@ namespace posting
                 txtTantouS.Text = "";   // 2015/11/20
                 txtMemo.Text = "";
 
+                txtBushoS.Text = "";    // 2019/02/20
+                cmbKeishoS.Text = "";   // 2019/02/20
+                cmbKeishoS.SelectedIndex = -1;  // 2019/02/20
+
                 btnDel.Enabled = false;
                 btnClr.Enabled = false;
 
@@ -506,7 +523,7 @@ namespace posting
             try
             {
 
-                if (fDataCheck() == true)
+                if (fDataCheck())
                 {
                     switch (fMode.Mode)
                     {
@@ -628,6 +645,9 @@ namespace posting
 
             r.変更年月日 = DateTime.Now;
             r.請求先名称 = txtNameSeikyu.Text;   // 2015/07/05
+
+            r.請求先部署名 = txtBushoS.Text;  // 2019/02/20
+            r.請求先敬称 = cmbKeishoS.Text;  // 2019/02/20
 
             return r;
         }
@@ -868,6 +888,12 @@ namespace posting
                 objtxt = textBox2;
             }
 
+            // 検索請求先部署名 2019/02/20
+            if (sender == txtBushoS)
+            {
+                objtxt = txtBushoS;
+            }
+
             objtxt.SelectAll();
             objtxt.BackColor = Color.LightGray;
 
@@ -920,6 +946,12 @@ namespace posting
             if (sender == txtBusho)
             {
                 objtxt = txtBusho;
+
+                // 請求先へコピー : 2019/02/20
+                if (txtBushoS.Text == "")
+                {
+                    txtBushoS.Text = txtBusho.Text;
+                }
             }
 
             if (sender == mtxtZipCode)
@@ -1033,6 +1065,12 @@ namespace posting
                 objtxt = textBox2;
             }
 
+            // 検索請求先部署名 2019/02/20
+            if (sender == txtBushoS)
+            {
+                objtxt = txtBushoS;
+            }
+
             objtxt.BackColor = Color.White;
             objMtxt.BackColor = Color.White;
         }
@@ -1140,6 +1178,13 @@ namespace posting
             cmbKeisho.Items.Add("様");
             cmbKeisho.Items.Add("殿");
             cmbKeisho.Items.Add("御中");
+        }
+        private void cmbKeishoSSet()
+        {
+            cmbKeishoS.Items.Clear();
+            cmbKeishoS.Items.Add("様");
+            cmbKeishoS.Items.Add("殿");
+            cmbKeishoS.Items.Add("御中");
         }
 
         private void cmbTaxSet()
@@ -1265,14 +1310,16 @@ namespace posting
                 g[colShimebi, iX].Value = t.締日.ToString();
                 g[colZei, iX].Value = t.税通知;
 
-                if (t.Is請求先名称Null())
-                {
-                    g[colSeName, iX].Value = string.Empty;
-                }
-                else
-                {
-                    g[colSeName, iX].Value = t.請求先名称;
-                }
+                //if (t.Is請求先名称Null())
+                //{
+                //    g[colSeName, iX].Value = string.Empty;
+                //}
+                //else
+                //{
+                //    g[colSeName, iX].Value = t.請求先名称;
+                //}
+
+                g[colSeName, iX].Value = t.請求先名称;
 
                 g[colSeCity, iX].Value = t.請求先都道府県;
                 g[colSeZip, iX].Value = t.請求先郵便番号;
@@ -1392,6 +1439,15 @@ namespace posting
             if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b')
             {
                 e.Handled = true;
+            }
+        }
+
+        private void cmbKeisho_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // 請求先敬称にコピー 2019/02/20
+            if (cmbKeishoS.SelectedIndex == -1)
+            {
+                cmbKeishoS.SelectedIndex = cmbKeisho.SelectedIndex;
             }
         }
     }

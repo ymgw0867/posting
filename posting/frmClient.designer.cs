@@ -98,6 +98,10 @@
             this.txtsZip = new System.Windows.Forms.TextBox();
             this.txtTantouS = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
+            this.txtBushoS = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.cmbKeishoS = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.得意先BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.darwinDataSet)).BeginInit();
@@ -128,10 +132,10 @@
             this.btnCsv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCsv.BackColor = System.Drawing.SystemColors.Control;
             this.btnCsv.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnCsv.Location = new System.Drawing.Point(728, 583);
+            this.btnCsv.Location = new System.Drawing.Point(732, 620);
             this.btnCsv.Name = "btnCsv";
             this.btnCsv.Size = new System.Drawing.Size(89, 31);
-            this.btnCsv.TabIndex = 27;
+            this.btnCsv.TabIndex = 29;
             this.btnCsv.Text = "CSV出力(&D)";
             this.btnCsv.UseVisualStyleBackColor = true;
             this.btnCsv.Click += new System.EventHandler(this.btnCsv_Click);
@@ -141,10 +145,10 @@
             this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDel.BackColor = System.Drawing.SystemColors.Control;
             this.btnDel.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnDel.Location = new System.Drawing.Point(538, 583);
+            this.btnDel.Location = new System.Drawing.Point(556, 620);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(89, 31);
-            this.btnDel.TabIndex = 25;
+            this.btnDel.Size = new System.Drawing.Size(82, 31);
+            this.btnDel.TabIndex = 27;
             this.btnDel.Text = "削除(&D)";
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
@@ -154,10 +158,10 @@
             this.btnClr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClr.BackColor = System.Drawing.SystemColors.Control;
             this.btnClr.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnClr.Location = new System.Drawing.Point(633, 583);
+            this.btnClr.Location = new System.Drawing.Point(644, 620);
             this.btnClr.Name = "btnClr";
-            this.btnClr.Size = new System.Drawing.Size(89, 31);
-            this.btnClr.TabIndex = 26;
+            this.btnClr.Size = new System.Drawing.Size(82, 31);
+            this.btnClr.TabIndex = 28;
             this.btnClr.Text = "取消(&C)";
             this.btnClr.UseVisualStyleBackColor = true;
             this.btnClr.Click += new System.EventHandler(this.btnClr_Click);
@@ -167,10 +171,10 @@
             this.btnRtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRtn.BackColor = System.Drawing.SystemColors.Control;
             this.btnRtn.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnRtn.Location = new System.Drawing.Point(823, 583);
+            this.btnRtn.Location = new System.Drawing.Point(827, 620);
             this.btnRtn.Name = "btnRtn";
-            this.btnRtn.Size = new System.Drawing.Size(89, 31);
-            this.btnRtn.TabIndex = 28;
+            this.btnRtn.Size = new System.Drawing.Size(82, 31);
+            this.btnRtn.TabIndex = 30;
             this.btnRtn.Text = "戻る(&R)";
             this.btnRtn.UseVisualStyleBackColor = true;
             this.btnRtn.Click += new System.EventHandler(this.btnRtn_Click);
@@ -180,10 +184,10 @@
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.BackColor = System.Drawing.SystemColors.Control;
             this.btnUpdate.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnUpdate.Location = new System.Drawing.Point(443, 583);
+            this.btnUpdate.Location = new System.Drawing.Point(468, 620);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(89, 31);
-            this.btnUpdate.TabIndex = 24;
+            this.btnUpdate.Size = new System.Drawing.Size(82, 31);
+            this.btnUpdate.TabIndex = 26;
             this.btnUpdate.Text = "更新(&U)";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -193,7 +197,7 @@
             this.txtAddress1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtAddress1.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.txtAddress1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.txtAddress1.Location = new System.Drawing.Point(81, 460);
+            this.txtAddress1.Location = new System.Drawing.Point(81, 459);
             this.txtAddress1.MaxLength = 50;
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(358, 23);
@@ -224,7 +228,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(12, 258);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 22);
+            this.label1.Size = new System.Drawing.Size(70, 23);
             this.label1.TabIndex = 20;
             this.label1.Text = "略称";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -250,7 +254,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(12, 283);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 22);
+            this.label3.Size = new System.Drawing.Size(70, 23);
             this.label3.TabIndex = 22;
             this.label3.Text = "フリガナ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -263,7 +267,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Location = new System.Drawing.Point(12, 409);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 22);
+            this.label5.Size = new System.Drawing.Size(70, 23);
             this.label5.TabIndex = 26;
             this.label5.Text = "郵便番号";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -289,7 +293,7 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label6.Location = new System.Drawing.Point(12, 308);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 22);
+            this.label6.Size = new System.Drawing.Size(70, 23);
             this.label6.TabIndex = 28;
             this.label6.Text = "名称";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -304,6 +308,7 @@
             this.cmbKeisho.Name = "cmbKeisho";
             this.cmbKeisho.Size = new System.Drawing.Size(80, 23);
             this.cmbKeisho.TabIndex = 4;
+            this.cmbKeisho.SelectedIndexChanged += new System.EventHandler(this.cmbKeisho_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -339,7 +344,7 @@
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label8.Location = new System.Drawing.Point(12, 333);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 22);
+            this.label8.Size = new System.Drawing.Size(70, 23);
             this.label8.TabIndex = 32;
             this.label8.Text = "ご担当者";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -365,7 +370,7 @@
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.Location = new System.Drawing.Point(12, 384);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 22);
+            this.label9.Size = new System.Drawing.Size(70, 23);
             this.label9.TabIndex = 34;
             this.label9.Text = "部署名";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -389,7 +394,7 @@
             this.txtAddress2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtAddress2.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.txtAddress2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.txtAddress2.Location = new System.Drawing.Point(81, 485);
+            this.txtAddress2.Location = new System.Drawing.Point(81, 484);
             this.txtAddress2.MaxLength = 50;
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(358, 23);
@@ -402,7 +407,7 @@
             this.txtTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtTel.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.txtTel.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtTel.Location = new System.Drawing.Point(81, 510);
+            this.txtTel.Location = new System.Drawing.Point(81, 509);
             this.txtTel.MaxLength = 50;
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(358, 23);
@@ -416,9 +421,9 @@
             this.label11.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.label11.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label11.Location = new System.Drawing.Point(12, 510);
+            this.label11.Location = new System.Drawing.Point(12, 509);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 22);
+            this.label11.Size = new System.Drawing.Size(70, 23);
             this.label11.TabIndex = 39;
             this.label11.Text = "電話番号";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -428,7 +433,7 @@
             this.txtFax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtFax.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.txtFax.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtFax.Location = new System.Drawing.Point(81, 535);
+            this.txtFax.Location = new System.Drawing.Point(81, 534);
             this.txtFax.MaxLength = 50;
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(358, 23);
@@ -442,9 +447,9 @@
             this.label12.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.label12.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label12.Location = new System.Drawing.Point(12, 535);
+            this.label12.Location = new System.Drawing.Point(12, 534);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 22);
+            this.label12.Size = new System.Drawing.Size(70, 23);
             this.label12.TabIndex = 41;
             this.label12.Text = "FAX番号";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -470,7 +475,7 @@
             this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label13.Location = new System.Drawing.Point(470, 258);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 22);
+            this.label13.Size = new System.Drawing.Size(70, 23);
             this.label13.TabIndex = 43;
             this.label13.Text = "e_mail";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -522,7 +527,7 @@
             this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label15.Location = new System.Drawing.Point(470, 308);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 22);
+            this.label15.Size = new System.Drawing.Size(70, 23);
             this.label15.TabIndex = 47;
             this.label15.Text = "締日";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -556,9 +561,9 @@
             this.label4.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.label4.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(12, 460);
+            this.label4.Location = new System.Drawing.Point(12, 459);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 22);
+            this.label4.Size = new System.Drawing.Size(70, 23);
             this.label4.TabIndex = 18;
             this.label4.Text = "住所１";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -595,9 +600,9 @@
             this.label10.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.label10.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(12, 485);
+            this.label10.Location = new System.Drawing.Point(12, 484);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 22);
+            this.label10.Size = new System.Drawing.Size(70, 23);
             this.label10.TabIndex = 37;
             this.label10.Text = "住所２";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -609,7 +614,7 @@
             this.label17.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label17.Location = new System.Drawing.Point(461, 369);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(449, 139);
+            this.label17.Size = new System.Drawing.Size(449, 189);
             this.label17.TabIndex = 16;
             // 
             // txtAddress2S
@@ -633,7 +638,7 @@
             this.label18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label18.Location = new System.Drawing.Point(470, 455);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(70, 22);
+            this.label18.Size = new System.Drawing.Size(70, 23);
             this.label18.TabIndex = 58;
             this.label18.Text = "住所２";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -670,7 +675,7 @@
             this.label19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label19.Location = new System.Drawing.Point(470, 405);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(70, 22);
+            this.label19.Size = new System.Drawing.Size(70, 23);
             this.label19.TabIndex = 55;
             this.label19.Text = "郵便番号";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -709,7 +714,7 @@
             this.label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label21.Location = new System.Drawing.Point(470, 430);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(70, 22);
+            this.label21.Size = new System.Drawing.Size(70, 23);
             this.label21.TabIndex = 53;
             this.label21.Text = "住所１";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -730,12 +735,12 @@
             this.txtMemo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtMemo.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.txtMemo.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.txtMemo.Location = new System.Drawing.Point(539, 511);
+            this.txtMemo.Location = new System.Drawing.Point(538, 565);
             this.txtMemo.MaxLength = 50;
             this.txtMemo.Multiline = true;
             this.txtMemo.Name = "txtMemo";
-            this.txtMemo.Size = new System.Drawing.Size(371, 50);
-            this.txtMemo.TabIndex = 23;
+            this.txtMemo.Size = new System.Drawing.Size(371, 38);
+            this.txtMemo.TabIndex = 25;
             this.txtMemo.Enter += new System.EventHandler(this.txtEnter);
             this.txtMemo.Leave += new System.EventHandler(this.txtLeave);
             // 
@@ -745,9 +750,9 @@
             this.label23.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.label23.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label23.Location = new System.Drawing.Point(470, 511);
+            this.label23.Location = new System.Drawing.Point(469, 565);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(70, 50);
+            this.label23.Size = new System.Drawing.Size(70, 38);
             this.label23.TabIndex = 61;
             this.label23.Text = "備考";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -757,7 +762,7 @@
             this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label27.Location = new System.Drawing.Point(316, 215);
+            this.label27.Location = new System.Drawing.Point(316, 212);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(31, 15);
             this.label27.TabIndex = 76;
@@ -766,9 +771,9 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(828, 207);
+            this.button1.Location = new System.Drawing.Point(828, 204);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(69, 30);
             this.button1.TabIndex = 33;
@@ -781,7 +786,7 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox1.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.textBox1.Location = new System.Drawing.Point(353, 212);
+            this.textBox1.Location = new System.Drawing.Point(353, 209);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(196, 23);
             this.textBox1.TabIndex = 31;
@@ -819,7 +824,7 @@
             this.label24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label24.Location = new System.Drawing.Point(470, 380);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(70, 22);
+            this.label24.Size = new System.Drawing.Size(70, 23);
             this.label24.TabIndex = 78;
             this.label24.Text = "請求先名称";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -843,7 +848,7 @@
             this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label25.Location = new System.Drawing.Point(557, 215);
+            this.label25.Location = new System.Drawing.Point(557, 212);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(43, 15);
             this.label25.TabIndex = 80;
@@ -855,7 +860,7 @@
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox2.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.textBox2.Location = new System.Drawing.Point(602, 212);
+            this.textBox2.Location = new System.Drawing.Point(602, 209);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(215, 23);
             this.textBox2.TabIndex = 32;
@@ -867,7 +872,7 @@
             this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label28.Location = new System.Drawing.Point(19, 215);
+            this.label28.Location = new System.Drawing.Point(19, 212);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(29, 15);
             this.label28.TabIndex = 82;
@@ -879,7 +884,7 @@
             this.txtsTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtsTel.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.txtsTel.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtsTel.Location = new System.Drawing.Point(49, 212);
+            this.txtsTel.Location = new System.Drawing.Point(49, 209);
             this.txtsTel.MaxLength = 14;
             this.txtsTel.Name = "txtsTel";
             this.txtsTel.Size = new System.Drawing.Size(114, 23);
@@ -892,7 +897,7 @@
             this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label29.Location = new System.Drawing.Point(173, 215);
+            this.label29.Location = new System.Drawing.Point(173, 212);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(55, 15);
             this.label29.TabIndex = 84;
@@ -904,7 +909,7 @@
             this.txtsZip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtsZip.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.txtsZip.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtsZip.Location = new System.Drawing.Point(230, 212);
+            this.txtsZip.Location = new System.Drawing.Point(230, 209);
             this.txtsZip.MaxLength = 8;
             this.txtsZip.Name = "txtsZip";
             this.txtsZip.Size = new System.Drawing.Size(73, 23);
@@ -933,16 +938,70 @@
             this.label30.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label30.Location = new System.Drawing.Point(470, 480);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(70, 22);
+            this.label30.Size = new System.Drawing.Size(70, 23);
             this.label30.TabIndex = 86;
             this.label30.Text = "担当者名";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtBushoS
+            // 
+            this.txtBushoS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtBushoS.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtBushoS.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
+            this.txtBushoS.Location = new System.Drawing.Point(539, 530);
+            this.txtBushoS.MaxLength = 50;
+            this.txtBushoS.Name = "txtBushoS";
+            this.txtBushoS.Size = new System.Drawing.Size(358, 23);
+            this.txtBushoS.TabIndex = 24;
+            this.txtBushoS.Enter += new System.EventHandler(this.txtEnter);
+            this.txtBushoS.Leave += new System.EventHandler(this.txtLeave);
+            // 
+            // label31
+            // 
+            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label31.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label31.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label31.Location = new System.Drawing.Point(470, 530);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(70, 23);
+            this.label31.TabIndex = 88;
+            this.label31.Text = "部署名";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label32
+            // 
+            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label32.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label32.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label32.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label32.Location = new System.Drawing.Point(470, 505);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(70, 22);
+            this.label32.TabIndex = 90;
+            this.label32.Text = "敬称";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmbKeishoS
+            // 
+            this.cmbKeishoS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmbKeishoS.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.cmbKeishoS.FormattingEnabled = true;
+            this.cmbKeishoS.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
+            this.cmbKeishoS.Location = new System.Drawing.Point(539, 504);
+            this.cmbKeishoS.Name = "cmbKeishoS";
+            this.cmbKeishoS.Size = new System.Drawing.Size(80, 23);
+            this.cmbKeishoS.TabIndex = 23;
             // 
             // frmClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 626);
+            this.ClientSize = new System.Drawing.Size(924, 660);
+            this.Controls.Add(this.cmbKeishoS);
+            this.Controls.Add(this.label32);
+            this.Controls.Add(this.txtBushoS);
+            this.Controls.Add(this.label31);
             this.Controls.Add(this.txtTantouS);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.label29);
@@ -1092,5 +1151,9 @@
         private System.Windows.Forms.TextBox txtsZip;
         private System.Windows.Forms.TextBox txtTantouS;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtBushoS;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.ComboBox cmbKeishoS;
     }
 }

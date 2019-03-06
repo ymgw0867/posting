@@ -8700,6 +8700,10 @@ namespace posting {
             
             private global::System.Data.DataColumn column請求先担当者名;
             
+            private global::System.Data.DataColumn column請求先部署名;
+            
+            private global::System.Data.DataColumn column請求先敬称;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public 得意先DataTable() {
@@ -8943,6 +8947,22 @@ namespace posting {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 請求先部署名Column {
+                get {
+                    return this.column請求先部署名;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 請求先敬称Column {
+                get {
+                    return this.column請求先敬称;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9003,7 +9023,9 @@ namespace posting {
                         System.DateTime 登録年月日, 
                         System.DateTime 変更年月日, 
                         string 請求先名称, 
-                        string 請求先担当者名) {
+                        string 請求先担当者名, 
+                        string 請求先部署名, 
+                        string 請求先敬称) {
                 得意先Row row得意先Row = ((得意先Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -9031,7 +9053,9 @@ namespace posting {
                         登録年月日,
                         変更年月日,
                         請求先名称,
-                        請求先担当者名};
+                        請求先担当者名,
+                        請求先部署名,
+                        請求先敬称};
                 if ((parent社員RowBy社員_得意先 != null)) {
                     columnValuesArray[14] = parent社員RowBy社員_得意先[0];
                 }
@@ -9090,6 +9114,8 @@ namespace posting {
                 this.column変更年月日 = base.Columns["変更年月日"];
                 this.column請求先名称 = base.Columns["請求先名称"];
                 this.column請求先担当者名 = base.Columns["請求先担当者名"];
+                this.column請求先部署名 = base.Columns["請求先部署名"];
+                this.column請求先敬称 = base.Columns["請求先敬称"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9147,6 +9173,10 @@ namespace posting {
                 base.Columns.Add(this.column請求先名称);
                 this.column請求先担当者名 = new global::System.Data.DataColumn("請求先担当者名", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column請求先担当者名);
+                this.column請求先部署名 = new global::System.Data.DataColumn("請求先部署名", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column請求先部署名);
+                this.column請求先敬称 = new global::System.Data.DataColumn("請求先敬称", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column請求先敬称);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -9178,10 +9208,15 @@ namespace posting {
                 this.column請求先住所1.MaxLength = 50;
                 this.column請求先住所2.MaxLength = 50;
                 this.column備考.MaxLength = 50;
+                this.column請求先名称.AllowDBNull = false;
                 this.column請求先名称.MaxLength = 50;
                 this.column請求先担当者名.AllowDBNull = false;
                 this.column請求先担当者名.DefaultValue = ((string)("\'\'"));
                 this.column請求先担当者名.MaxLength = 50;
+                this.column請求先部署名.AllowDBNull = false;
+                this.column請求先部署名.MaxLength = 50;
+                this.column請求先敬称.AllowDBNull = false;
+                this.column請求先敬称.MaxLength = 5;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11634,6 +11669,8 @@ namespace posting {
             
             private global::System.Data.DataColumn column納品書発行;
             
+            private global::System.Data.DataColumn column営業備考;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public 受注1DataTable() {
@@ -12301,6 +12338,14 @@ namespace posting {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 営業備考Column {
+                get {
+                    return this.column営業備考;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -12415,7 +12460,8 @@ namespace posting {
                         string 外注受け渡し担当者3, 
                         string 外注支払ID2, 
                         string 外注支払ID3, 
-                        int 納品書発行) {
+                        int 納品書発行, 
+                        string 営業備考) {
                 受注1Row row受注1Row = ((受注1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -12496,7 +12542,8 @@ namespace posting {
                         外注受け渡し担当者3,
                         外注支払ID2,
                         外注支払ID3,
-                        納品書発行};
+                        納品書発行,
+                        営業備考};
                 if ((parent得意先RowBy得意先_受注1 != null)) {
                     columnValuesArray[4] = parent得意先RowBy得意先_受注1[0];
                 }
@@ -12635,6 +12682,7 @@ namespace posting {
                 this.column外注支払ID2 = base.Columns["外注支払ID2"];
                 this.column外注支払ID3 = base.Columns["外注支払ID3"];
                 this.column納品書発行 = base.Columns["納品書発行"];
+                this.column営業備考 = base.Columns["営業備考"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12798,6 +12846,8 @@ namespace posting {
                 base.Columns.Add(this.column外注支払ID3);
                 this.column納品書発行 = new global::System.Data.DataColumn("納品書発行", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column納品書発行);
+                this.column営業備考 = new global::System.Data.DataColumn("営業備考", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column営業備考);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
@@ -12891,6 +12941,8 @@ namespace posting {
                 this.column外注支払ID3.MaxLength = 14;
                 this.column納品書発行.AllowDBNull = false;
                 this.column納品書発行.DefaultValue = ((int)(0));
+                this.column営業備考.AllowDBNull = false;
+                this.column営業備考.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21610,12 +21662,7 @@ namespace posting {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string 請求先名称 {
                 get {
-                    if (this.Is請求先名称Null()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.table得意先.請求先名称Column]));
-                    }
+                    return ((string)(this[this.table得意先.請求先名称Column]));
                 }
                 set {
                     this[this.table得意先.請求先名称Column] = value;
@@ -21630,6 +21677,28 @@ namespace posting {
                 }
                 set {
                     this[this.table得意先.請求先担当者名Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 請求先部署名 {
+                get {
+                    return ((string)(this[this.table得意先.請求先部署名Column]));
+                }
+                set {
+                    this[this.table得意先.請求先部署名Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 請求先敬称 {
+                get {
+                    return ((string)(this[this.table得意先.請求先敬称Column]));
+                }
+                set {
+                    this[this.table得意先.請求先敬称Column] = value;
                 }
             }
             
@@ -21870,18 +21939,6 @@ namespace posting {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Set変更年月日Null() {
                 this[this.table得意先.変更年月日Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is請求先名称Null() {
-                return this.IsNull(this.table得意先.請求先名称Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set請求先名称Null() {
-                this[this.table得意先.請求先名称Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24360,6 +24417,17 @@ namespace posting {
                 }
                 set {
                     this[this.table受注1.納品書発行Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 営業備考 {
+                get {
+                    return ((string)(this[this.table受注1.営業備考Column]));
+                }
+                set {
+                    this[this.table受注1.営業備考Column] = value;
                 }
             }
             
@@ -36672,6 +36740,8 @@ SELECT ID, 名称, フリガナ, 担当者名, 担当部署, 郵便番号, 住�
             tableMapping.ColumnMappings.Add("変更年月日", "変更年月日");
             tableMapping.ColumnMappings.Add("請求先名称", "請求先名称");
             tableMapping.ColumnMappings.Add("請求先担当者名", "請求先担当者名");
+            tableMapping.ColumnMappings.Add("請求先部署名", "請求先部署名");
+            tableMapping.ColumnMappings.Add("請求先敬称", "請求先敬称");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -36687,16 +36757,16 @@ SELECT ID, 名称, フリガナ, 担当者名, 担当部署, 郵便番号, 住�
                 "_電話番号 = 1 AND [電話番号] IS NULL) OR ([電話番号] = @Original_電話番号)) AND ((@IsNull_FAX番号 " +
                 "= 1 AND [FAX番号] IS NULL) OR ([FAX番号] = @Original_FAX番号)) AND ((@IsNull_メールアドレス =" +
                 " 1 AND [メールアドレス] IS NULL) OR ([メールアドレス] = @Original_メールアドレス)) AND ([担当社員コード] = @" +
-                "Original_担当社員コード) AND ([締日] = @Original_締日) AND ([税通知] = @Original_税通知) AND ((@I" +
-                "sNull_請求先名称 = 1 AND [請求先名称] IS NULL) OR ([請求先名称] = @Original_請求先名称)) AND ((@IsNu" +
-                "ll_請求先郵便番号 = 1 AND [請求先郵便番号] IS NULL) OR ([請求先郵便番号] = @Original_請求先郵便番号)) AND ((" +
-                "@IsNull_請求先都道府県 = 1 AND [請求先都道府県] IS NULL) OR ([請求先都道府県] = @Original_請求先都道府県)) A" +
-                "ND ((@IsNull_請求先住所1 = 1 AND [請求先住所1] IS NULL) OR ([請求先住所1] = @Original_請求先住所1)) " +
-                "AND ((@IsNull_請求先住所2 = 1 AND [請求先住所2] IS NULL) OR ([請求先住所2] = @Original_請求先住所2))" +
-                " AND ((@IsNull_備考 = 1 AND [備考] IS NULL) OR ([備考] = @Original_備考)) AND ((@IsNull_" +
-                "登録年月日 = 1 AND [登録年月日] IS NULL) OR ([登録年月日] = @Original_登録年月日)) AND ((@IsNull_変更年" +
-                "月日 = 1 AND [変更年月日] IS NULL) OR ([変更年月日] = @Original_変更年月日)) AND ([請求先担当者名] = @Or" +
-                "iginal_請求先担当者名))";
+                "Original_担当社員コード) AND ([締日] = @Original_締日) AND ([税通知] = @Original_税通知) AND ([請求" +
+                "先名称] = @Original_請求先名称) AND ((@IsNull_請求先郵便番号 = 1 AND [請求先郵便番号] IS NULL) OR ([請求" +
+                "先郵便番号] = @Original_請求先郵便番号)) AND ((@IsNull_請求先都道府県 = 1 AND [請求先都道府県] IS NULL) OR" +
+                " ([請求先都道府県] = @Original_請求先都道府県)) AND ((@IsNull_請求先住所1 = 1 AND [請求先住所1] IS NULL)" +
+                " OR ([請求先住所1] = @Original_請求先住所1)) AND ((@IsNull_請求先住所2 = 1 AND [請求先住所2] IS NULL" +
+                ") OR ([請求先住所2] = @Original_請求先住所2)) AND ((@IsNull_備考 = 1 AND [備考] IS NULL) OR ([" +
+                "備考] = @Original_備考)) AND ((@IsNull_登録年月日 = 1 AND [登録年月日] IS NULL) OR ([登録年月日] = " +
+                "@Original_登録年月日)) AND ((@IsNull_変更年月日 = 1 AND [変更年月日] IS NULL) OR ([変更年月日] = @Or" +
+                "iginal_変更年月日)) AND ([請求先担当者名] = @Original_請求先担当者名) AND ([請求先部署名] = @Original_請求先" +
+                "部署名) AND ([請求先敬称] = @Original_請求先敬称))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_略称", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "略称", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -36727,7 +36797,6 @@ SELECT ID, 名称, フリガナ, 担当者名, 担当部署, 郵便番号, 住�
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_担当社員コード", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "担当社員コード", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_締日", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "締日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_税通知", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "税通知", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_請求先名称", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先名称", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_請求先名称", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先名称", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_請求先郵便番号", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先郵便番号", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_請求先郵便番号", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先郵便番号", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -36744,10 +36813,12 @@ SELECT ID, 名称, フリガナ, 担当者名, 担当部署, 郵便番号, 住�
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_変更年月日", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_変更年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_請求先担当者名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先担当者名", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_請求先部署名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先部署名", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_請求先敬称", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先敬称", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[得意先] ([略称], [フリガナ], [名称], [敬称], [担当者名], [部署名], [郵便番号], [都道府県], [住所1], [住所2], [電話番号], [FAX番号], [メールアドレス], [担当社員コード], [締日], [税通知], [請求先名称], [請求先郵便番号], [請求先都道府県], [請求先住所1], [請求先住所2], [備考], [登録年月日], [変更年月日], [請求先担当者名]) VALUES (@略称, @フリガナ, @名称, @敬称, @担当者名, @部署名, @郵便番号, @都道府県, @住所1, @住所2, @電話番号, @FAX番号, @メールアドレス, @担当社員コード, @締日, @税通知, @請求先名称, @請求先郵便番号, @請求先都道府県, @請求先住所1, @請求先住所2, @備考, @登録年月日, @変更年月日, @請求先担当者名);
-SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便番号, 都道府県, 住所1, 住所2, 電話番号, FAX番号, メールアドレス, 担当社員コード, 締日, 税通知, 請求先名称, 請求先郵便番号, 請求先都道府県, 請求先住所1, 請求先住所2, 備考, 登録年月日, 変更年月日, 請求先担当者名 FROM 得意先 WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[得意先] ([略称], [フリガナ], [名称], [敬称], [担当者名], [部署名], [郵便番号], [都道府県], [住所1], [住所2], [電話番号], [FAX番号], [メールアドレス], [担当社員コード], [締日], [税通知], [請求先名称], [請求先郵便番号], [請求先都道府県], [請求先住所1], [請求先住所2], [備考], [登録年月日], [変更年月日], [請求先担当者名], [請求先部署名], [請求先敬称]) VALUES (@略称, @フリガナ, @名称, @敬称, @担当者名, @部署名, @郵便番号, @都道府県, @住所1, @住所2, @電話番号, @FAX番号, @メールアドレス, @担当社員コード, @締日, @税通知, @請求先名称, @請求先郵便番号, @請求先都道府県, @請求先住所1, @請求先住所2, @備考, @登録年月日, @変更年月日, @請求先担当者名, @請求先部署名, @請求先敬称);
+SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便番号, 都道府県, 住所1, 住所2, 電話番号, FAX番号, メールアドレス, 担当社員コード, 締日, 税通知, 請求先名称, 請求先郵便番号, 請求先都道府県, 請求先住所1, 請求先住所2, 備考, 登録年月日, 変更年月日, 請求先担当者名, 請求先部署名, 請求先敬称 FROM 得意先 WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@略称", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "略称", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@フリガナ", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "フリガナ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -36774,6 +36845,8 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@変更年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@請求先担当者名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先担当者名", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@請求先部署名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先部署名", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@請求先敬称", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先敬称", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[得意先] SET [略称] = @略称, [フリガナ] = @フリガナ, [名称] = @名称, [敬称] = @敬称, [担当者名]" +
@@ -36781,30 +36854,31 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
                 "所2, [電話番号] = @電話番号, [FAX番号] = @FAX番号, [メールアドレス] = @メールアドレス, [担当社員コード] = @担当社員コード" +
                 ", [締日] = @締日, [税通知] = @税通知, [請求先名称] = @請求先名称, [請求先郵便番号] = @請求先郵便番号, [請求先都道府県] = " +
                 "@請求先都道府県, [請求先住所1] = @請求先住所1, [請求先住所2] = @請求先住所2, [備考] = @備考, [登録年月日] = @登録年月日, " +
-                "[変更年月日] = @変更年月日, [請求先担当者名] = @請求先担当者名 WHERE (([ID] = @Original_ID) AND ([略称] = " +
-                "@Original_略称) AND ((@IsNull_フリガナ = 1 AND [フリガナ] IS NULL) OR ([フリガナ] = @Original_" +
-                "フリガナ)) AND ((@IsNull_名称 = 1 AND [名称] IS NULL) OR ([名称] = @Original_名称)) AND ((@I" +
-                "sNull_敬称 = 1 AND [敬称] IS NULL) OR ([敬称] = @Original_敬称)) AND ((@IsNull_担当者名 = 1 " +
-                "AND [担当者名] IS NULL) OR ([担当者名] = @Original_担当者名)) AND ((@IsNull_部署名 = 1 AND [部署名" +
-                "] IS NULL) OR ([部署名] = @Original_部署名)) AND ((@IsNull_郵便番号 = 1 AND [郵便番号] IS NULL" +
-                ") OR ([郵便番号] = @Original_郵便番号)) AND ((@IsNull_都道府県 = 1 AND [都道府県] IS NULL) OR ([" +
-                "都道府県] = @Original_都道府県)) AND ((@IsNull_住所1 = 1 AND [住所1] IS NULL) OR ([住所1] = @O" +
-                "riginal_住所1)) AND ((@IsNull_住所2 = 1 AND [住所2] IS NULL) OR ([住所2] = @Original_住所2" +
-                ")) AND ((@IsNull_電話番号 = 1 AND [電話番号] IS NULL) OR ([電話番号] = @Original_電話番号)) AND " +
-                "((@IsNull_FAX番号 = 1 AND [FAX番号] IS NULL) OR ([FAX番号] = @Original_FAX番号)) AND ((@" +
-                "IsNull_メールアドレス = 1 AND [メールアドレス] IS NULL) OR ([メールアドレス] = @Original_メールアドレス)) AN" +
-                "D ([担当社員コード] = @Original_担当社員コード) AND ([締日] = @Original_締日) AND ([税通知] = @Origin" +
-                "al_税通知) AND ((@IsNull_請求先名称 = 1 AND [請求先名称] IS NULL) OR ([請求先名称] = @Original_請求先" +
-                "名称)) AND ((@IsNull_請求先郵便番号 = 1 AND [請求先郵便番号] IS NULL) OR ([請求先郵便番号] = @Original_" +
-                "請求先郵便番号)) AND ((@IsNull_請求先都道府県 = 1 AND [請求先都道府県] IS NULL) OR ([請求先都道府県] = @Orig" +
-                "inal_請求先都道府県)) AND ((@IsNull_請求先住所1 = 1 AND [請求先住所1] IS NULL) OR ([請求先住所1] = @Or" +
-                "iginal_請求先住所1)) AND ((@IsNull_請求先住所2 = 1 AND [請求先住所2] IS NULL) OR ([請求先住所2] = @O" +
-                "riginal_請求先住所2)) AND ((@IsNull_備考 = 1 AND [備考] IS NULL) OR ([備考] = @Original_備考)" +
-                ") AND ((@IsNull_登録年月日 = 1 AND [登録年月日] IS NULL) OR ([登録年月日] = @Original_登録年月日)) A" +
-                "ND ((@IsNull_変更年月日 = 1 AND [変更年月日] IS NULL) OR ([変更年月日] = @Original_変更年月日)) AND " +
-                "([請求先担当者名] = @Original_請求先担当者名));\r\nSELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便番号," +
-                " 都道府県, 住所1, 住所2, 電話番号, FAX番号, メールアドレス, 担当社員コード, 締日, 税通知, 請求先名称, 請求先郵便番号, 請求先都道府県" +
-                ", 請求先住所1, 請求先住所2, 備考, 登録年月日, 変更年月日, 請求先担当者名 FROM 得意先 WHERE (ID = @ID)";
+                "[変更年月日] = @変更年月日, [請求先担当者名] = @請求先担当者名, [請求先部署名] = @請求先部署名, [請求先敬称] = @請求先敬称 WHE" +
+                "RE (([ID] = @Original_ID) AND ([略称] = @Original_略称) AND ((@IsNull_フリガナ = 1 AND [" +
+                "フリガナ] IS NULL) OR ([フリガナ] = @Original_フリガナ)) AND ((@IsNull_名称 = 1 AND [名称] IS NU" +
+                "LL) OR ([名称] = @Original_名称)) AND ((@IsNull_敬称 = 1 AND [敬称] IS NULL) OR ([敬称] = " +
+                "@Original_敬称)) AND ((@IsNull_担当者名 = 1 AND [担当者名] IS NULL) OR ([担当者名] = @Original" +
+                "_担当者名)) AND ((@IsNull_部署名 = 1 AND [部署名] IS NULL) OR ([部署名] = @Original_部署名)) AND" +
+                " ((@IsNull_郵便番号 = 1 AND [郵便番号] IS NULL) OR ([郵便番号] = @Original_郵便番号)) AND ((@IsN" +
+                "ull_都道府県 = 1 AND [都道府県] IS NULL) OR ([都道府県] = @Original_都道府県)) AND ((@IsNull_住所1" +
+                " = 1 AND [住所1] IS NULL) OR ([住所1] = @Original_住所1)) AND ((@IsNull_住所2 = 1 AND [住" +
+                "所2] IS NULL) OR ([住所2] = @Original_住所2)) AND ((@IsNull_電話番号 = 1 AND [電話番号] IS NU" +
+                "LL) OR ([電話番号] = @Original_電話番号)) AND ((@IsNull_FAX番号 = 1 AND [FAX番号] IS NULL) O" +
+                "R ([FAX番号] = @Original_FAX番号)) AND ((@IsNull_メールアドレス = 1 AND [メールアドレス] IS NULL) " +
+                "OR ([メールアドレス] = @Original_メールアドレス)) AND ([担当社員コード] = @Original_担当社員コード) AND ([締日" +
+                "] = @Original_締日) AND ([税通知] = @Original_税通知) AND ([請求先名称] = @Original_請求先名称) AN" +
+                "D ((@IsNull_請求先郵便番号 = 1 AND [請求先郵便番号] IS NULL) OR ([請求先郵便番号] = @Original_請求先郵便番号" +
+                ")) AND ((@IsNull_請求先都道府県 = 1 AND [請求先都道府県] IS NULL) OR ([請求先都道府県] = @Original_請求" +
+                "先都道府県)) AND ((@IsNull_請求先住所1 = 1 AND [請求先住所1] IS NULL) OR ([請求先住所1] = @Original_" +
+                "請求先住所1)) AND ((@IsNull_請求先住所2 = 1 AND [請求先住所2] IS NULL) OR ([請求先住所2] = @Original" +
+                "_請求先住所2)) AND ((@IsNull_備考 = 1 AND [備考] IS NULL) OR ([備考] = @Original_備考)) AND (" +
+                "(@IsNull_登録年月日 = 1 AND [登録年月日] IS NULL) OR ([登録年月日] = @Original_登録年月日)) AND ((@I" +
+                "sNull_変更年月日 = 1 AND [変更年月日] IS NULL) OR ([変更年月日] = @Original_変更年月日)) AND ([請求先担当" +
+                "者名] = @Original_請求先担当者名) AND ([請求先部署名] = @Original_請求先部署名) AND ([請求先敬称] = @Origi" +
+                "nal_請求先敬称));\r\nSELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便番号, 都道府県, 住所1, 住所2, 電話番号" +
+                ", FAX番号, メールアドレス, 担当社員コード, 締日, 税通知, 請求先名称, 請求先郵便番号, 請求先都道府県, 請求先住所1, 請求先住所2, 備考," +
+                " 登録年月日, 変更年月日, 請求先担当者名, 請求先部署名, 請求先敬称 FROM 得意先 WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@略称", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "略称", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@フリガナ", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "フリガナ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -36831,6 +36905,8 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@変更年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@請求先担当者名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先担当者名", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@請求先部署名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先部署名", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@請求先敬称", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先敬称", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_略称", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "略称", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_フリガナ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "フリガナ", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -36860,7 +36936,6 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_担当社員コード", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "担当社員コード", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_締日", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "締日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_税通知", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "税通知", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_請求先名称", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先名称", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_請求先名称", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先名称", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_請求先郵便番号", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先郵便番号", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_請求先郵便番号", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先郵便番号", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -36877,6 +36952,8 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_変更年月日", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_変更年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_請求先担当者名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先担当者名", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_請求先部署名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先部署名", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_請求先敬称", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "請求先敬称", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -36895,13 +36972,13 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便番号, 都道府県, 住所1, 住所2, 電話番号, FAX番号, メールアドレ" +
                 "ス, 担当社員コード, 締日, 税通知, 請求先名称, 請求先郵便番号, 請求先都道府県, 請求先住所1, 請求先住所2, 備考, 登録年月日, 変更年月日, " +
-                "請求先担当者名 FROM dbo.得意先";
+                "請求先担当者名, 請求先部署名, 請求先敬称 FROM dbo.得意先";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT FAX番号, ID, フリガナ, メールアドレス, 住所1, 住所2, 備考, 名称, 変更年月日, 担当社員コード, 担当者名, 敬称, 略称, " +
-                "登録年月日, 税通知, 締日, 請求先住所1, 請求先住所2, 請求先名称, 請求先担当者名, 請求先郵便番号, 請求先都道府県, 部署名, 郵便番号, 都道府" +
-                "県, 電話番号 FROM 得意先 WHERE (略称 LIKE @略称)";
+                "登録年月日, 税通知, 締日, 請求先住所1, 請求先住所2, 請求先名称, 請求先担当者名, 請求先敬称, 請求先部署名, 請求先郵便番号, 請求先都道府県," +
+                " 部署名, 郵便番号, 都道府県, 電話番号, 請求先部署名, 請求先敬称 FROM 得意先 WHERE (略称 LIKE @略称)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@略称", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "略称", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -37025,7 +37102,9 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
                     string Original_備考, 
                     global::System.Nullable<global::System.DateTime> Original_登録年月日, 
                     global::System.Nullable<global::System.DateTime> Original_変更年月日, 
-                    string Original_請求先担当者名) {
+                    string Original_請求先担当者名, 
+                    string Original_請求先部署名, 
+                    string Original_請求先敬称) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_略称 == null)) {
                 throw new global::System.ArgumentNullException("Original_略称");
@@ -37138,74 +37217,84 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
                 this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_税通知));
             }
             if ((Original_請求先名称 == null)) {
-                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_請求先名称");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_請求先名称));
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((string)(Original_請求先名称));
             }
             if ((Original_請求先郵便番号 == null)) {
-                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_請求先郵便番号));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((string)(Original_請求先郵便番号));
             }
             if ((Original_請求先都道府県 == null)) {
-                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_請求先都道府県));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((string)(Original_請求先都道府県));
             }
             if ((Original_請求先住所1 == null)) {
-                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[36].Value = ((string)(Original_請求先住所1));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((string)(Original_請求先住所1));
             }
             if ((Original_請求先住所2 == null)) {
-                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[38].Value = ((string)(Original_請求先住所2));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((string)(Original_請求先住所2));
             }
             if ((Original_備考 == null)) {
-                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[40].Value = ((string)(Original_備考));
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((string)(Original_備考));
             }
             if ((Original_登録年月日.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[42].Value = ((System.DateTime)(Original_登録年月日.Value));
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((System.DateTime)(Original_登録年月日.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
             if ((Original_変更年月日.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[44].Value = ((System.DateTime)(Original_変更年月日.Value));
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[43].Value = ((System.DateTime)(Original_変更年月日.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[44].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             if ((Original_請求先担当者名 == null)) {
                 throw new global::System.ArgumentNullException("Original_請求先担当者名");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[45].Value = ((string)(Original_請求先担当者名));
+                this.Adapter.DeleteCommand.Parameters[44].Value = ((string)(Original_請求先担当者名));
+            }
+            if ((Original_請求先部署名 == null)) {
+                throw new global::System.ArgumentNullException("Original_請求先部署名");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[45].Value = ((string)(Original_請求先部署名));
+            }
+            if ((Original_請求先敬称 == null)) {
+                throw new global::System.ArgumentNullException("Original_請求先敬称");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[46].Value = ((string)(Original_請求先敬称));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -37252,7 +37341,9 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
                     string 備考, 
                     global::System.Nullable<global::System.DateTime> 登録年月日, 
                     global::System.Nullable<global::System.DateTime> 変更年月日, 
-                    string 請求先担当者名) {
+                    string 請求先担当者名, 
+                    string 請求先部署名, 
+                    string 請求先敬称) {
             if ((略称 == null)) {
                 throw new global::System.ArgumentNullException("略称");
             }
@@ -37340,7 +37431,7 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
                 this.Adapter.InsertCommand.Parameters[15].Value = ((string)(税通知));
             }
             if ((請求先名称 == null)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("請求先名称");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[16].Value = ((string)(請求先名称));
@@ -37393,6 +37484,18 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
             else {
                 this.Adapter.InsertCommand.Parameters[24].Value = ((string)(請求先担当者名));
             }
+            if ((請求先部署名 == null)) {
+                throw new global::System.ArgumentNullException("請求先部署名");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(請求先部署名));
+            }
+            if ((請求先敬称 == null)) {
+                throw new global::System.ArgumentNullException("請求先敬称");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(請求先敬称));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -37439,6 +37542,8 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
                     global::System.Nullable<global::System.DateTime> 登録年月日, 
                     global::System.Nullable<global::System.DateTime> 変更年月日, 
                     string 請求先担当者名, 
+                    string 請求先部署名, 
+                    string 請求先敬称, 
                     int Original_ID, 
                     string Original_略称, 
                     string Original_フリガナ, 
@@ -37465,6 +37570,8 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
                     global::System.Nullable<global::System.DateTime> Original_登録年月日, 
                     global::System.Nullable<global::System.DateTime> Original_変更年月日, 
                     string Original_請求先担当者名, 
+                    string Original_請求先部署名, 
+                    string Original_請求先敬称, 
                     int ID) {
             if ((略称 == null)) {
                 throw new global::System.ArgumentNullException("略称");
@@ -37553,7 +37660,7 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(税通知));
             }
             if ((請求先名称 == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("請求先名称");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(請求先名称));
@@ -37606,188 +37713,210 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
             else {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(請求先担当者名));
             }
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_ID));
+            if ((請求先部署名 == null)) {
+                throw new global::System.ArgumentNullException("請求先部署名");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(請求先部署名));
+            }
+            if ((請求先敬称 == null)) {
+                throw new global::System.ArgumentNullException("請求先敬称");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(請求先敬称));
+            }
+            this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_ID));
             if ((Original_略称 == null)) {
                 throw new global::System.ArgumentNullException("Original_略称");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_略称));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_略称));
             }
             if ((Original_フリガナ == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_フリガナ));
-            }
-            if ((Original_名称 == null)) {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_名称));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_フリガナ));
             }
-            if ((Original_敬称 == null)) {
+            if ((Original_名称 == null)) {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_敬称));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_名称));
             }
-            if ((Original_担当者名 == null)) {
+            if ((Original_敬称 == null)) {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_担当者名));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_敬称));
             }
-            if ((Original_部署名 == null)) {
+            if ((Original_担当者名 == null)) {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_部署名));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_担当者名));
             }
-            if ((Original_郵便番号 == null)) {
+            if ((Original_部署名 == null)) {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_郵便番号));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_部署名));
             }
-            if ((Original_都道府県 == null)) {
+            if ((Original_郵便番号 == null)) {
                 this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_都道府県));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_郵便番号));
             }
-            if ((Original_住所1 == null)) {
+            if ((Original_都道府県 == null)) {
                 this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_住所1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_都道府県));
             }
-            if ((Original_住所2 == null)) {
+            if ((Original_住所1 == null)) {
                 this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_住所2));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_住所1));
             }
-            if ((Original_電話番号 == null)) {
+            if ((Original_住所2 == null)) {
                 this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_電話番号));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_住所2));
             }
-            if ((Original_FAX番号 == null)) {
+            if ((Original_電話番号 == null)) {
                 this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_FAX番号));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_電話番号));
             }
-            if ((Original_メールアドレス == null)) {
+            if ((Original_FAX番号 == null)) {
                 this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_メールアドレス));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_FAX番号));
             }
-            this.Adapter.UpdateCommand.Parameters[51].Value = ((int)(Original_担当社員コード));
-            this.Adapter.UpdateCommand.Parameters[52].Value = ((int)(Original_締日));
+            if ((Original_メールアドレス == null)) {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_メールアドレス));
+            }
+            this.Adapter.UpdateCommand.Parameters[53].Value = ((int)(Original_担当社員コード));
+            this.Adapter.UpdateCommand.Parameters[54].Value = ((int)(Original_締日));
             if ((Original_税通知 == null)) {
                 throw new global::System.ArgumentNullException("Original_税通知");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_税通知));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(Original_税通知));
             }
             if ((Original_請求先名称 == null)) {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_請求先名称");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(Original_請求先名称));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(Original_請求先名称));
             }
             if ((Original_請求先郵便番号 == null)) {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((string)(Original_請求先郵便番号));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((string)(Original_請求先郵便番号));
             }
             if ((Original_請求先都道府県 == null)) {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((string)(Original_請求先都道府県));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((string)(Original_請求先都道府県));
             }
             if ((Original_請求先住所1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((string)(Original_請求先住所1));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((string)(Original_請求先住所1));
             }
             if ((Original_請求先住所2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[63].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((string)(Original_請求先住所2));
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_請求先住所2));
             }
             if ((Original_備考 == null)) {
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((string)(Original_備考));
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((string)(Original_備考));
             }
             if ((Original_登録年月日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((System.DateTime)(Original_登録年月日.Value));
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((System.DateTime)(Original_登録年月日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
             }
             if ((Original_変更年月日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((System.DateTime)(Original_変更年月日.Value));
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((System.DateTime)(Original_変更年月日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
             }
             if ((Original_請求先担当者名 == null)) {
                 throw new global::System.ArgumentNullException("Original_請求先担当者名");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((string)(Original_請求先担当者名));
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((string)(Original_請求先担当者名));
             }
-            this.Adapter.UpdateCommand.Parameters[71].Value = ((int)(ID));
+            if ((Original_請求先部署名 == null)) {
+                throw new global::System.ArgumentNullException("Original_請求先部署名");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((string)(Original_請求先部署名));
+            }
+            if ((Original_請求先敬称 == null)) {
+                throw new global::System.ArgumentNullException("Original_請求先敬称");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((string)(Original_請求先敬称));
+            }
+            this.Adapter.UpdateCommand.Parameters[74].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -37834,6 +37963,8 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
                     global::System.Nullable<global::System.DateTime> 登録年月日, 
                     global::System.Nullable<global::System.DateTime> 変更年月日, 
                     string 請求先担当者名, 
+                    string 請求先部署名, 
+                    string 請求先敬称, 
                     int Original_ID, 
                     string Original_略称, 
                     string Original_フリガナ, 
@@ -37859,8 +37990,10 @@ SELECT ID, 略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便
                     string Original_備考, 
                     global::System.Nullable<global::System.DateTime> Original_登録年月日, 
                     global::System.Nullable<global::System.DateTime> Original_変更年月日, 
-                    string Original_請求先担当者名) {
-            return this.Update(略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便番号, 都道府県, 住所1, 住所2, 電話番号, FAX番号, メールアドレス, 担当社員コード, 締日, 税通知, 請求先名称, 請求先郵便番号, 請求先都道府県, 請求先住所1, 請求先住所2, 備考, 登録年月日, 変更年月日, 請求先担当者名, Original_ID, Original_略称, Original_フリガナ, Original_名称, Original_敬称, Original_担当者名, Original_部署名, Original_郵便番号, Original_都道府県, Original_住所1, Original_住所2, Original_電話番号, Original_FAX番号, Original_メールアドレス, Original_担当社員コード, Original_締日, Original_税通知, Original_請求先名称, Original_請求先郵便番号, Original_請求先都道府県, Original_請求先住所1, Original_請求先住所2, Original_備考, Original_登録年月日, Original_変更年月日, Original_請求先担当者名, Original_ID);
+                    string Original_請求先担当者名, 
+                    string Original_請求先部署名, 
+                    string Original_請求先敬称) {
+            return this.Update(略称, フリガナ, 名称, 敬称, 担当者名, 部署名, 郵便番号, 都道府県, 住所1, 住所2, 電話番号, FAX番号, メールアドレス, 担当社員コード, 締日, 税通知, 請求先名称, 請求先郵便番号, 請求先都道府県, 請求先住所1, 請求先住所2, 備考, 登録年月日, 変更年月日, 請求先担当者名, 請求先部署名, 請求先敬称, Original_ID, Original_略称, Original_フリガナ, Original_名称, Original_敬称, Original_担当者名, Original_部署名, Original_郵便番号, Original_都道府県, Original_住所1, Original_住所2, Original_電話番号, Original_FAX番号, Original_メールアドレス, Original_担当社員コード, Original_締日, Original_税通知, Original_請求先名称, Original_請求先郵便番号, Original_請求先都道府県, Original_請求先住所1, Original_請求先住所2, Original_備考, Original_登録年月日, Original_変更年月日, Original_請求先担当者名, Original_請求先部署名, Original_請求先敬称, Original_ID);
         }
     }
     
@@ -40991,6 +41124,7 @@ FROM              配布員 LEFT OUTER JOIN
             tableMapping.ColumnMappings.Add("外注支払ID2", "外注支払ID2");
             tableMapping.ColumnMappings.Add("外注支払ID3", "外注支払ID3");
             tableMapping.ColumnMappings.Add("納品書発行", "納品書発行");
+            tableMapping.ColumnMappings.Add("営業備考", "営業備考");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -41039,7 +41173,7 @@ FROM              配布員 LEFT OUTER JOIN
                 "sNull_外注渡し日3 = 1 AND [外注渡し日3] IS NULL) OR ([外注渡し日3] = @Original_外注渡し日3)) AND ([外" +
                 "注受け渡し担当者2] = @Original_外注受け渡し担当者2) AND ([外注受け渡し担当者3] = @Original_外注受け渡し担当者3) AND" +
                 " ([外注支払ID2] = @Original_外注支払ID2) AND ([外注支払ID3] = @Original_外注支払ID3) AND ([納品書発行" +
-                "] = @Original_納品書発行))";
+                "] = @Original_納品書発行) AND ([営業備考] = @Original_営業備考))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_事業所ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "事業所ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -41142,6 +41276,7 @@ FROM              配布員 LEFT OUTER JOIN
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_外注支払ID2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "外注支払ID2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_外注支払ID3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "外注支払ID3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_納品書発行", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "納品書発行", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_営業備考", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "営業備考", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [受注] ([ID], [事業所ID], [受注日], [受注区分], [得意先ID], [社員ID], [チラシ名], [受注種別ID]" +
@@ -41153,23 +41288,23 @@ FROM              配布員 LEFT OUTER JOIN
                 "ーID], [案件種別], [受注確定書発行], [登録ユーザーID], [外注渡し日], [外注受け渡し担当者], [外注委託枚数], [業種], [外注先I" +
                 "D支払2], [外注支払日支払2], [外注原価支払2], [外注先ID支払3], [外注支払日支払3], [外注原価支払3], [外注依頼日支払2], [外注" +
                 "依頼日支払3], [外注委託枚数2], [外注委託枚数3], [外注渡し日2], [外注渡し日3], [外注受け渡し担当者2], [外注受け渡し担当者3], [" +
-                "外注支払ID2], [外注支払ID3], [納品書発行]) VALUES (@ID, @事業所ID, @受注日, @受注区分, @得意先ID, @社員ID, @" +
-                "チラシ名, @受注種別ID, @単価, @枚数, @金額, @消費税, @税込金額, @値引額, @売上金額, @税率, @判型, @配布単価, @依頼先, @" +
-                "原価, @配布形態, @配布条件, @配布開始日, @配布終了日, @配布猶予, @納品予定日, @納品形態, @請求書, @請求書ID, @請求書発行日, @" +
-                "入金方法, @入金予定日, @報告時期, @報告精度, @報告方法, @メールアドレス, @振込口座ID, @未配布情報有無, @枝番有無, @特記事項, @エ" +
-                "リア備考, @完了区分, @併配除外, @登録年月日, @変更年月日, @外注先ID営業, @外注支払日営業, @外注原価営業, @外注依頼日営業, @外注先I" +
-                "D支払, @外注支払日支払, @外注原価支払, @外注依頼日支払, @外注支払ID, @ユーザーID, @案件種別, @受注確定書発行, @登録ユーザーID, " +
-                "@外注渡し日, @外注受け渡し担当者, @外注委託枚数, @業種, @外注先ID支払2, @外注支払日支払2, @外注原価支払2, @外注先ID支払3, @外注" +
-                "支払日支払3, @外注原価支払3, @外注依頼日支払2, @外注依頼日支払3, @外注委託枚数2, @外注委託枚数3, @外注渡し日2, @外注渡し日3, @外" +
-                "注受け渡し担当者2, @外注受け渡し担当者3, @外注支払ID2, @外注支払ID3, @納品書発行);\r\nSELECT ID, 事業所ID, 受注日, 受注区" +
-                "分, 得意先ID, 社員ID, チラシ名, 受注種別ID, 単価, 枚数, 金額, 消費税, 税込金額, 値引額, 売上金額, 税率, 判型, 配布単価, 依頼" +
-                "先, 原価, 配布形態, 配布条件, 配布開始日, 配布終了日, 配布猶予, 納品予定日, 納品形態, 請求書, 請求書ID, 請求書発行日, 入金方法, 入金" +
-                "予定日, 報告時期, 報告精度, 報告方法, メールアドレス, 振込口座ID, 未配布情報有無, 枝番有無, 特記事項, エリア備考, 完了区分, 併配除外, " +
-                "登録年月日, 変更年月日, 外注先ID営業, 外注支払日営業, 外注原価営業, 外注依頼日営業, 外注先ID支払, 外注支払日支払, 外注原価支払, 外注依頼日" +
-                "支払, 外注支払ID, ユーザーID, 案件種別, 受注確定書発行, 登録ユーザーID, 外注渡し日, 外注受け渡し担当者, 外注委託枚数, 業種, 外注先ID" +
-                "支払2, 外注支払日支払2, 外注原価支払2, 外注先ID支払3, 外注支払日支払3, 外注原価支払3, 外注依頼日支払2, 外注依頼日支払3, 外注委託枚数2" +
-                ", 外注委託枚数3, 外注渡し日2, 外注渡し日3, 外注受け渡し担当者2, 外注受け渡し担当者3, 外注支払ID2, 外注支払ID3, 納品書発行 FROM " +
-                "受注 WHERE (ID = @ID)";
+                "外注支払ID2], [外注支払ID3], [納品書発行], [営業備考]) VALUES (@ID, @事業所ID, @受注日, @受注区分, @得意先ID, " +
+                "@社員ID, @チラシ名, @受注種別ID, @単価, @枚数, @金額, @消費税, @税込金額, @値引額, @売上金額, @税率, @判型, @配布単価," +
+                " @依頼先, @原価, @配布形態, @配布条件, @配布開始日, @配布終了日, @配布猶予, @納品予定日, @納品形態, @請求書, @請求書ID, @請" +
+                "求書発行日, @入金方法, @入金予定日, @報告時期, @報告精度, @報告方法, @メールアドレス, @振込口座ID, @未配布情報有無, @枝番有無, @" +
+                "特記事項, @エリア備考, @完了区分, @併配除外, @登録年月日, @変更年月日, @外注先ID営業, @外注支払日営業, @外注原価営業, @外注依頼日営" +
+                "業, @外注先ID支払, @外注支払日支払, @外注原価支払, @外注依頼日支払, @外注支払ID, @ユーザーID, @案件種別, @受注確定書発行, @登録" +
+                "ユーザーID, @外注渡し日, @外注受け渡し担当者, @外注委託枚数, @業種, @外注先ID支払2, @外注支払日支払2, @外注原価支払2, @外注先ID" +
+                "支払3, @外注支払日支払3, @外注原価支払3, @外注依頼日支払2, @外注依頼日支払3, @外注委託枚数2, @外注委託枚数3, @外注渡し日2, @外注" +
+                "渡し日3, @外注受け渡し担当者2, @外注受け渡し担当者3, @外注支払ID2, @外注支払ID3, @納品書発行, @営業備考);\r\nSELECT ID, " +
+                "事業所ID, 受注日, 受注区分, 得意先ID, 社員ID, チラシ名, 受注種別ID, 単価, 枚数, 金額, 消費税, 税込金額, 値引額, 売上金額, 税" +
+                "率, 判型, 配布単価, 依頼先, 原価, 配布形態, 配布条件, 配布開始日, 配布終了日, 配布猶予, 納品予定日, 納品形態, 請求書, 請求書ID, 請" +
+                "求書発行日, 入金方法, 入金予定日, 報告時期, 報告精度, 報告方法, メールアドレス, 振込口座ID, 未配布情報有無, 枝番有無, 特記事項, エリア備" +
+                "考, 完了区分, 併配除外, 登録年月日, 変更年月日, 外注先ID営業, 外注支払日営業, 外注原価営業, 外注依頼日営業, 外注先ID支払, 外注支払日支払" +
+                ", 外注原価支払, 外注依頼日支払, 外注支払ID, ユーザーID, 案件種別, 受注確定書発行, 登録ユーザーID, 外注渡し日, 外注受け渡し担当者, 外注" +
+                "委託枚数, 業種, 外注先ID支払2, 外注支払日支払2, 外注原価支払2, 外注先ID支払3, 外注支払日支払3, 外注原価支払3, 外注依頼日支払2, 外注" +
+                "依頼日支払3, 外注委託枚数2, 外注委託枚数3, 外注渡し日2, 外注渡し日3, 外注受け渡し担当者2, 外注受け渡し担当者3, 外注支払ID2, 外注支払I" +
+                "D3, 納品書発行, 営業備考 FROM 受注 WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@事業所ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "事業所ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -41250,6 +41385,7 @@ FROM              配布員 LEFT OUTER JOIN
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@外注支払ID2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "外注支払ID2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@外注支払ID3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "外注支払ID3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@納品書発行", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "納品書発行", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@営業備考", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "営業備考", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [受注] SET [ID] = @ID, [事業所ID] = @事業所ID, [受注日] = @受注日, [受注区分] = @受注区分, [得意先I" +
@@ -41270,60 +41406,60 @@ FROM              配布員 LEFT OUTER JOIN
                 "注支払日支払3, [外注原価支払3] = @外注原価支払3, [外注依頼日支払2] = @外注依頼日支払2, [外注依頼日支払3] = @外注依頼日支払3, [" +
                 "外注委託枚数2] = @外注委託枚数2, [外注委託枚数3] = @外注委託枚数3, [外注渡し日2] = @外注渡し日2, [外注渡し日3] = @外注渡し日" +
                 "3, [外注受け渡し担当者2] = @外注受け渡し担当者2, [外注受け渡し担当者3] = @外注受け渡し担当者3, [外注支払ID2] = @外注支払ID2," +
-                " [外注支払ID3] = @外注支払ID3, [納品書発行] = @納品書発行 WHERE (([ID] = @Original_ID) AND ([事業所ID" +
-                "] = @Original_事業所ID) AND ((@IsNull_受注日 = 1 AND [受注日] IS NULL) OR ([受注日] = @Origi" +
-                "nal_受注日)) AND ((@IsNull_受注区分 = 1 AND [受注区分] IS NULL) OR ([受注区分] = @Original_受注区分" +
-                ")) AND ([得意先ID] = @Original_得意先ID) AND ([社員ID] = @Original_社員ID) AND ([チラシ名] = @" +
-                "Original_チラシ名) AND ((@IsNull_受注種別ID = 1 AND [受注種別ID] IS NULL) OR ([受注種別ID] = @Or" +
-                "iginal_受注種別ID)) AND ([単価] = @Original_単価) AND ([枚数] = @Original_枚数) AND ([金額] = " +
-                "@Original_金額) AND ([消費税] = @Original_消費税) AND ([税込金額] = @Original_税込金額) AND ([値引" +
-                "額] = @Original_値引額) AND ((@IsNull_売上金額 = 1 AND [売上金額] IS NULL) OR ([売上金額] = @Ori" +
-                "ginal_売上金額)) AND ([税率] = @Original_税率) AND ([判型] = @Original_判型) AND ([配布単価] = @" +
-                "Original_配布単価) AND ([依頼先] = @Original_依頼先) AND ([原価] = @Original_原価) AND ([配布形態]" +
-                " = @Original_配布形態) AND ([配布条件] = @Original_配布条件) AND ((@IsNull_配布開始日 = 1 AND [配布" +
-                "開始日] IS NULL) OR ([配布開始日] = @Original_配布開始日)) AND ((@IsNull_配布終了日 = 1 AND [配布終了日" +
-                "] IS NULL) OR ([配布終了日] = @Original_配布終了日)) AND ([配布猶予] = @Original_配布猶予) AND ((@" +
-                "IsNull_納品予定日 = 1 AND [納品予定日] IS NULL) OR ([納品予定日] = @Original_納品予定日)) AND ([納品形態" +
-                "] = @Original_納品形態) AND ([請求書] = @Original_請求書) AND ([請求書ID] = @Original_請求書ID) " +
-                "AND ((@IsNull_請求書発行日 = 1 AND [請求書発行日] IS NULL) OR ([請求書発行日] = @Original_請求書発行日))" +
-                " AND ([入金方法] = @Original_入金方法) AND ((@IsNull_入金予定日 = 1 AND [入金予定日] IS NULL) OR (" +
-                "[入金予定日] = @Original_入金予定日)) AND ([報告時期] = @Original_報告時期) AND ([報告精度] = @Origina" +
-                "l_報告精度) AND ([報告方法] = @Original_報告方法) AND ([メールアドレス] = @Original_メールアドレス) AND ([" +
-                "振込口座ID] = @Original_振込口座ID) AND ([未配布情報有無] = @Original_未配布情報有無) AND ([枝番有無] = @O" +
-                "riginal_枝番有無) AND ([特記事項] = @Original_特記事項) AND ([エリア備考] = @Original_エリア備考) AND " +
-                "([完了区分] = @Original_完了区分) AND ([併配除外] = @Original_併配除外) AND ((@IsNull_登録年月日 = 1 " +
-                "AND [登録年月日] IS NULL) OR ([登録年月日] = @Original_登録年月日)) AND ((@IsNull_変更年月日 = 1 AND" +
-                " [変更年月日] IS NULL) OR ([変更年月日] = @Original_変更年月日)) AND ([外注先ID営業] = @Original_外注先" +
-                "ID営業) AND ((@IsNull_外注支払日営業 = 1 AND [外注支払日営業] IS NULL) OR ([外注支払日営業] = @Original" +
-                "_外注支払日営業)) AND ([外注原価営業] = @Original_外注原価営業) AND ((@IsNull_外注依頼日営業 = 1 AND [外注依頼" +
-                "日営業] IS NULL) OR ([外注依頼日営業] = @Original_外注依頼日営業)) AND ([外注先ID支払] = @Original_外注先" +
-                "ID支払) AND ((@IsNull_外注支払日支払 = 1 AND [外注支払日支払] IS NULL) OR ([外注支払日支払] = @Original" +
-                "_外注支払日支払)) AND ([外注原価支払] = @Original_外注原価支払) AND ((@IsNull_外注依頼日支払 = 1 AND [外注依頼" +
-                "日支払] IS NULL) OR ([外注依頼日支払] = @Original_外注依頼日支払)) AND ([外注支払ID] = @Original_外注支払" +
-                "ID) AND ([ユーザーID] = @Original_ユーザーID) AND ([案件種別] = @Original_案件種別) AND ([受注確定書発" +
-                "行] = @Original_受注確定書発行) AND ([登録ユーザーID] = @Original_登録ユーザーID) AND ((@IsNull_外注渡し" +
-                "日 = 1 AND [外注渡し日] IS NULL) OR ([外注渡し日] = @Original_外注渡し日)) AND ([外注受け渡し担当者] = @O" +
-                "riginal_外注受け渡し担当者) AND ([外注委託枚数] = @Original_外注委託枚数) AND ([業種] = @Original_業種) A" +
-                "ND ([外注先ID支払2] = @Original_外注先ID支払2) AND ((@IsNull_外注支払日支払2 = 1 AND [外注支払日支払2] I" +
-                "S NULL) OR ([外注支払日支払2] = @Original_外注支払日支払2)) AND ([外注原価支払2] = @Original_外注原価支払2" +
-                ") AND ([外注先ID支払3] = @Original_外注先ID支払3) AND ((@IsNull_外注支払日支払3 = 1 AND [外注支払日支払3" +
-                "] IS NULL) OR ([外注支払日支払3] = @Original_外注支払日支払3)) AND ([外注原価支払3] = @Original_外注原価" +
-                "支払3) AND ((@IsNull_外注依頼日支払2 = 1 AND [外注依頼日支払2] IS NULL) OR ([外注依頼日支払2] = @Origin" +
-                "al_外注依頼日支払2)) AND ((@IsNull_外注依頼日支払3 = 1 AND [外注依頼日支払3] IS NULL) OR ([外注依頼日支払3] " +
-                "= @Original_外注依頼日支払3)) AND ([外注委託枚数2] = @Original_外注委託枚数2) AND ([外注委託枚数3] = @Ori" +
-                "ginal_外注委託枚数3) AND ((@IsNull_外注渡し日2 = 1 AND [外注渡し日2] IS NULL) OR ([外注渡し日2] = @Or" +
-                "iginal_外注渡し日2)) AND ((@IsNull_外注渡し日3 = 1 AND [外注渡し日3] IS NULL) OR ([外注渡し日3] = @O" +
-                "riginal_外注渡し日3)) AND ([外注受け渡し担当者2] = @Original_外注受け渡し担当者2) AND ([外注受け渡し担当者3] = @" +
-                "Original_外注受け渡し担当者3) AND ([外注支払ID2] = @Original_外注支払ID2) AND ([外注支払ID3] = @Origi" +
-                "nal_外注支払ID3) AND ([納品書発行] = @Original_納品書発行));\r\nSELECT ID, 事業所ID, 受注日, 受注区分, 得意先" +
-                "ID, 社員ID, チラシ名, 受注種別ID, 単価, 枚数, 金額, 消費税, 税込金額, 値引額, 売上金額, 税率, 判型, 配布単価, 依頼先, 原価," +
-                " 配布形態, 配布条件, 配布開始日, 配布終了日, 配布猶予, 納品予定日, 納品形態, 請求書, 請求書ID, 請求書発行日, 入金方法, 入金予定日, 報" +
-                "告時期, 報告精度, 報告方法, メールアドレス, 振込口座ID, 未配布情報有無, 枝番有無, 特記事項, エリア備考, 完了区分, 併配除外, 登録年月日," +
-                " 変更年月日, 外注先ID営業, 外注支払日営業, 外注原価営業, 外注依頼日営業, 外注先ID支払, 外注支払日支払, 外注原価支払, 外注依頼日支払, 外注" +
-                "支払ID, ユーザーID, 案件種別, 受注確定書発行, 登録ユーザーID, 外注渡し日, 外注受け渡し担当者, 外注委託枚数, 業種, 外注先ID支払2, 外" +
-                "注支払日支払2, 外注原価支払2, 外注先ID支払3, 外注支払日支払3, 外注原価支払3, 外注依頼日支払2, 外注依頼日支払3, 外注委託枚数2, 外注委託" +
-                "枚数3, 外注渡し日2, 外注渡し日3, 外注受け渡し担当者2, 外注受け渡し担当者3, 外注支払ID2, 外注支払ID3, 納品書発行 FROM 受注 WHE" +
-                "RE (ID = @ID)";
+                " [外注支払ID3] = @外注支払ID3, [納品書発行] = @納品書発行, [営業備考] = @営業備考 WHERE (([ID] = @Original" +
+                "_ID) AND ([事業所ID] = @Original_事業所ID) AND ((@IsNull_受注日 = 1 AND [受注日] IS NULL) OR" +
+                " ([受注日] = @Original_受注日)) AND ((@IsNull_受注区分 = 1 AND [受注区分] IS NULL) OR ([受注区分] " +
+                "= @Original_受注区分)) AND ([得意先ID] = @Original_得意先ID) AND ([社員ID] = @Original_社員ID)" +
+                " AND ([チラシ名] = @Original_チラシ名) AND ((@IsNull_受注種別ID = 1 AND [受注種別ID] IS NULL) OR" +
+                " ([受注種別ID] = @Original_受注種別ID)) AND ([単価] = @Original_単価) AND ([枚数] = @Original_" +
+                "枚数) AND ([金額] = @Original_金額) AND ([消費税] = @Original_消費税) AND ([税込金額] = @Origina" +
+                "l_税込金額) AND ([値引額] = @Original_値引額) AND ((@IsNull_売上金額 = 1 AND [売上金額] IS NULL) O" +
+                "R ([売上金額] = @Original_売上金額)) AND ([税率] = @Original_税率) AND ([判型] = @Original_判型)" +
+                " AND ([配布単価] = @Original_配布単価) AND ([依頼先] = @Original_依頼先) AND ([原価] = @Original" +
+                "_原価) AND ([配布形態] = @Original_配布形態) AND ([配布条件] = @Original_配布条件) AND ((@IsNull_配" +
+                "布開始日 = 1 AND [配布開始日] IS NULL) OR ([配布開始日] = @Original_配布開始日)) AND ((@IsNull_配布終了" +
+                "日 = 1 AND [配布終了日] IS NULL) OR ([配布終了日] = @Original_配布終了日)) AND ([配布猶予] = @Origin" +
+                "al_配布猶予) AND ((@IsNull_納品予定日 = 1 AND [納品予定日] IS NULL) OR ([納品予定日] = @Original_納品" +
+                "予定日)) AND ([納品形態] = @Original_納品形態) AND ([請求書] = @Original_請求書) AND ([請求書ID] = @" +
+                "Original_請求書ID) AND ((@IsNull_請求書発行日 = 1 AND [請求書発行日] IS NULL) OR ([請求書発行日] = @O" +
+                "riginal_請求書発行日)) AND ([入金方法] = @Original_入金方法) AND ((@IsNull_入金予定日 = 1 AND [入金予定" +
+                "日] IS NULL) OR ([入金予定日] = @Original_入金予定日)) AND ([報告時期] = @Original_報告時期) AND ([" +
+                "報告精度] = @Original_報告精度) AND ([報告方法] = @Original_報告方法) AND ([メールアドレス] = @Original" +
+                "_メールアドレス) AND ([振込口座ID] = @Original_振込口座ID) AND ([未配布情報有無] = @Original_未配布情報有無) " +
+                "AND ([枝番有無] = @Original_枝番有無) AND ([特記事項] = @Original_特記事項) AND ([エリア備考] = @Orig" +
+                "inal_エリア備考) AND ([完了区分] = @Original_完了区分) AND ([併配除外] = @Original_併配除外) AND ((@I" +
+                "sNull_登録年月日 = 1 AND [登録年月日] IS NULL) OR ([登録年月日] = @Original_登録年月日)) AND ((@IsNu" +
+                "ll_変更年月日 = 1 AND [変更年月日] IS NULL) OR ([変更年月日] = @Original_変更年月日)) AND ([外注先ID営業]" +
+                " = @Original_外注先ID営業) AND ((@IsNull_外注支払日営業 = 1 AND [外注支払日営業] IS NULL) OR ([外注支払" +
+                "日営業] = @Original_外注支払日営業)) AND ([外注原価営業] = @Original_外注原価営業) AND ((@IsNull_外注依頼日" +
+                "営業 = 1 AND [外注依頼日営業] IS NULL) OR ([外注依頼日営業] = @Original_外注依頼日営業)) AND ([外注先ID支払]" +
+                " = @Original_外注先ID支払) AND ((@IsNull_外注支払日支払 = 1 AND [外注支払日支払] IS NULL) OR ([外注支払" +
+                "日支払] = @Original_外注支払日支払)) AND ([外注原価支払] = @Original_外注原価支払) AND ((@IsNull_外注依頼日" +
+                "支払 = 1 AND [外注依頼日支払] IS NULL) OR ([外注依頼日支払] = @Original_外注依頼日支払)) AND ([外注支払ID] " +
+                "= @Original_外注支払ID) AND ([ユーザーID] = @Original_ユーザーID) AND ([案件種別] = @Original_案件" +
+                "種別) AND ([受注確定書発行] = @Original_受注確定書発行) AND ([登録ユーザーID] = @Original_登録ユーザーID) AN" +
+                "D ((@IsNull_外注渡し日 = 1 AND [外注渡し日] IS NULL) OR ([外注渡し日] = @Original_外注渡し日)) AND (" +
+                "[外注受け渡し担当者] = @Original_外注受け渡し担当者) AND ([外注委託枚数] = @Original_外注委託枚数) AND ([業種] =" +
+                " @Original_業種) AND ([外注先ID支払2] = @Original_外注先ID支払2) AND ((@IsNull_外注支払日支払2 = 1 " +
+                "AND [外注支払日支払2] IS NULL) OR ([外注支払日支払2] = @Original_外注支払日支払2)) AND ([外注原価支払2] = @" +
+                "Original_外注原価支払2) AND ([外注先ID支払3] = @Original_外注先ID支払3) AND ((@IsNull_外注支払日支払3 =" +
+                " 1 AND [外注支払日支払3] IS NULL) OR ([外注支払日支払3] = @Original_外注支払日支払3)) AND ([外注原価支払3] " +
+                "= @Original_外注原価支払3) AND ((@IsNull_外注依頼日支払2 = 1 AND [外注依頼日支払2] IS NULL) OR ([外注依" +
+                "頼日支払2] = @Original_外注依頼日支払2)) AND ((@IsNull_外注依頼日支払3 = 1 AND [外注依頼日支払3] IS NULL)" +
+                " OR ([外注依頼日支払3] = @Original_外注依頼日支払3)) AND ([外注委託枚数2] = @Original_外注委託枚数2) AND (" +
+                "[外注委託枚数3] = @Original_外注委託枚数3) AND ((@IsNull_外注渡し日2 = 1 AND [外注渡し日2] IS NULL) OR" +
+                " ([外注渡し日2] = @Original_外注渡し日2)) AND ((@IsNull_外注渡し日3 = 1 AND [外注渡し日3] IS NULL) O" +
+                "R ([外注渡し日3] = @Original_外注渡し日3)) AND ([外注受け渡し担当者2] = @Original_外注受け渡し担当者2) AND (" +
+                "[外注受け渡し担当者3] = @Original_外注受け渡し担当者3) AND ([外注支払ID2] = @Original_外注支払ID2) AND ([外" +
+                "注支払ID3] = @Original_外注支払ID3) AND ([納品書発行] = @Original_納品書発行) AND ([営業備考] = @Orig" +
+                "inal_営業備考));\r\nSELECT ID, 事業所ID, 受注日, 受注区分, 得意先ID, 社員ID, チラシ名, 受注種別ID, 単価, 枚数, 金額" +
+                ", 消費税, 税込金額, 値引額, 売上金額, 税率, 判型, 配布単価, 依頼先, 原価, 配布形態, 配布条件, 配布開始日, 配布終了日, 配布猶予, 納" +
+                "品予定日, 納品形態, 請求書, 請求書ID, 請求書発行日, 入金方法, 入金予定日, 報告時期, 報告精度, 報告方法, メールアドレス, 振込口座ID, " +
+                "未配布情報有無, 枝番有無, 特記事項, エリア備考, 完了区分, 併配除外, 登録年月日, 変更年月日, 外注先ID営業, 外注支払日営業, 外注原価営業, " +
+                "外注依頼日営業, 外注先ID支払, 外注支払日支払, 外注原価支払, 外注依頼日支払, 外注支払ID, ユーザーID, 案件種別, 受注確定書発行, 登録ユーザ" +
+                "ーID, 外注渡し日, 外注受け渡し担当者, 外注委託枚数, 業種, 外注先ID支払2, 外注支払日支払2, 外注原価支払2, 外注先ID支払3, 外注支払日支" +
+                "払3, 外注原価支払3, 外注依頼日支払2, 外注依頼日支払3, 外注委託枚数2, 外注委託枚数3, 外注渡し日2, 外注渡し日3, 外注受け渡し担当者2, 外" +
+                "注受け渡し担当者3, 外注支払ID2, 外注支払ID3, 納品書発行, 営業備考 FROM 受注 WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@事業所ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "事業所ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -41404,6 +41540,7 @@ FROM              配布員 LEFT OUTER JOIN
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@外注支払ID2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "外注支払ID2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@外注支払ID3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "外注支払ID3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@納品書発行", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "納品書発行", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@営業備考", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "営業備考", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_事業所ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "事業所ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_受注日", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受注日", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -41505,6 +41642,7 @@ FROM              配布員 LEFT OUTER JOIN
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_外注支払ID2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "外注支払ID2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_外注支払ID3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "外注支払ID3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_納品書発行", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "納品書発行", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_営業備考", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "営業備考", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -41520,11 +41658,11 @@ FROM              配布員 LEFT OUTER JOIN
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID, 事業所ID, 受注日, 受注区分, 得意先ID, 社員ID, チラシ名, 受注種別ID, 単価, 枚数, 金額, 消費税, 税込金額, 値引額, 売上金額, 税率, 判型, 配布単価, 依頼先, 原価, 配布形態, 配布条件, 配布開始日, 配布終了日, 配布猶予, 納品予定日, 納品形態, 請求書, 請求書ID, 請求書発行日, 入金方法, 入金予定日, 報告時期, 報告精度, 報告方法, メールアドレス, 振込口座ID, 未配布情報有無, 枝番有無, 特記事項, エリア備考, 完了区分, 併配除外, 登録年月日, 変更年月日, 外注先ID営業, 外注支払日営業, 外注原価営業, 外注依頼日営業, 外注先ID支払, 外注支払日支払, 外注原価支払, 外注依頼日支払, 外注支払ID, ユーザーID, 案件種別, 受注確定書発行, 登録ユーザーID, 外注渡し日, 外注受け渡し担当者, 外注委託枚数, 業種, 外注先ID支払2, 外注支払日支払2, 外注原価支払2, 外注先ID支払3, 外注支払日支払3, 外注原価支払3, 外注依頼日支払2, 外注依頼日支払3, 外注委託枚数2, 外注委託枚数3, 外注渡し日2, 外注渡し日3, 外注受け渡し担当者2, 外注受け渡し担当者3,外注支払ID2,外注支払ID3,納品書発行 FROM 受注 where ID > 0";
+            this._commandCollection[0].CommandText = @"SELECT ID, 事業所ID, 受注日, 受注区分, 得意先ID, 社員ID, チラシ名, 受注種別ID, 単価, 枚数, 金額, 消費税, 税込金額, 値引額, 売上金額, 税率, 判型, 配布単価, 依頼先, 原価, 配布形態, 配布条件, 配布開始日, 配布終了日, 配布猶予, 納品予定日, 納品形態, 請求書, 請求書ID, 請求書発行日, 入金方法, 入金予定日, 報告時期, 報告精度, 報告方法, メールアドレス, 振込口座ID, 未配布情報有無, 枝番有無, 特記事項, エリア備考, 完了区分, 併配除外, 登録年月日, 変更年月日, 外注先ID営業, 外注支払日営業, 外注原価営業, 外注依頼日営業, 外注先ID支払, 外注支払日支払, 外注原価支払, 外注依頼日支払, 外注支払ID, ユーザーID, 案件種別, 受注確定書発行, 登録ユーザーID, 外注渡し日, 外注受け渡し担当者, 外注委託枚数, 業種, 外注先ID支払2, 外注支払日支払2, 外注原価支払2, 外注先ID支払3, 外注支払日支払3, 外注原価支払3, 外注依頼日支払2, 外注依頼日支払3, 外注委託枚数2, 外注委託枚数3, 外注渡し日2, 外注渡し日3, 外注受け渡し担当者2, 外注受け渡し担当者3,外注支払ID2,外注支払ID3,納品書発行,営業備考 FROM 受注 where ID > 0";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT ID, 事業所ID, 受注日, 受注区分, 得意先ID, 社員ID, チラシ名, 受注種別ID, 単価, 枚数, 金額, 消費税, 税込金額, 値引額, 売上金額, 税率, 判型, 配布単価, 依頼先, 原価, 配布形態, 配布条件, 配布開始日, 配布終了日, 配布猶予, 納品予定日, 納品形態, 請求書, 請求書ID, 請求書発行日, 入金方法, 入金予定日, 報告時期, 報告精度, 報告方法, メールアドレス, 振込口座ID, 未配布情報有無, 枝番有無, 特記事項, エリア備考, 完了区分, 併配除外, 登録年月日, 変更年月日, 外注先ID営業, 外注支払日営業, 外注原価営業, 外注依頼日営業, 外注先ID支払, 外注支払日支払, 外注原価支払, 外注依頼日支払, 外注支払ID, ユーザーID, 案件種別, 受注確定書発行, 登録ユーザーID, 外注渡し日, 外注受け渡し担当者, 外注委託枚数, 業種, 外注先ID支払2, 外注支払日支払2, 外注原価支払2, 外注先ID支払3, 外注支払日支払3, 外注原価支払3, 外注依頼日支払2, 外注依頼日支払3, 外注委託枚数2, 外注委託枚数3, 外注渡し日2, 外注渡し日3, 外注受け渡し担当者2, 外注受け渡し担当者3,外注支払ID2,外注支払ID3,納品書発行 FROM 受注 where ID > 0 and 受注日 >= @dt1  and  受注日 <= @dt2 ";
+            this._commandCollection[1].CommandText = @"SELECT ID, エリア備考, チラシ名, メールアドレス, ユーザーID, 事業所ID, 併配除外, 依頼先, 値引額, 入金予定日, 入金方法, 判型, 単価, 原価, 受注区分, 受注日, 受注確定書発行, 受注種別ID, 営業備考, 報告方法, 報告時期, 報告精度, 売上金額, 変更年月日, 外注依頼日営業, 外注依頼日支払, 外注依頼日支払2, 外注依頼日支払3, 外注先ID営業, 外注先ID支払, 外注先ID支払2, 外注先ID支払3, 外注原価営業, 外注原価支払, 外注原価支払2, 外注原価支払3, 外注受け渡し担当者, 外注受け渡し担当者2, 外注受け渡し担当者3, 外注委託枚数, 外注委託枚数2, 外注委託枚数3, 外注支払ID, 外注支払ID2, 外注支払ID3, 外注支払日営業, 外注支払日支払, 外注支払日支払2, 外注支払日支払3, 外注渡し日, 外注渡し日2, 外注渡し日3, 完了区分, 得意先ID, 振込口座ID, 未配布情報有無, 枚数, 枝番有無, 案件種別, 業種, 消費税, 特記事項, 登録ユーザーID, 登録年月日, 社員ID, 税率, 税込金額, 納品予定日, 納品形態, 納品書発行, 請求書, 請求書ID, 請求書発行日, 配布単価, 配布形態, 配布条件, 配布猶予, 配布終了日, 配布開始日, 金額, 営業備考 FROM 受注 WHERE (ID > 0) AND (受注日 >= @dt1) AND (受注日 <= @dt2)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dt1", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "受注日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dt2", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "受注日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -41714,7 +41852,8 @@ FROM              配布員 LEFT OUTER JOIN
                     string Original_外注受け渡し担当者3, 
                     string Original_外注支払ID2, 
                     string Original_外注支払ID3, 
-                    int Original_納品書発行) {
+                    int Original_納品書発行, 
+                    string Original_営業備考) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_ID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_事業所ID));
             if ((Original_受注日.HasValue == true)) {
@@ -42043,6 +42182,12 @@ FROM              配布員 LEFT OUTER JOIN
                 this.Adapter.DeleteCommand.Parameters[99].Value = ((string)(Original_外注支払ID3));
             }
             this.Adapter.DeleteCommand.Parameters[100].Value = ((int)(Original_納品書発行));
+            if ((Original_営業備考 == null)) {
+                throw new global::System.ArgumentNullException("Original_営業備考");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[101].Value = ((string)(Original_営業備考));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -42142,7 +42287,8 @@ FROM              配布員 LEFT OUTER JOIN
                     string 外注受け渡し担当者3, 
                     string 外注支払ID2, 
                     string 外注支払ID3, 
-                    int 納品書発行) {
+                    int 納品書発行, 
+                    string 営業備考) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(ID));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(事業所ID));
             if ((受注日.HasValue == true)) {
@@ -42427,6 +42573,12 @@ FROM              配布員 LEFT OUTER JOIN
                 this.Adapter.InsertCommand.Parameters[77].Value = ((string)(外注支払ID3));
             }
             this.Adapter.InsertCommand.Parameters[78].Value = ((int)(納品書発行));
+            if ((営業備考 == null)) {
+                throw new global::System.ArgumentNullException("営業備考");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[79].Value = ((string)(営業備考));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -42527,6 +42679,7 @@ FROM              配布員 LEFT OUTER JOIN
                     string 外注支払ID2, 
                     string 外注支払ID3, 
                     int 納品書発行, 
+                    string 営業備考, 
                     long Original_ID, 
                     int Original_事業所ID, 
                     global::System.Nullable<global::System.DateTime> Original_受注日, 
@@ -42605,7 +42758,8 @@ FROM              配布員 LEFT OUTER JOIN
                     string Original_外注受け渡し担当者3, 
                     string Original_外注支払ID2, 
                     string Original_外注支払ID3, 
-                    int Original_納品書発行) {
+                    int Original_納品書発行, 
+                    string Original_営業備考) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(ID));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(事業所ID));
             if ((受注日.HasValue == true)) {
@@ -42890,334 +43044,346 @@ FROM              配布員 LEFT OUTER JOIN
                 this.Adapter.UpdateCommand.Parameters[77].Value = ((string)(外注支払ID3));
             }
             this.Adapter.UpdateCommand.Parameters[78].Value = ((int)(納品書発行));
-            this.Adapter.UpdateCommand.Parameters[79].Value = ((long)(Original_ID));
-            this.Adapter.UpdateCommand.Parameters[80].Value = ((int)(Original_事業所ID));
-            if ((Original_受注日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((System.DateTime)(Original_受注日.Value));
+            if ((営業備考 == null)) {
+                throw new global::System.ArgumentNullException("営業備考");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((string)(営業備考));
+            }
+            this.Adapter.UpdateCommand.Parameters[80].Value = ((long)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[81].Value = ((int)(Original_事業所ID));
+            if ((Original_受注日.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((System.DateTime)(Original_受注日.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[83].Value = global::System.DBNull.Value;
             }
             if ((Original_受注区分 == null)) {
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[85].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((string)(Original_受注区分));
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((string)(Original_受注区分));
             }
-            this.Adapter.UpdateCommand.Parameters[85].Value = ((int)(Original_得意先ID));
-            this.Adapter.UpdateCommand.Parameters[86].Value = ((int)(Original_社員ID));
+            this.Adapter.UpdateCommand.Parameters[86].Value = ((int)(Original_得意先ID));
+            this.Adapter.UpdateCommand.Parameters[87].Value = ((int)(Original_社員ID));
             if ((Original_チラシ名 == null)) {
                 throw new global::System.ArgumentNullException("Original_チラシ名");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[87].Value = ((string)(Original_チラシ名));
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((string)(Original_チラシ名));
             }
             if ((Original_受注種別ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[89].Value = ((int)(Original_受注種別ID.Value));
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[90].Value = ((int)(Original_受注種別ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[89].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[90].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[90].Value = ((decimal)(Original_単価));
-            this.Adapter.UpdateCommand.Parameters[91].Value = ((int)(Original_枚数));
-            this.Adapter.UpdateCommand.Parameters[92].Value = ((decimal)(Original_金額));
-            this.Adapter.UpdateCommand.Parameters[93].Value = ((decimal)(Original_消費税));
-            this.Adapter.UpdateCommand.Parameters[94].Value = ((decimal)(Original_税込金額));
-            this.Adapter.UpdateCommand.Parameters[95].Value = ((decimal)(Original_値引額));
+            this.Adapter.UpdateCommand.Parameters[91].Value = ((decimal)(Original_単価));
+            this.Adapter.UpdateCommand.Parameters[92].Value = ((int)(Original_枚数));
+            this.Adapter.UpdateCommand.Parameters[93].Value = ((decimal)(Original_金額));
+            this.Adapter.UpdateCommand.Parameters[94].Value = ((decimal)(Original_消費税));
+            this.Adapter.UpdateCommand.Parameters[95].Value = ((decimal)(Original_税込金額));
+            this.Adapter.UpdateCommand.Parameters[96].Value = ((decimal)(Original_値引額));
             if ((Original_売上金額.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[96].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[97].Value = ((decimal)(Original_売上金額.Value));
+                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[98].Value = ((decimal)(Original_売上金額.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[96].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[97].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[98].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[98].Value = ((int)(Original_税率));
-            this.Adapter.UpdateCommand.Parameters[99].Value = ((int)(Original_判型));
-            this.Adapter.UpdateCommand.Parameters[100].Value = ((decimal)(Original_配布単価));
+            this.Adapter.UpdateCommand.Parameters[99].Value = ((int)(Original_税率));
+            this.Adapter.UpdateCommand.Parameters[100].Value = ((int)(Original_判型));
+            this.Adapter.UpdateCommand.Parameters[101].Value = ((decimal)(Original_配布単価));
             if ((Original_依頼先 == null)) {
                 throw new global::System.ArgumentNullException("Original_依頼先");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[101].Value = ((string)(Original_依頼先));
+                this.Adapter.UpdateCommand.Parameters[102].Value = ((string)(Original_依頼先));
             }
-            this.Adapter.UpdateCommand.Parameters[102].Value = ((decimal)(Original_原価));
-            this.Adapter.UpdateCommand.Parameters[103].Value = ((int)(Original_配布形態));
+            this.Adapter.UpdateCommand.Parameters[103].Value = ((decimal)(Original_原価));
+            this.Adapter.UpdateCommand.Parameters[104].Value = ((int)(Original_配布形態));
             if ((Original_配布条件 == null)) {
                 throw new global::System.ArgumentNullException("Original_配布条件");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[104].Value = ((string)(Original_配布条件));
+                this.Adapter.UpdateCommand.Parameters[105].Value = ((string)(Original_配布条件));
             }
             if ((Original_配布開始日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[105].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[106].Value = ((System.DateTime)(Original_配布開始日.Value));
+                this.Adapter.UpdateCommand.Parameters[106].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[107].Value = ((System.DateTime)(Original_配布開始日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[105].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[106].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[106].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[107].Value = global::System.DBNull.Value;
             }
             if ((Original_配布終了日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[107].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[108].Value = ((System.DateTime)(Original_配布終了日.Value));
+                this.Adapter.UpdateCommand.Parameters[108].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[109].Value = ((System.DateTime)(Original_配布終了日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[107].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[108].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[108].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[109].Value = global::System.DBNull.Value;
             }
             if ((Original_配布猶予 == null)) {
                 throw new global::System.ArgumentNullException("Original_配布猶予");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[109].Value = ((string)(Original_配布猶予));
+                this.Adapter.UpdateCommand.Parameters[110].Value = ((string)(Original_配布猶予));
             }
             if ((Original_納品予定日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[110].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[111].Value = ((System.DateTime)(Original_納品予定日.Value));
+                this.Adapter.UpdateCommand.Parameters[111].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[112].Value = ((System.DateTime)(Original_納品予定日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[110].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[111].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[111].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[112].Value = global::System.DBNull.Value;
             }
             if ((Original_納品形態 == null)) {
                 throw new global::System.ArgumentNullException("Original_納品形態");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[112].Value = ((string)(Original_納品形態));
+                this.Adapter.UpdateCommand.Parameters[113].Value = ((string)(Original_納品形態));
             }
-            this.Adapter.UpdateCommand.Parameters[113].Value = ((int)(Original_請求書));
-            this.Adapter.UpdateCommand.Parameters[114].Value = ((int)(Original_請求書ID));
+            this.Adapter.UpdateCommand.Parameters[114].Value = ((int)(Original_請求書));
+            this.Adapter.UpdateCommand.Parameters[115].Value = ((int)(Original_請求書ID));
             if ((Original_請求書発行日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[115].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[116].Value = ((System.DateTime)(Original_請求書発行日.Value));
+                this.Adapter.UpdateCommand.Parameters[116].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[117].Value = ((System.DateTime)(Original_請求書発行日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[115].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[116].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[116].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[117].Value = global::System.DBNull.Value;
             }
             if ((Original_入金方法 == null)) {
                 throw new global::System.ArgumentNullException("Original_入金方法");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[117].Value = ((string)(Original_入金方法));
+                this.Adapter.UpdateCommand.Parameters[118].Value = ((string)(Original_入金方法));
             }
             if ((Original_入金予定日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[118].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[119].Value = ((System.DateTime)(Original_入金予定日.Value));
+                this.Adapter.UpdateCommand.Parameters[119].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[120].Value = ((System.DateTime)(Original_入金予定日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[118].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[119].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[119].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[120].Value = global::System.DBNull.Value;
             }
             if ((Original_報告時期 == null)) {
                 throw new global::System.ArgumentNullException("Original_報告時期");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[120].Value = ((string)(Original_報告時期));
+                this.Adapter.UpdateCommand.Parameters[121].Value = ((string)(Original_報告時期));
             }
             if ((Original_報告精度 == null)) {
                 throw new global::System.ArgumentNullException("Original_報告精度");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[121].Value = ((string)(Original_報告精度));
+                this.Adapter.UpdateCommand.Parameters[122].Value = ((string)(Original_報告精度));
             }
             if ((Original_報告方法 == null)) {
                 throw new global::System.ArgumentNullException("Original_報告方法");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[122].Value = ((string)(Original_報告方法));
+                this.Adapter.UpdateCommand.Parameters[123].Value = ((string)(Original_報告方法));
             }
             if ((Original_メールアドレス == null)) {
                 throw new global::System.ArgumentNullException("Original_メールアドレス");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[123].Value = ((string)(Original_メールアドレス));
+                this.Adapter.UpdateCommand.Parameters[124].Value = ((string)(Original_メールアドレス));
             }
-            this.Adapter.UpdateCommand.Parameters[124].Value = ((int)(Original_振込口座ID));
-            this.Adapter.UpdateCommand.Parameters[125].Value = ((int)(Original_未配布情報有無));
-            this.Adapter.UpdateCommand.Parameters[126].Value = ((int)(Original_枝番有無));
+            this.Adapter.UpdateCommand.Parameters[125].Value = ((int)(Original_振込口座ID));
+            this.Adapter.UpdateCommand.Parameters[126].Value = ((int)(Original_未配布情報有無));
+            this.Adapter.UpdateCommand.Parameters[127].Value = ((int)(Original_枝番有無));
             if ((Original_特記事項 == null)) {
                 throw new global::System.ArgumentNullException("Original_特記事項");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[127].Value = ((string)(Original_特記事項));
+                this.Adapter.UpdateCommand.Parameters[128].Value = ((string)(Original_特記事項));
             }
             if ((Original_エリア備考 == null)) {
                 throw new global::System.ArgumentNullException("Original_エリア備考");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[128].Value = ((string)(Original_エリア備考));
+                this.Adapter.UpdateCommand.Parameters[129].Value = ((string)(Original_エリア備考));
             }
-            this.Adapter.UpdateCommand.Parameters[129].Value = ((int)(Original_完了区分));
-            this.Adapter.UpdateCommand.Parameters[130].Value = ((int)(Original_併配除外));
+            this.Adapter.UpdateCommand.Parameters[130].Value = ((int)(Original_完了区分));
+            this.Adapter.UpdateCommand.Parameters[131].Value = ((int)(Original_併配除外));
             if ((Original_登録年月日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[131].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[132].Value = ((System.DateTime)(Original_登録年月日.Value));
+                this.Adapter.UpdateCommand.Parameters[132].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[133].Value = ((System.DateTime)(Original_登録年月日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[131].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[132].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[132].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[133].Value = global::System.DBNull.Value;
             }
             if ((Original_変更年月日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[133].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[134].Value = ((System.DateTime)(Original_変更年月日.Value));
+                this.Adapter.UpdateCommand.Parameters[134].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[135].Value = ((System.DateTime)(Original_変更年月日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[133].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[134].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[134].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[135].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[135].Value = ((int)(Original_外注先ID営業));
+            this.Adapter.UpdateCommand.Parameters[136].Value = ((int)(Original_外注先ID営業));
             if ((Original_外注支払日営業.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[136].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[137].Value = ((System.DateTime)(Original_外注支払日営業.Value));
+                this.Adapter.UpdateCommand.Parameters[137].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[138].Value = ((System.DateTime)(Original_外注支払日営業.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[136].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[137].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[137].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[138].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[138].Value = ((decimal)(Original_外注原価営業));
+            this.Adapter.UpdateCommand.Parameters[139].Value = ((decimal)(Original_外注原価営業));
             if ((Original_外注依頼日営業.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[139].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[140].Value = ((System.DateTime)(Original_外注依頼日営業.Value));
+                this.Adapter.UpdateCommand.Parameters[140].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[141].Value = ((System.DateTime)(Original_外注依頼日営業.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[139].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[140].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[140].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[141].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[141].Value = ((int)(Original_外注先ID支払));
+            this.Adapter.UpdateCommand.Parameters[142].Value = ((int)(Original_外注先ID支払));
             if ((Original_外注支払日支払.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[142].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[143].Value = ((System.DateTime)(Original_外注支払日支払.Value));
+                this.Adapter.UpdateCommand.Parameters[143].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[144].Value = ((System.DateTime)(Original_外注支払日支払.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[142].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[143].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[143].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[144].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[144].Value = ((decimal)(Original_外注原価支払));
+            this.Adapter.UpdateCommand.Parameters[145].Value = ((decimal)(Original_外注原価支払));
             if ((Original_外注依頼日支払.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[145].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[146].Value = ((System.DateTime)(Original_外注依頼日支払.Value));
+                this.Adapter.UpdateCommand.Parameters[146].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[147].Value = ((System.DateTime)(Original_外注依頼日支払.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[145].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[146].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[146].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[147].Value = global::System.DBNull.Value;
             }
             if ((Original_外注支払ID == null)) {
                 throw new global::System.ArgumentNullException("Original_外注支払ID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[147].Value = ((string)(Original_外注支払ID));
+                this.Adapter.UpdateCommand.Parameters[148].Value = ((string)(Original_外注支払ID));
             }
-            this.Adapter.UpdateCommand.Parameters[148].Value = ((int)(Original_ユーザーID));
-            this.Adapter.UpdateCommand.Parameters[149].Value = ((int)(Original_案件種別));
-            this.Adapter.UpdateCommand.Parameters[150].Value = ((int)(Original_受注確定書発行));
-            this.Adapter.UpdateCommand.Parameters[151].Value = ((int)(Original_登録ユーザーID));
+            this.Adapter.UpdateCommand.Parameters[149].Value = ((int)(Original_ユーザーID));
+            this.Adapter.UpdateCommand.Parameters[150].Value = ((int)(Original_案件種別));
+            this.Adapter.UpdateCommand.Parameters[151].Value = ((int)(Original_受注確定書発行));
+            this.Adapter.UpdateCommand.Parameters[152].Value = ((int)(Original_登録ユーザーID));
             if ((Original_外注渡し日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[152].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[153].Value = ((System.DateTime)(Original_外注渡し日.Value));
+                this.Adapter.UpdateCommand.Parameters[153].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[154].Value = ((System.DateTime)(Original_外注渡し日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[152].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[153].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[153].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[154].Value = global::System.DBNull.Value;
             }
             if ((Original_外注受け渡し担当者 == null)) {
                 throw new global::System.ArgumentNullException("Original_外注受け渡し担当者");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[154].Value = ((string)(Original_外注受け渡し担当者));
+                this.Adapter.UpdateCommand.Parameters[155].Value = ((string)(Original_外注受け渡し担当者));
             }
-            this.Adapter.UpdateCommand.Parameters[155].Value = ((int)(Original_外注委託枚数));
+            this.Adapter.UpdateCommand.Parameters[156].Value = ((int)(Original_外注委託枚数));
             if ((Original_業種 == null)) {
                 throw new global::System.ArgumentNullException("Original_業種");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[156].Value = ((string)(Original_業種));
+                this.Adapter.UpdateCommand.Parameters[157].Value = ((string)(Original_業種));
             }
-            this.Adapter.UpdateCommand.Parameters[157].Value = ((int)(Original_外注先ID支払2));
+            this.Adapter.UpdateCommand.Parameters[158].Value = ((int)(Original_外注先ID支払2));
             if ((Original_外注支払日支払2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[158].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[159].Value = ((System.DateTime)(Original_外注支払日支払2.Value));
+                this.Adapter.UpdateCommand.Parameters[159].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[160].Value = ((System.DateTime)(Original_外注支払日支払2.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[158].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[159].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[159].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[160].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[160].Value = ((decimal)(Original_外注原価支払2));
-            this.Adapter.UpdateCommand.Parameters[161].Value = ((int)(Original_外注先ID支払3));
+            this.Adapter.UpdateCommand.Parameters[161].Value = ((decimal)(Original_外注原価支払2));
+            this.Adapter.UpdateCommand.Parameters[162].Value = ((int)(Original_外注先ID支払3));
             if ((Original_外注支払日支払3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[162].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[163].Value = ((System.DateTime)(Original_外注支払日支払3.Value));
+                this.Adapter.UpdateCommand.Parameters[163].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[164].Value = ((System.DateTime)(Original_外注支払日支払3.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[162].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[163].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[163].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[164].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[164].Value = ((decimal)(Original_外注原価支払3));
+            this.Adapter.UpdateCommand.Parameters[165].Value = ((decimal)(Original_外注原価支払3));
             if ((Original_外注依頼日支払2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[165].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[166].Value = ((System.DateTime)(Original_外注依頼日支払2.Value));
+                this.Adapter.UpdateCommand.Parameters[166].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[167].Value = ((System.DateTime)(Original_外注依頼日支払2.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[165].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[166].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[166].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[167].Value = global::System.DBNull.Value;
             }
             if ((Original_外注依頼日支払3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[167].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[168].Value = ((System.DateTime)(Original_外注依頼日支払3.Value));
+                this.Adapter.UpdateCommand.Parameters[168].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[169].Value = ((System.DateTime)(Original_外注依頼日支払3.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[167].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[168].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[168].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[169].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[169].Value = ((int)(Original_外注委託枚数2));
-            this.Adapter.UpdateCommand.Parameters[170].Value = ((int)(Original_外注委託枚数3));
+            this.Adapter.UpdateCommand.Parameters[170].Value = ((int)(Original_外注委託枚数2));
+            this.Adapter.UpdateCommand.Parameters[171].Value = ((int)(Original_外注委託枚数3));
             if ((Original_外注渡し日2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[171].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[172].Value = ((System.DateTime)(Original_外注渡し日2.Value));
+                this.Adapter.UpdateCommand.Parameters[172].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[173].Value = ((System.DateTime)(Original_外注渡し日2.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[171].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[172].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[172].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[173].Value = global::System.DBNull.Value;
             }
             if ((Original_外注渡し日3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[173].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[174].Value = ((System.DateTime)(Original_外注渡し日3.Value));
+                this.Adapter.UpdateCommand.Parameters[174].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[175].Value = ((System.DateTime)(Original_外注渡し日3.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[173].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[174].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[174].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[175].Value = global::System.DBNull.Value;
             }
             if ((Original_外注受け渡し担当者2 == null)) {
                 throw new global::System.ArgumentNullException("Original_外注受け渡し担当者2");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[175].Value = ((string)(Original_外注受け渡し担当者2));
+                this.Adapter.UpdateCommand.Parameters[176].Value = ((string)(Original_外注受け渡し担当者2));
             }
             if ((Original_外注受け渡し担当者3 == null)) {
                 throw new global::System.ArgumentNullException("Original_外注受け渡し担当者3");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[176].Value = ((string)(Original_外注受け渡し担当者3));
+                this.Adapter.UpdateCommand.Parameters[177].Value = ((string)(Original_外注受け渡し担当者3));
             }
             if ((Original_外注支払ID2 == null)) {
                 throw new global::System.ArgumentNullException("Original_外注支払ID2");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[177].Value = ((string)(Original_外注支払ID2));
+                this.Adapter.UpdateCommand.Parameters[178].Value = ((string)(Original_外注支払ID2));
             }
             if ((Original_外注支払ID3 == null)) {
                 throw new global::System.ArgumentNullException("Original_外注支払ID3");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[178].Value = ((string)(Original_外注支払ID3));
+                this.Adapter.UpdateCommand.Parameters[179].Value = ((string)(Original_外注支払ID3));
             }
-            this.Adapter.UpdateCommand.Parameters[179].Value = ((int)(Original_納品書発行));
+            this.Adapter.UpdateCommand.Parameters[180].Value = ((int)(Original_納品書発行));
+            if ((Original_営業備考 == null)) {
+                throw new global::System.ArgumentNullException("Original_営業備考");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[181].Value = ((string)(Original_営業備考));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -43317,6 +43483,7 @@ FROM              配布員 LEFT OUTER JOIN
                     string 外注支払ID2, 
                     string 外注支払ID3, 
                     int 納品書発行, 
+                    string 営業備考, 
                     long Original_ID, 
                     int Original_事業所ID, 
                     global::System.Nullable<global::System.DateTime> Original_受注日, 
@@ -43395,8 +43562,9 @@ FROM              配布員 LEFT OUTER JOIN
                     string Original_外注受け渡し担当者3, 
                     string Original_外注支払ID2, 
                     string Original_外注支払ID3, 
-                    int Original_納品書発行) {
-            return this.Update(Original_ID, 事業所ID, 受注日, 受注区分, 得意先ID, 社員ID, チラシ名, 受注種別ID, 単価, 枚数, 金額, 消費税, 税込金額, 値引額, 売上金額, 税率, 判型, 配布単価, 依頼先, 原価, 配布形態, 配布条件, 配布開始日, 配布終了日, 配布猶予, 納品予定日, 納品形態, 請求書, 請求書ID, 請求書発行日, 入金方法, 入金予定日, 報告時期, 報告精度, 報告方法, メールアドレス, 振込口座ID, 未配布情報有無, 枝番有無, 特記事項, エリア備考, 完了区分, 併配除外, 登録年月日, 変更年月日, 外注先ID営業, 外注支払日営業, 外注原価営業, 外注依頼日営業, 外注先ID支払, 外注支払日支払, 外注原価支払, 外注依頼日支払, 外注支払ID, ユーザーID, 案件種別, 受注確定書発行, 登録ユーザーID, 外注渡し日, 外注受け渡し担当者, 外注委託枚数, 業種, 外注先ID支払2, 外注支払日支払2, 外注原価支払2, 外注先ID支払3, 外注支払日支払3, 外注原価支払3, 外注依頼日支払2, 外注依頼日支払3, 外注委託枚数2, 外注委託枚数3, 外注渡し日2, 外注渡し日3, 外注受け渡し担当者2, 外注受け渡し担当者3, 外注支払ID2, 外注支払ID3, 納品書発行, Original_ID, Original_事業所ID, Original_受注日, Original_受注区分, Original_得意先ID, Original_社員ID, Original_チラシ名, Original_受注種別ID, Original_単価, Original_枚数, Original_金額, Original_消費税, Original_税込金額, Original_値引額, Original_売上金額, Original_税率, Original_判型, Original_配布単価, Original_依頼先, Original_原価, Original_配布形態, Original_配布条件, Original_配布開始日, Original_配布終了日, Original_配布猶予, Original_納品予定日, Original_納品形態, Original_請求書, Original_請求書ID, Original_請求書発行日, Original_入金方法, Original_入金予定日, Original_報告時期, Original_報告精度, Original_報告方法, Original_メールアドレス, Original_振込口座ID, Original_未配布情報有無, Original_枝番有無, Original_特記事項, Original_エリア備考, Original_完了区分, Original_併配除外, Original_登録年月日, Original_変更年月日, Original_外注先ID営業, Original_外注支払日営業, Original_外注原価営業, Original_外注依頼日営業, Original_外注先ID支払, Original_外注支払日支払, Original_外注原価支払, Original_外注依頼日支払, Original_外注支払ID, Original_ユーザーID, Original_案件種別, Original_受注確定書発行, Original_登録ユーザーID, Original_外注渡し日, Original_外注受け渡し担当者, Original_外注委託枚数, Original_業種, Original_外注先ID支払2, Original_外注支払日支払2, Original_外注原価支払2, Original_外注先ID支払3, Original_外注支払日支払3, Original_外注原価支払3, Original_外注依頼日支払2, Original_外注依頼日支払3, Original_外注委託枚数2, Original_外注委託枚数3, Original_外注渡し日2, Original_外注渡し日3, Original_外注受け渡し担当者2, Original_外注受け渡し担当者3, Original_外注支払ID2, Original_外注支払ID3, Original_納品書発行);
+                    int Original_納品書発行, 
+                    string Original_営業備考) {
+            return this.Update(Original_ID, 事業所ID, 受注日, 受注区分, 得意先ID, 社員ID, チラシ名, 受注種別ID, 単価, 枚数, 金額, 消費税, 税込金額, 値引額, 売上金額, 税率, 判型, 配布単価, 依頼先, 原価, 配布形態, 配布条件, 配布開始日, 配布終了日, 配布猶予, 納品予定日, 納品形態, 請求書, 請求書ID, 請求書発行日, 入金方法, 入金予定日, 報告時期, 報告精度, 報告方法, メールアドレス, 振込口座ID, 未配布情報有無, 枝番有無, 特記事項, エリア備考, 完了区分, 併配除外, 登録年月日, 変更年月日, 外注先ID営業, 外注支払日営業, 外注原価営業, 外注依頼日営業, 外注先ID支払, 外注支払日支払, 外注原価支払, 外注依頼日支払, 外注支払ID, ユーザーID, 案件種別, 受注確定書発行, 登録ユーザーID, 外注渡し日, 外注受け渡し担当者, 外注委託枚数, 業種, 外注先ID支払2, 外注支払日支払2, 外注原価支払2, 外注先ID支払3, 外注支払日支払3, 外注原価支払3, 外注依頼日支払2, 外注依頼日支払3, 外注委託枚数2, 外注委託枚数3, 外注渡し日2, 外注渡し日3, 外注受け渡し担当者2, 外注受け渡し担当者3, 外注支払ID2, 外注支払ID3, 納品書発行, 営業備考, Original_ID, Original_事業所ID, Original_受注日, Original_受注区分, Original_得意先ID, Original_社員ID, Original_チラシ名, Original_受注種別ID, Original_単価, Original_枚数, Original_金額, Original_消費税, Original_税込金額, Original_値引額, Original_売上金額, Original_税率, Original_判型, Original_配布単価, Original_依頼先, Original_原価, Original_配布形態, Original_配布条件, Original_配布開始日, Original_配布終了日, Original_配布猶予, Original_納品予定日, Original_納品形態, Original_請求書, Original_請求書ID, Original_請求書発行日, Original_入金方法, Original_入金予定日, Original_報告時期, Original_報告精度, Original_報告方法, Original_メールアドレス, Original_振込口座ID, Original_未配布情報有無, Original_枝番有無, Original_特記事項, Original_エリア備考, Original_完了区分, Original_併配除外, Original_登録年月日, Original_変更年月日, Original_外注先ID営業, Original_外注支払日営業, Original_外注原価営業, Original_外注依頼日営業, Original_外注先ID支払, Original_外注支払日支払, Original_外注原価支払, Original_外注依頼日支払, Original_外注支払ID, Original_ユーザーID, Original_案件種別, Original_受注確定書発行, Original_登録ユーザーID, Original_外注渡し日, Original_外注受け渡し担当者, Original_外注委託枚数, Original_業種, Original_外注先ID支払2, Original_外注支払日支払2, Original_外注原価支払2, Original_外注先ID支払3, Original_外注支払日支払3, Original_外注原価支払3, Original_外注依頼日支払2, Original_外注依頼日支払3, Original_外注委託枚数2, Original_外注委託枚数3, Original_外注渡し日2, Original_外注渡し日3, Original_外注受け渡し担当者2, Original_外注受け渡し担当者3, Original_外注支払ID2, Original_外注支払ID3, Original_納品書発行, Original_営業備考);
         }
     }
     

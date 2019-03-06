@@ -18,7 +18,6 @@ namespace posting
             InitializeComponent();
 
             // データ読み込み
-            jAdp.Fill(dts.受注1);
             cAdp.Fill(dts.得意先);
             eAdp.Fill(dts.社員);
             gAdp.Fill(dts.外注先);
@@ -399,8 +398,8 @@ namespace posting
             // 事前請求書コンボ設定
             //cmbJizenSeikyushoSet();   // 2015/11/27 コメント化
 
-            // データグリッドビューデータ表示
-            gridShow(dataGridView1);
+            //// データグリッドビューデータ表示
+            //gridShow(dataGridView1);
 
             // 画面初期化
             dispClear();
@@ -473,8 +472,17 @@ namespace posting
             //txtHaifuhoukoku.Text = string.Empty; //  2015/11/27 コメント化
             //cmbJizenseikyusho.SelectedIndex = -1; // 2015/11/27 コメント化
             txtMemo.Text = string.Empty;
+            txtSalesMemo.Text = string.Empty;   // 2019/03/04
+
+            chkKaishuFlg.Checked = false;   // 2019/02/18
 
             btnRep.Enabled = false;
+
+            // 検索欄 2019/02/18
+            txtSNum.Text = string.Empty;
+            sDate.Checked = false;
+            txtSClient.Text = string.Empty;
+            chk1Year.Checked = true;
         }
 
         /// ------------------------------------------------------------------
@@ -485,8 +493,21 @@ namespace posting
         /// ------------------------------------------------------------------
         private void gridShow(DataGridView g)
         {
+            Cursor = Cursors.WaitCursor;
+
             g.Rows.Clear();
             int iX = 0;
+            DateTime dt = DateTime.Today.AddYears(-1);
+
+            // 過去1年間 : 2019/02/16
+            if (chk1Year.Checked)
+            {
+                jAdp.FillByFromYMDToYMD(dts.受注1, dt, DateTime.Parse("2999/12/31"));
+            }
+            else
+            {
+                jAdp.Fill(dts.受注1);
+            }
 
             var d = dts.受注1.OrderByDescending(a => a.ID);
 
@@ -495,7 +516,33 @@ namespace posting
             {
                 d = d.Where(a => a.登録ユーザーID == global.loginUserID).OrderByDescending(a => a.ID);
             }
-            
+
+            // 過去1年間 : 2019/02/16
+            //if (chk1Year.Checked)
+            //{
+            //    d = d.Where(a => a.受注日 >= dt).OrderByDescending(a => a.ID);
+            //}
+
+            // 受注番号検索 : 2019/02/18
+            if (txtSNum.Text != string.Empty)
+            {
+                d = d.Where(a => a.ID.ToString().Contains(txtSNum.Text)).OrderByDescending(a => a.ID);
+            }
+
+            // 受注日検索 : 2019/02/18
+            if (sDate.Checked)
+            {
+                d = d.Where(a => !a.Is受注日Null() && a.受注日.ToShortDateString() == sDate.Value.ToShortDateString()).OrderByDescending(a => a.ID);
+            }
+
+            // クライアント名 : 2019/02/18
+            if (txtSClient.Text != string.Empty)
+            {
+                d = d.Where(a => a.得意先Row != null && a.得意先Row.略称.Contains(txtSClient.Text)).OrderByDescending(a => a.ID);
+            }
+
+
+
             // グリッドに表示
             foreach (var t in d)
             {
@@ -577,6 +624,8 @@ namespace posting
             }
 
             g.CurrentCell = null;
+
+            Cursor = Cursors.Default;
 
             if (g.RowCount == 0)
             {
@@ -1096,11 +1145,13 @@ namespace posting
                     else
                     {
                         txtsName.Text = t.得意先Row.請求先名称;
-                        txtsBusho.Text = string.Empty;
+                        //txtsBusho.Text = string.Empty;    // 2019/02/21
+                        txtsBusho.Text = t.得意先Row.請求先部署名;   // 2019/02/21
 
                         if (t.得意先Row.請求先担当者名 != string.Empty)
                         {
-                            txtsTantou.Text = t.得意先Row.請求先担当者名 + " 様";
+                            //txtsTantou.Text = t.得意先Row.請求先担当者名 + " 様";    // 2019/02/21
+                            txtsTantou.Text = t.得意先Row.請求先担当者名 + " " + t.得意先Row.請求先敬称;  // 2019/02/21
                         }
                         else
                         {
@@ -1165,6 +1216,9 @@ namespace posting
 
                 // 特記事項
                 //txtMemo.Text = t.特記事項;    // 受注データの特記事項を採用しない 2015/11/27
+
+                // 営業備考 2019/03/04
+                txtSalesMemo.Text = t.営業備考;
             }
         }
 
@@ -1519,7 +1573,18 @@ namespace posting
                             oxlsSheetPrn.Cells[39, 29] = "＊＊＊＊＊";
                         }
 
-                        oxlsSheetPrn.Cells[40, 7] = txtMemo.Text;  // 特記事項                
+                        oxlsSheetPrn.Cells[40, 4] = txtMemo.Text;           // 特記事項
+                        oxlsSheetPrn.Cells[40, 22] = txtSalesMemo.Text;     // 営業備考 2019/03/06
+
+                        // 注文書回収フラグ : 2019/02/18
+                        if (chkKaishuFlg.Checked)
+                        {
+                            oxlsSheetPrn.Cells[43, 20] = "済";
+                        }
+                        else
+                        {
+                            oxlsSheetPrn.Cells[43, 20] = string.Empty;
+                        }
                     }
 
                     // 印刷用BOOKの1番目のシートは削除する
@@ -1664,6 +1729,12 @@ namespace posting
             {
                 dataGridView2.EndEdit();
             }
+        }
+
+        private void btnSel_Click(object sender, EventArgs e)
+        {
+            // データグリッドビューデータ表示
+            gridShow(dataGridView1);
         }
     }
 }

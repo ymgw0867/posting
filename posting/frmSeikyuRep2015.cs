@@ -660,7 +660,17 @@ namespace posting
                                             oxlsSheetPrn.Cells[4, 3] = it.得意先Row.請求先住所2;
 
                                             // 請求先名
-                                            if (it.得意先Row.Is請求先名称Null())
+                                            //if (it.得意先Row.Is請求先名称Null())
+                                            //{
+                                            //    corp = it.得意先Row.略称;
+                                            //}
+                                            //else
+                                            //{
+                                            //    corp = it.得意先Row.請求先名称;
+                                            //}
+
+                                            // 2019/02/21
+                                            if (it.得意先Row.請求先名称 == null)
                                             {
                                                 corp = it.得意先Row.略称;
                                             }
@@ -669,18 +679,33 @@ namespace posting
                                                 corp = it.得意先Row.請求先名称;
                                             }
 
-                                            // 部署・担当者名
-                                            string tn = (it.得意先Row.部署名 + " " + it.得意先Row.請求先担当者名).Trim();
+                                            // 2019/02/21 コメント化
+                                            //// 部署・担当者名 
+                                            //string tn = (it.得意先Row.部署名 + " " + it.得意先Row.請求先担当者名).Trim();
+
+                                            //if (tn != string.Empty)
+                                            //{
+                                            //    oxlsSheetPrn.Cells[8, 3] = tn + " 様";
+                                            //    oxlsSheetPrn.Cells[6, 3] = corp;
+                                            //}
+                                            //else
+                                            //{
+                                            //    oxlsSheetPrn.Cells[8, 3] = string.Empty;
+                                            //    oxlsSheetPrn.Cells[6, 3] = corp + " 御中";
+                                            //}
+
+                                            // 部署・担当者名（得意先@請求先部署名、得意先@請求先敬称を使用）: 2019/02/21
+                                            string tn = (it.得意先Row.請求先部署名 + " " + it.得意先Row.請求先担当者名).Trim();
 
                                             if (tn != string.Empty)
                                             {
-                                                oxlsSheetPrn.Cells[8, 3] = tn + " 様";
+                                                oxlsSheetPrn.Cells[8, 3] = tn + " " + it.得意先Row.請求先敬称;
                                                 oxlsSheetPrn.Cells[6, 3] = corp;
                                             }
                                             else
                                             {
                                                 oxlsSheetPrn.Cells[8, 3] = string.Empty;
-                                                oxlsSheetPrn.Cells[6, 3] = corp + " 御中";
+                                                oxlsSheetPrn.Cells[6, 3] = corp + " " + it.得意先Row.請求先敬称;
                                             }
                                         }
 

@@ -95,7 +95,22 @@
             this.cmbOffice = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.受注日DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.略称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.チラシ名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.名称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.単価DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.枚数DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.消費税DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.税込金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.登録年月日DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.変更年月日DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ログインユーザーDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.得意先ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.受注BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.darwinDataSet = new posting.darwinDataSet();
             this.label41 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
@@ -117,6 +132,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.cmbAnShu = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txteGaichuArari = new System.Windows.Forms.TextBox();
+            this.label70 = new System.Windows.Forms.Label();
             this.txteGaichuGenka = new System.Windows.Forms.TextBox();
             this.dteGaichuPay = new System.Windows.Forms.DateTimePicker();
             this.cmbeGaichu = new System.Windows.Forms.ComboBox();
@@ -197,6 +214,23 @@
             this.label47 = new System.Windows.Forms.Label();
             this.dtGaichuWatashi = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.txtaArari = new System.Windows.Forms.TextBox();
+            this.label78 = new System.Windows.Forms.Label();
+            this.txtaGaiGenka3 = new System.Windows.Forms.TextBox();
+            this.label76 = new System.Windows.Forms.Label();
+            this.txtaGai3 = new System.Windows.Forms.TextBox();
+            this.label77 = new System.Windows.Forms.Label();
+            this.txtaGaiGenka2 = new System.Windows.Forms.TextBox();
+            this.label74 = new System.Windows.Forms.Label();
+            this.txtaGai2 = new System.Windows.Forms.TextBox();
+            this.label75 = new System.Windows.Forms.Label();
+            this.txtaGaiGenka1 = new System.Windows.Forms.TextBox();
+            this.label73 = new System.Windows.Forms.Label();
+            this.txtaGai1 = new System.Windows.Forms.TextBox();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.txtaUri = new System.Windows.Forms.TextBox();
             this.lblClientShimebi = new System.Windows.Forms.Label();
             this.lnkCopy = new System.Windows.Forms.LinkLabel();
             this.label67 = new System.Windows.Forms.Label();
@@ -205,31 +239,19 @@
             this.txtsMaisu = new System.Windows.Forms.TextBox();
             this.seDt = new System.Windows.Forms.DateTimePicker();
             this.label69 = new System.Windows.Forms.Label();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.受注日DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.略称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.チラシ名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.名称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.単価DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.枚数DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.消費税DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.税込金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.登録年月日DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.変更年月日DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ログインユーザーDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.受注BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.darwinDataSet = new posting.darwinDataSet();
             this.受注TableAdapter = new posting.darwinDataSetTableAdapters.受注TableAdapter();
+            this.label79 = new System.Windows.Forms.Label();
+            this.txtSalesMemo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.受注BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.darwinDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.受注BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.darwinDataSet)).BeginInit();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDel
@@ -514,7 +536,7 @@
             this.txtMemo.MaxLength = 255;
             this.txtMemo.Multiline = true;
             this.txtMemo.Name = "txtMemo";
-            this.txtMemo.Size = new System.Drawing.Size(948, 59);
+            this.txtMemo.Size = new System.Drawing.Size(441, 59);
             this.txtMemo.TabIndex = 30;
             this.txtMemo.Enter += new System.EventHandler(this.txtEnter);
             this.txtMemo.Leave += new System.EventHandler(this.txtLeave);
@@ -1008,12 +1030,135 @@
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick_1);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "受注番号";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 受注日DataGridViewTextBoxColumn
+            // 
+            this.受注日DataGridViewTextBoxColumn.DataPropertyName = "受注日";
+            this.受注日DataGridViewTextBoxColumn.HeaderText = "受注日";
+            this.受注日DataGridViewTextBoxColumn.Name = "受注日DataGridViewTextBoxColumn";
+            this.受注日DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 略称DataGridViewTextBoxColumn
+            // 
+            this.略称DataGridViewTextBoxColumn.DataPropertyName = "略称";
+            this.略称DataGridViewTextBoxColumn.HeaderText = "クライアント";
+            this.略称DataGridViewTextBoxColumn.Name = "略称DataGridViewTextBoxColumn";
+            this.略称DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // チラシ名DataGridViewTextBoxColumn
+            // 
+            this.チラシ名DataGridViewTextBoxColumn.DataPropertyName = "チラシ名";
+            this.チラシ名DataGridViewTextBoxColumn.HeaderText = "チラシ名";
+            this.チラシ名DataGridViewTextBoxColumn.Name = "チラシ名DataGridViewTextBoxColumn";
+            this.チラシ名DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 名称DataGridViewTextBoxColumn
+            // 
+            this.名称DataGridViewTextBoxColumn.DataPropertyName = "名称";
+            this.名称DataGridViewTextBoxColumn.HeaderText = "内容";
+            this.名称DataGridViewTextBoxColumn.Name = "名称DataGridViewTextBoxColumn";
+            this.名称DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 単価DataGridViewTextBoxColumn
+            // 
+            this.単価DataGridViewTextBoxColumn.DataPropertyName = "単価";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.単価DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.単価DataGridViewTextBoxColumn.HeaderText = "単価";
+            this.単価DataGridViewTextBoxColumn.Name = "単価DataGridViewTextBoxColumn";
+            this.単価DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 枚数DataGridViewTextBoxColumn
+            // 
+            this.枚数DataGridViewTextBoxColumn.DataPropertyName = "枚数";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomRight;
+            dataGridViewCellStyle3.Format = "N0";
+            this.枚数DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.枚数DataGridViewTextBoxColumn.HeaderText = "枚数";
+            this.枚数DataGridViewTextBoxColumn.Name = "枚数DataGridViewTextBoxColumn";
+            this.枚数DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 金額DataGridViewTextBoxColumn
+            // 
+            this.金額DataGridViewTextBoxColumn.DataPropertyName = "金額";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomRight;
+            dataGridViewCellStyle4.Format = "C0";
+            this.金額DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.金額DataGridViewTextBoxColumn.HeaderText = "金額";
+            this.金額DataGridViewTextBoxColumn.Name = "金額DataGridViewTextBoxColumn";
+            this.金額DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 消費税DataGridViewTextBoxColumn
+            // 
+            this.消費税DataGridViewTextBoxColumn.DataPropertyName = "消費税";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomRight;
+            dataGridViewCellStyle5.Format = "C0";
+            this.消費税DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.消費税DataGridViewTextBoxColumn.HeaderText = "消費税";
+            this.消費税DataGridViewTextBoxColumn.Name = "消費税DataGridViewTextBoxColumn";
+            this.消費税DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 税込金額DataGridViewTextBoxColumn
+            // 
+            this.税込金額DataGridViewTextBoxColumn.DataPropertyName = "税込金額";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomRight;
+            dataGridViewCellStyle6.Format = "C0";
+            this.税込金額DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.税込金額DataGridViewTextBoxColumn.HeaderText = "税込金額";
+            this.税込金額DataGridViewTextBoxColumn.Name = "税込金額DataGridViewTextBoxColumn";
+            this.税込金額DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 登録年月日DataGridViewTextBoxColumn
+            // 
+            this.登録年月日DataGridViewTextBoxColumn.DataPropertyName = "登録年月日";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            this.登録年月日DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.登録年月日DataGridViewTextBoxColumn.HeaderText = "登録年月日";
+            this.登録年月日DataGridViewTextBoxColumn.Name = "登録年月日DataGridViewTextBoxColumn";
+            this.登録年月日DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 変更年月日DataGridViewTextBoxColumn
+            // 
+            this.変更年月日DataGridViewTextBoxColumn.DataPropertyName = "変更年月日";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            this.変更年月日DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.変更年月日DataGridViewTextBoxColumn.HeaderText = "変更年月日";
+            this.変更年月日DataGridViewTextBoxColumn.Name = "変更年月日DataGridViewTextBoxColumn";
+            this.変更年月日DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ログインユーザーDataGridViewTextBoxColumn
+            // 
+            this.ログインユーザーDataGridViewTextBoxColumn.DataPropertyName = "ログインユーザー";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            this.ログインユーザーDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            this.ログインユーザーDataGridViewTextBoxColumn.HeaderText = "ログインユーザー";
+            this.ログインユーザーDataGridViewTextBoxColumn.Name = "ログインユーザーDataGridViewTextBoxColumn";
+            this.ログインユーザーDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // 得意先ID
             // 
             this.得意先ID.DataPropertyName = "得意先ID";
             this.得意先ID.HeaderText = "得意先ID";
             this.得意先ID.Name = "得意先ID";
             this.得意先ID.ReadOnly = true;
+            // 
+            // 受注BindingSource
+            // 
+            this.受注BindingSource.DataMember = "受注";
+            this.受注BindingSource.DataSource = this.darwinDataSet;
+            // 
+            // darwinDataSet
+            // 
+            this.darwinDataSet.DataSetName = "darwinDataSet";
+            this.darwinDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label41
             // 
@@ -1271,6 +1416,8 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.txteGaichuArari);
+            this.groupBox1.Controls.Add(this.label70);
             this.groupBox1.Controls.Add(this.txteGaichuGenka);
             this.groupBox1.Controls.Add(this.dteGaichuPay);
             this.groupBox1.Controls.Add(this.cmbeGaichu);
@@ -1280,10 +1427,36 @@
             this.groupBox1.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.groupBox1.Location = new System.Drawing.Point(436, 427);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(270, 103);
+            this.groupBox1.Size = new System.Drawing.Size(270, 132);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "営業原価";
+            // 
+            // txteGaichuArari
+            // 
+            this.txteGaichuArari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txteGaichuArari.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txteGaichuArari.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txteGaichuArari.Location = new System.Drawing.Point(69, 99);
+            this.txteGaichuArari.MaxLength = 50;
+            this.txteGaichuArari.Name = "txteGaichuArari";
+            this.txteGaichuArari.Size = new System.Drawing.Size(135, 24);
+            this.txteGaichuArari.TabIndex = 150;
+            this.txteGaichuArari.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txteGaichuArari.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMai_KeyPress);
+            // 
+            // label70
+            // 
+            this.label70.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label70.BackColor = System.Drawing.Color.SteelBlue;
+            this.label70.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label70.ForeColor = System.Drawing.Color.White;
+            this.label70.Location = new System.Drawing.Point(6, 99);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(63, 24);
+            this.label70.TabIndex = 151;
+            this.label70.Text = "粗　利";
+            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txteGaichuGenka
             // 
@@ -1742,6 +1915,7 @@
             this.txtpGaichuGenka3.Size = new System.Drawing.Size(135, 24);
             this.txtpGaichuGenka3.TabIndex = 152;
             this.txtpGaichuGenka3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtpGaichuGenka3.TextChanged += new System.EventHandler(this.txtpGaichuGenka3_TextChanged);
             this.txtpGaichuGenka3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMai_KeyPress);
             // 
             // label63
@@ -1955,6 +2129,7 @@
             this.txtpGaichuGenka2.Size = new System.Drawing.Size(135, 24);
             this.txtpGaichuGenka2.TabIndex = 152;
             this.txtpGaichuGenka2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtpGaichuGenka2.TextChanged += new System.EventHandler(this.txtpGaichuGenka3_TextChanged);
             this.txtpGaichuGenka2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMai_KeyPress);
             // 
             // label59
@@ -2145,6 +2320,7 @@
             this.txtpGaichuGenka.Size = new System.Drawing.Size(135, 24);
             this.txtpGaichuGenka.TabIndex = 2;
             this.txtpGaichuGenka.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtpGaichuGenka.TextChanged += new System.EventHandler(this.txtpGaichuGenka3_TextChanged);
             this.txtpGaichuGenka.Enter += new System.EventHandler(this.txtEnter);
             this.txtpGaichuGenka.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMai_KeyPress);
             this.txtpGaichuGenka.Leave += new System.EventHandler(this.txtLeave);
@@ -2326,12 +2502,259 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tabControl1.Location = new System.Drawing.Point(709, 398);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(324, 165);
             this.tabControl1.TabIndex = 173;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.Controls.Add(this.txtaArari);
+            this.tabPage4.Controls.Add(this.label78);
+            this.tabPage4.Controls.Add(this.txtaGaiGenka3);
+            this.tabPage4.Controls.Add(this.label76);
+            this.tabPage4.Controls.Add(this.txtaGai3);
+            this.tabPage4.Controls.Add(this.label77);
+            this.tabPage4.Controls.Add(this.txtaGaiGenka2);
+            this.tabPage4.Controls.Add(this.label74);
+            this.tabPage4.Controls.Add(this.txtaGai2);
+            this.tabPage4.Controls.Add(this.label75);
+            this.tabPage4.Controls.Add(this.txtaGaiGenka1);
+            this.tabPage4.Controls.Add(this.label73);
+            this.tabPage4.Controls.Add(this.txtaGai1);
+            this.tabPage4.Controls.Add(this.label72);
+            this.tabPage4.Controls.Add(this.label71);
+            this.tabPage4.Controls.Add(this.txtaUri);
+            this.tabPage4.Location = new System.Drawing.Point(4, 24);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(316, 137);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "粗利";
+            // 
+            // txtaArari
+            // 
+            this.txtaArari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtaArari.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtaArari.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtaArari.Location = new System.Drawing.Point(70, 110);
+            this.txtaArari.MaxLength = 50;
+            this.txtaArari.Multiline = true;
+            this.txtaArari.Name = "txtaArari";
+            this.txtaArari.ReadOnly = true;
+            this.txtaArari.Size = new System.Drawing.Size(238, 24);
+            this.txtaArari.TabIndex = 161;
+            this.txtaArari.TabStop = false;
+            this.txtaArari.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label78
+            // 
+            this.label78.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label78.BackColor = System.Drawing.Color.SteelBlue;
+            this.label78.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label78.ForeColor = System.Drawing.Color.White;
+            this.label78.Location = new System.Drawing.Point(6, 110);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(64, 24);
+            this.label78.TabIndex = 160;
+            this.label78.Text = "粗　利";
+            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtaGaiGenka3
+            // 
+            this.txtaGaiGenka3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtaGaiGenka3.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtaGaiGenka3.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtaGaiGenka3.Location = new System.Drawing.Point(233, 84);
+            this.txtaGaiGenka3.MaxLength = 50;
+            this.txtaGaiGenka3.Multiline = true;
+            this.txtaGaiGenka3.Name = "txtaGaiGenka3";
+            this.txtaGaiGenka3.ReadOnly = true;
+            this.txtaGaiGenka3.Size = new System.Drawing.Size(75, 24);
+            this.txtaGaiGenka3.TabIndex = 159;
+            this.txtaGaiGenka3.TabStop = false;
+            this.txtaGaiGenka3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label76
+            // 
+            this.label76.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label76.BackColor = System.Drawing.Color.SteelBlue;
+            this.label76.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label76.ForeColor = System.Drawing.Color.White;
+            this.label76.Location = new System.Drawing.Point(180, 84);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(53, 24);
+            this.label76.TabIndex = 158;
+            this.label76.Text = "　〃　";
+            this.label76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtaGai3
+            // 
+            this.txtaGai3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtaGai3.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtaGai3.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtaGai3.Location = new System.Drawing.Point(70, 84);
+            this.txtaGai3.MaxLength = 50;
+            this.txtaGai3.Multiline = true;
+            this.txtaGai3.Name = "txtaGai3";
+            this.txtaGai3.ReadOnly = true;
+            this.txtaGai3.Size = new System.Drawing.Size(110, 24);
+            this.txtaGai3.TabIndex = 157;
+            this.txtaGai3.TabStop = false;
+            // 
+            // label77
+            // 
+            this.label77.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label77.BackColor = System.Drawing.Color.SteelBlue;
+            this.label77.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label77.ForeColor = System.Drawing.Color.White;
+            this.label77.Location = new System.Drawing.Point(6, 84);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(64, 24);
+            this.label77.TabIndex = 156;
+            this.label77.Text = "　　〃　３";
+            this.label77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtaGaiGenka2
+            // 
+            this.txtaGaiGenka2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtaGaiGenka2.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtaGaiGenka2.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtaGaiGenka2.Location = new System.Drawing.Point(233, 58);
+            this.txtaGaiGenka2.MaxLength = 50;
+            this.txtaGaiGenka2.Multiline = true;
+            this.txtaGaiGenka2.Name = "txtaGaiGenka2";
+            this.txtaGaiGenka2.ReadOnly = true;
+            this.txtaGaiGenka2.Size = new System.Drawing.Size(75, 24);
+            this.txtaGaiGenka2.TabIndex = 155;
+            this.txtaGaiGenka2.TabStop = false;
+            this.txtaGaiGenka2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label74
+            // 
+            this.label74.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label74.BackColor = System.Drawing.Color.SteelBlue;
+            this.label74.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label74.ForeColor = System.Drawing.Color.White;
+            this.label74.Location = new System.Drawing.Point(180, 58);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(53, 24);
+            this.label74.TabIndex = 154;
+            this.label74.Text = "　〃　";
+            this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtaGai2
+            // 
+            this.txtaGai2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtaGai2.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtaGai2.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtaGai2.Location = new System.Drawing.Point(70, 58);
+            this.txtaGai2.MaxLength = 50;
+            this.txtaGai2.Multiline = true;
+            this.txtaGai2.Name = "txtaGai2";
+            this.txtaGai2.ReadOnly = true;
+            this.txtaGai2.Size = new System.Drawing.Size(110, 24);
+            this.txtaGai2.TabIndex = 153;
+            this.txtaGai2.TabStop = false;
+            // 
+            // label75
+            // 
+            this.label75.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label75.BackColor = System.Drawing.Color.SteelBlue;
+            this.label75.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label75.ForeColor = System.Drawing.Color.White;
+            this.label75.Location = new System.Drawing.Point(6, 58);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(64, 24);
+            this.label75.TabIndex = 152;
+            this.label75.Text = "　　〃　２";
+            this.label75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtaGaiGenka1
+            // 
+            this.txtaGaiGenka1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtaGaiGenka1.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtaGaiGenka1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtaGaiGenka1.Location = new System.Drawing.Point(233, 32);
+            this.txtaGaiGenka1.MaxLength = 50;
+            this.txtaGaiGenka1.Multiline = true;
+            this.txtaGaiGenka1.Name = "txtaGaiGenka1";
+            this.txtaGaiGenka1.ReadOnly = true;
+            this.txtaGaiGenka1.Size = new System.Drawing.Size(75, 24);
+            this.txtaGaiGenka1.TabIndex = 151;
+            this.txtaGaiGenka1.TabStop = false;
+            this.txtaGaiGenka1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label73
+            // 
+            this.label73.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label73.BackColor = System.Drawing.Color.SteelBlue;
+            this.label73.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label73.ForeColor = System.Drawing.Color.White;
+            this.label73.Location = new System.Drawing.Point(180, 32);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(53, 24);
+            this.label73.TabIndex = 150;
+            this.label73.Text = "原価";
+            this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtaGai1
+            // 
+            this.txtaGai1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtaGai1.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtaGai1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtaGai1.Location = new System.Drawing.Point(70, 32);
+            this.txtaGai1.MaxLength = 50;
+            this.txtaGai1.Multiline = true;
+            this.txtaGai1.Name = "txtaGai1";
+            this.txtaGai1.ReadOnly = true;
+            this.txtaGai1.Size = new System.Drawing.Size(110, 24);
+            this.txtaGai1.TabIndex = 149;
+            this.txtaGai1.TabStop = false;
+            // 
+            // label72
+            // 
+            this.label72.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label72.BackColor = System.Drawing.Color.SteelBlue;
+            this.label72.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label72.ForeColor = System.Drawing.Color.White;
+            this.label72.Location = new System.Drawing.Point(6, 32);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(64, 24);
+            this.label72.TabIndex = 148;
+            this.label72.Text = "外注先１";
+            this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label71
+            // 
+            this.label71.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label71.BackColor = System.Drawing.Color.SteelBlue;
+            this.label71.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label71.ForeColor = System.Drawing.Color.White;
+            this.label71.Location = new System.Drawing.Point(6, 5);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(64, 25);
+            this.label71.TabIndex = 134;
+            this.label71.Text = "売上金額";
+            this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtaUri
+            // 
+            this.txtaUri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtaUri.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtaUri.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtaUri.Location = new System.Drawing.Point(70, 5);
+            this.txtaUri.MaxLength = 50;
+            this.txtaUri.Multiline = true;
+            this.txtaUri.Name = "txtaUri";
+            this.txtaUri.ReadOnly = true;
+            this.txtaUri.Size = new System.Drawing.Size(238, 25);
+            this.txtaUri.TabIndex = 133;
+            this.txtaUri.TabStop = false;
+            this.txtaUri.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblClientShimebi
             // 
@@ -2429,138 +2852,43 @@
             this.label69.Text = "請求締日";
             this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "受注番号";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 受注日DataGridViewTextBoxColumn
-            // 
-            this.受注日DataGridViewTextBoxColumn.DataPropertyName = "受注日";
-            this.受注日DataGridViewTextBoxColumn.HeaderText = "受注日";
-            this.受注日DataGridViewTextBoxColumn.Name = "受注日DataGridViewTextBoxColumn";
-            this.受注日DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 略称DataGridViewTextBoxColumn
-            // 
-            this.略称DataGridViewTextBoxColumn.DataPropertyName = "略称";
-            this.略称DataGridViewTextBoxColumn.HeaderText = "クライアント";
-            this.略称DataGridViewTextBoxColumn.Name = "略称DataGridViewTextBoxColumn";
-            this.略称DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // チラシ名DataGridViewTextBoxColumn
-            // 
-            this.チラシ名DataGridViewTextBoxColumn.DataPropertyName = "チラシ名";
-            this.チラシ名DataGridViewTextBoxColumn.HeaderText = "チラシ名";
-            this.チラシ名DataGridViewTextBoxColumn.Name = "チラシ名DataGridViewTextBoxColumn";
-            this.チラシ名DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 名称DataGridViewTextBoxColumn
-            // 
-            this.名称DataGridViewTextBoxColumn.DataPropertyName = "名称";
-            this.名称DataGridViewTextBoxColumn.HeaderText = "内容";
-            this.名称DataGridViewTextBoxColumn.Name = "名称DataGridViewTextBoxColumn";
-            this.名称DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 単価DataGridViewTextBoxColumn
-            // 
-            this.単価DataGridViewTextBoxColumn.DataPropertyName = "単価";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.単価DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.単価DataGridViewTextBoxColumn.HeaderText = "単価";
-            this.単価DataGridViewTextBoxColumn.Name = "単価DataGridViewTextBoxColumn";
-            this.単価DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 枚数DataGridViewTextBoxColumn
-            // 
-            this.枚数DataGridViewTextBoxColumn.DataPropertyName = "枚数";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomRight;
-            dataGridViewCellStyle3.Format = "N0";
-            this.枚数DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.枚数DataGridViewTextBoxColumn.HeaderText = "枚数";
-            this.枚数DataGridViewTextBoxColumn.Name = "枚数DataGridViewTextBoxColumn";
-            this.枚数DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 金額DataGridViewTextBoxColumn
-            // 
-            this.金額DataGridViewTextBoxColumn.DataPropertyName = "金額";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomRight;
-            dataGridViewCellStyle4.Format = "C0";
-            this.金額DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.金額DataGridViewTextBoxColumn.HeaderText = "金額";
-            this.金額DataGridViewTextBoxColumn.Name = "金額DataGridViewTextBoxColumn";
-            this.金額DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 消費税DataGridViewTextBoxColumn
-            // 
-            this.消費税DataGridViewTextBoxColumn.DataPropertyName = "消費税";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomRight;
-            dataGridViewCellStyle5.Format = "C0";
-            this.消費税DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.消費税DataGridViewTextBoxColumn.HeaderText = "消費税";
-            this.消費税DataGridViewTextBoxColumn.Name = "消費税DataGridViewTextBoxColumn";
-            this.消費税DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 税込金額DataGridViewTextBoxColumn
-            // 
-            this.税込金額DataGridViewTextBoxColumn.DataPropertyName = "税込金額";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomRight;
-            dataGridViewCellStyle6.Format = "C0";
-            this.税込金額DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.税込金額DataGridViewTextBoxColumn.HeaderText = "税込金額";
-            this.税込金額DataGridViewTextBoxColumn.Name = "税込金額DataGridViewTextBoxColumn";
-            this.税込金額DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 登録年月日DataGridViewTextBoxColumn
-            // 
-            this.登録年月日DataGridViewTextBoxColumn.DataPropertyName = "登録年月日";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
-            this.登録年月日DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.登録年月日DataGridViewTextBoxColumn.HeaderText = "登録年月日";
-            this.登録年月日DataGridViewTextBoxColumn.Name = "登録年月日DataGridViewTextBoxColumn";
-            this.登録年月日DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 変更年月日DataGridViewTextBoxColumn
-            // 
-            this.変更年月日DataGridViewTextBoxColumn.DataPropertyName = "変更年月日";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
-            this.変更年月日DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.変更年月日DataGridViewTextBoxColumn.HeaderText = "変更年月日";
-            this.変更年月日DataGridViewTextBoxColumn.Name = "変更年月日DataGridViewTextBoxColumn";
-            this.変更年月日DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ログインユーザーDataGridViewTextBoxColumn
-            // 
-            this.ログインユーザーDataGridViewTextBoxColumn.DataPropertyName = "ログインユーザー";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
-            this.ログインユーザーDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.ログインユーザーDataGridViewTextBoxColumn.HeaderText = "ログインユーザー";
-            this.ログインユーザーDataGridViewTextBoxColumn.Name = "ログインユーザーDataGridViewTextBoxColumn";
-            this.ログインユーザーDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 受注BindingSource
-            // 
-            this.受注BindingSource.DataMember = "受注";
-            this.受注BindingSource.DataSource = this.darwinDataSet;
-            // 
-            // darwinDataSet
-            // 
-            this.darwinDataSet.DataSetName = "darwinDataSet";
-            this.darwinDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // 受注TableAdapter
             // 
             this.受注TableAdapter.ClearBeforeFill = true;
+            // 
+            // label79
+            // 
+            this.label79.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label79.BackColor = System.Drawing.Color.SteelBlue;
+            this.label79.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label79.ForeColor = System.Drawing.Color.White;
+            this.label79.Location = new System.Drawing.Point(522, 564);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(70, 59);
+            this.label79.TabIndex = 184;
+            this.label79.Text = "営業備考";
+            this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtSalesMemo
+            // 
+            this.txtSalesMemo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSalesMemo.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtSalesMemo.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
+            this.txtSalesMemo.Location = new System.Drawing.Point(592, 564);
+            this.txtSalesMemo.MaxLength = 255;
+            this.txtSalesMemo.Multiline = true;
+            this.txtSalesMemo.Name = "txtSalesMemo";
+            this.txtSalesMemo.Size = new System.Drawing.Size(436, 59);
+            this.txtSalesMemo.TabIndex = 185;
             // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 683);
+            this.Controls.Add(this.txtSalesMemo);
+            this.Controls.Add(this.label79);
             this.Controls.Add(this.sDt);
             this.Controls.Add(this.seDt);
             this.Controls.Add(this.label69);
@@ -2675,6 +3003,8 @@
             this.Enter += new System.EventHandler(this.txtEnter);
             this.Leave += new System.EventHandler(this.txtLeave);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.受注BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.darwinDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -2686,8 +3016,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.受注BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.darwinDataSet)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2877,5 +3207,26 @@
         private System.Windows.Forms.TextBox txtsMaisu;
         private System.Windows.Forms.DateTimePicker seDt;
         private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.TextBox txteGaichuArari;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TextBox txtaArari;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.TextBox txtaGaiGenka3;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.TextBox txtaGai3;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.TextBox txtaGaiGenka2;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.TextBox txtaGai2;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.TextBox txtaGaiGenka1;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.TextBox txtaGai1;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.TextBox txtaUri;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.TextBox txtSalesMemo;
     }
 }

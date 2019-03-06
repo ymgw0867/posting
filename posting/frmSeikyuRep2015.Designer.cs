@@ -168,7 +168,7 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Checked = true;
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Location = new System.Drawing.Point(12, 604);
+            this.checkBox2.Location = new System.Drawing.Point(12, 605);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(125, 19);
             this.checkBox2.TabIndex = 3;

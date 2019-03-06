@@ -583,7 +583,7 @@ namespace posting
                 cmbFkeitai.SelectedValue = t.配布形態;
                 cmbFjyouken.Text = t.配布条件;
                 cmbSize.SelectedValue = t.判型;
-                txtHTanka.Text = t.配布単価.ToString("#,##0.0");
+                txtHTanka.Text = t.配布単価.ToString("#,##0.00");
 
                 if (t.Is配布開始日Null())
                 {
@@ -627,6 +627,8 @@ namespace posting
 
                 txtMemo.Text = t.特記事項;
                 //txtMemo2.Text = t.エリア備考;
+
+                txtSalesMemo.Text = t.営業備考;     // 2019/03/01
 
                 if (int.Parse(t.未配布情報有無.ToString()) == 1)
                 {
@@ -1013,6 +1015,7 @@ namespace posting
                 //txtEmail.Text = "";               // 2015/06/23
 
                 txtMemo.Text = "";
+                txtSalesMemo.Text = "";             // 2019/03/01
                 //txtMemo2.Text = "";
                 checkBox2.Checked = false;
                 checkBox3.Checked = false;
@@ -1068,6 +1071,17 @@ namespace posting
                 txtGyoushu.Text = string.Empty;         // 業種            2015/09/20
 
                 tabControl1.SelectTab(0);
+                tabControl1.TabPages[3].Text = "粗利";    // 2019/02/21
+
+                // 2019/02/21
+                txtaUri.Text = string.Empty;
+                txtaGai1.Text = string.Empty;
+                txtaGai2.Text = string.Empty;
+                txtaGai3.Text = string.Empty;
+                txtaGaiGenka1.Text = string.Empty;
+                txtaGaiGenka2.Text = string.Empty;
+                txtaGaiGenka3.Text = string.Empty;
+                txtaArari.Text = string.Empty;
 
                 btnUpdate.Enabled = true;
                 btnDel.Enabled = false;
@@ -2009,7 +2023,8 @@ namespace posting
                 }
 
                 cMaster.特記事項 = txtMemo.Text.ToString();
-                cMaster.エリア備考 = string.Empty;   // 2015/11/11
+                cMaster.エリア備考 = string.Empty;       // 2015/11/11
+                cMaster.営業備考 = txtSalesMemo.Text;   // 2019/03/01
                 cMaster.完了区分 = 0;
 
                 // 2014/11/26 併配除外
@@ -2437,13 +2452,24 @@ namespace posting
                     // 金額計算
                     UriageSum(dt, nebikigoKin, out KingakuTax, out KingakuZeikomi, out KingakuTL);
 
-                    //売上金額
+                    // 売上金額
                     txtUri.Text = Kingaku.ToString("#,##0");
 
-                    //消費税額計算               
+                    // 営業原価・粗利金額：2019/02/21
+                    txteGaichuArari.Text = (Utility.strToInt(txtUri.Text) - Utility.strToInt(txteGaichuGenka.Text)).ToString("#,##0");
+
+                    // 外注粗利：2019/02/21
+                    int gai = Utility.strToInt(txtpGaichuGenka.Text) + Utility.strToInt(txtpGaichuGenka2.Text) + Utility.strToInt(txtpGaichuGenka3.Text);
+                    int arari = Utility.strToInt(txtUri.Text) - gai;
+                    txtaUri.Text = Kingaku.ToString("#,##0");
+                    txtaArari.Text = arari.ToString("#,##0");
+
+                    tabControl1.TabPages[3].Text = "粗利：" + arari.ToString("#,##0");
+
+                    // 消費税額計算               
                     txtTax.Text = KingakuTax.ToString("#,##0");
 
-                    //税込金額
+                    // 税込金額
                     txtZeikomi.Text = KingakuZeikomi.ToString("#,##0");
 
                     // 営業原価：ポスティングのとき 2018/01/03
@@ -3555,6 +3581,17 @@ namespace posting
             {
                 txtpGaichuGenka.Text = txteGaichuGenka.Text;
             }
+
+            // 営業原価と外注先原価はイコールとする（外注先原価２、３がないとき） 2019/02/21
+            if ((Utility.strToInt(txtpGaichuGenka2.Text) == global.FLGOFF) &&
+                (Utility.strToInt(txtpGaichuGenka3.Text) == global.FLGOFF))
+            {
+                txtpGaichuGenka.Text = txteGaichuGenka.Text;
+            }
+
+            // 粗利金額：2019/02/21
+            txteGaichuArari.Text = (Utility.strToInt(txtUri.Text) - Utility.strToInt(txteGaichuGenka.Text)).ToString("#,##0");
+
         }
 
         private void txtTanka_KeyPress(object sender, KeyPressEventArgs e)
@@ -3679,6 +3716,8 @@ namespace posting
                 {
                     lblSD1.Text = string.Empty;
                 }
+
+                txtaGai1.Text = cmbpGaichu.Text;
             }
         }
 
@@ -3694,6 +3733,8 @@ namespace posting
                 {
                     lblSD2.Text = string.Empty;
                 }
+
+                txtaGai2.Text = cmbpGaichu2.Text;
             }
         }
 
@@ -3709,6 +3750,8 @@ namespace posting
                 {
                     lblSD3.Text = string.Empty;
                 }
+
+                txtaGai3.Text = cmbpGaichu3.Text;
             }
         }
 
@@ -3763,6 +3806,24 @@ namespace posting
                 jAdp.Fill(dts.受注1);
                 Cursor = Cursors.Default;
             }
+        }
+
+        private void txtpGaichuGenka3_TextChanged(object sender, EventArgs e)
+        {
+            // 売上金額
+            txtaUri.Text = txtUri.Text;
+
+            // 外注粗利：2019/02/21
+            int gai = Utility.strToInt(txtpGaichuGenka.Text) + Utility.strToInt(txtpGaichuGenka2.Text) + Utility.strToInt(txtpGaichuGenka3.Text);
+            int arari = Utility.strToInt(txtUri.Text) - gai;
+            txtaArari.Text = arari.ToString("#,##0");
+
+            tabControl1.TabPages[3].Text = "粗利：" + arari.ToString("#,##0");
+
+            // 外注原価
+            txtaGaiGenka1.Text = txtpGaichuGenka.Text;
+            txtaGaiGenka2.Text = txtpGaichuGenka2.Text;
+            txtaGaiGenka3.Text = txtpGaichuGenka3.Text;
         }
     }
 }
