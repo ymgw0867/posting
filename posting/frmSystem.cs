@@ -35,7 +35,6 @@ namespace posting
             DispClear();
 
             GridEnter();
-
         }
 
         private Boolean GetData(ref Entity.会社情報 tempC)
@@ -73,6 +72,7 @@ namespace posting
                     tempC.口座番号 = dr["口座番号"].ToString() + "";
                     tempC.配布フラグ = int.Parse(dr["配布フラグ"].ToString());
                     tempC.郵便番号CSVパス = dr["郵便番号CSVパス"].ToString();
+                    tempC.受注確定書入力シートパス = dr["受注確定書入力シートパス"].ToString();
                 }
             }
             else
@@ -121,6 +121,7 @@ namespace posting
 
                     txtFlg.Text = cMaster.配布フラグ.ToString();
                     txtZipPath.Text = cMaster.郵便番号CSVパス;   // 2015/10/04
+                    txtSheet.Text = cMaster.受注確定書入力シートパス;   // 2019/03/16
 
                     //IDテキストボックスは編集不可とする
                     //txtCode.Enabled = false;
@@ -183,6 +184,8 @@ namespace posting
                 txtFlg.Visible = false;
 
                 txtZipPath.Text = string.Empty;     // 2015/10/04
+
+                txtSheet.Text = string.Empty;       // 2019/03/04
 
                 txtName.Focus();
             }
@@ -390,6 +393,16 @@ namespace posting
                     throw new Exception("口座番号は数字で入力してください");
                 }
 
+                if (txtSheet.Text != string.Empty)
+                {
+                    if (!System.IO.File.Exists(txtSheet.Text))
+                    {
+                        this.txtSheet.Focus();
+                        throw new Exception(txtSheet.Text + " は存在しません。存在するファイルを登録してください。");
+                    }
+                }
+
+
                 //クラスにデータセット
                 //cMaster.ID = Convert.ToInt32(txtCode.Text.ToString());
                 cMaster.会社名 = txtName.Text.ToString();
@@ -434,6 +447,7 @@ namespace posting
                 if (fMode.Mode == 0) cMaster.登録年月日 = DateTime.Today;
                 cMaster.変更年月日 = DateTime.Today;
                 cMaster.郵便番号CSVパス = txtZipPath.Text;
+                cMaster.受注確定書入力シートパス = txtSheet.Text;
 
                 return true;
 
@@ -559,6 +573,16 @@ namespace posting
                 objtxt = txtFlg;
             }
 
+            if (sender == txtZipPath)
+            {
+                objtxt = txtZipPath;
+            }
+
+            if (sender == txtSheet)
+            {
+                objtxt = txtSheet;
+            }
+
             objtxt.SelectAll();
             objtxt.BackColor = Color.LightGray;
             
@@ -677,7 +701,17 @@ namespace posting
                objtxt = txtFlg;
            }
 
-           objtxt.BackColor = Color.White;
+            if (sender == txtZipPath)
+            {
+                objtxt = txtZipPath;
+            }
+
+            if (sender == txtSheet)
+            {
+                objtxt = txtSheet;
+            }
+
+            objtxt.BackColor = Color.White;
            objMtxt.BackColor = Color.White;
 
         }
@@ -750,5 +784,35 @@ namespace posting
             return openFileDialog1.FileName;
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string sPath = getSheetPath();
+
+            if (sPath != string.Empty)
+            {
+                txtSheet.Text = sPath;
+            }
+        }
+
+        private string getSheetPath()
+        {
+            DialogResult ret;
+
+            // ダイアログボックスの初期設定
+            openFileDialog1.Title = "受注確定書入力シート選択";
+            openFileDialog1.CheckFileExists = true;
+            openFileDialog1.RestoreDirectory = true;
+            openFileDialog1.FileName = "";
+            openFileDialog1.Filter = "Excelファイル(*.xlsx)|*.xlsx|全てのファイル(*.*)|*.*";
+
+            // ダイアログボックスの表示
+            ret = openFileDialog1.ShowDialog();
+            if (ret == System.Windows.Forms.DialogResult.Cancel)
+            {
+                return string.Empty;
+            }
+
+            return openFileDialog1.FileName;
+        }
     }
 }

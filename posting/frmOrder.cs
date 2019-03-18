@@ -3825,5 +3825,46 @@ namespace posting
             txtaGaiGenka2.Text = txtpGaichuGenka2.Text;
             txtaGaiGenka3.Text = txtpGaichuGenka3.Text;
         }
+
+        private void txtMai_TextChanged(object sender, EventArgs e)
+        {
+            // 営業原価：ポスティングのとき 2019/03/16
+            if (cmbNaiyou.Text == J_NAIYOU_POSTING)
+            {
+                txteGaichuGenka.Text = getGenka().ToString("#,##0");
+            }
+        }
+
+        private void txtHTanka_TextChanged(object sender, EventArgs e)
+        {
+            // 営業原価：ポスティングのとき 2019/03/16
+            if (cmbNaiyou.Text == J_NAIYOU_POSTING)
+            {
+                txteGaichuGenka.Text = getGenka().ToString("#,##0");
+            }
+        }
+
+        ///-------------------------------------------------------
+        /// <summary>
+        ///     営業原価を求める：2019/03/16 </summary>
+        /// <returns>
+        ///     営業原価</returns>
+        ///-------------------------------------------------------
+        private decimal getGenka()
+        {
+            // 配布単価取得
+            String str = Utility.strToDouble(txtHTanka.Text).ToString();
+
+            decimal dHTanka = 0;
+
+            if (!decimal.TryParse(str, out dHTanka))
+            {
+                dHTanka = 0m;
+            }
+
+            decimal genka = Math.Floor(dHTanka * Utility.strToDecimal(txtMai.Text.Replace(",","")));
+
+            return genka;
+        }
     }
 }

@@ -23,6 +23,7 @@ namespace posting
             gAdp.Fill(dts.外注先);
             hAdp.Fill(dts.判型);
             rAdp.Fill(dts.受注確定書発行記録);
+            pAdp.Fill(dts.会社情報);
         }
 
         darwinDataSet dts = new darwinDataSet();
@@ -32,6 +33,7 @@ namespace posting
         darwinDataSetTableAdapters.外注先TableAdapter gAdp = new darwinDataSetTableAdapters.外注先TableAdapter();
         darwinDataSetTableAdapters.判型TableAdapter hAdp = new darwinDataSetTableAdapters.判型TableAdapter();
         darwinDataSetTableAdapters.受注確定書発行記録TableAdapter rAdp = new darwinDataSetTableAdapters.受注確定書発行記録TableAdapter();
+        darwinDataSetTableAdapters.会社情報TableAdapter pAdp = new darwinDataSetTableAdapters.会社情報TableAdapter();
 
         #region グリッドビューカラム定義
         // 受注案件
@@ -75,6 +77,9 @@ namespace posting
         string colGenka4 = "col35";
 
         #endregion
+
+        // 受注確定書入力シートパス：2019/03/06
+        string sheetPath = string.Empty;
 
         /// -------------------------------------------------------------------
         /// <summary>
@@ -403,6 +408,20 @@ namespace posting
 
             // 画面初期化
             dispClear();
+
+            // 受注確定書入力シートパスを取得：2019/03/06
+            var s = dts.会社情報.Where(a => a.ID == 1);
+            foreach (var t in s)
+            {
+                sheetPath = t.受注確定書入力シートパス;
+            }
+
+            // 2019/03/06
+            if (sheetPath == string.Empty)
+            {
+                string msg = "出力先シートが未登録のため、受注確定書入力シートにデータ出力は行われません" + Environment.NewLine + "会社情報画面で出力先となる受注確定書入力シートパスを登録してください";
+                MessageBox.Show(msg, "出力シート未登録", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         // 配布条件コンボ設定
@@ -912,6 +931,7 @@ namespace posting
                 int sGenka3 = 0;
 
                 // 請求締日表示：2018/01/04
+                dtSeikyuShime.Checked = true;    // 明示的にチェックをオン 2019/03/16   
                 dtSeikyuShime.Value = t.請求書発行日;
 
                 // 支払期日欄に表示：2018/02/20
@@ -1328,6 +1348,15 @@ namespace posting
 
             // 受注確定書作成
             kakuteishoReport();
+
+            // 受注確定書入力シートへの書き込み：2019/03/07
+            if (sheetPath != string.Empty)
+            {
+                if (MessageBox.Show("受注確定書入力シートへの書き込みを行いますか？", "確認", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    setData2Sheet();
+                }
+            }
 
             // 受注データに受注確定書発行フラグを書き込む
             if (MessageBox.Show("受注データに受注確定書発行フラグを書き込みます。よろしいですか？", "確認", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)

@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Linq;
 using MyLibrary;
+using MyTextKana;
+
 
 namespace posting
 {
@@ -792,6 +794,12 @@ namespace posting
 
             objtxt.SelectAll();
             objtxt.BackColor = Color.LightGray;
+
+            // 2019/03/16
+            if (objtxt == txtName1 || objtxt == txtBank || objtxt == txtShiten)
+            {
+                MyTextKana.TextKana.textEnter(objtxt);
+            }
         }
 
         private void txtMLeave(object sender, EventArgs e)
@@ -1011,8 +1019,16 @@ namespace posting
         {
             string furiName;
             furiName  = MyTextKana.TextKana.textBox_KeyDown(txtName1, sender, e);
-            txtFuri.Text = furiName;
-            txtMeigi.Text = furiName;
+
+            //txtFuri.Text = furiName;      // 2019/03/16 コメント化
+            //txtMeigi.Text = furiName;     // 2019/03/16 コメント化
+
+            // 2019/03/16
+            if (furiName != "")
+            {
+                txtFuri.Text += furiName; 
+                txtMeigi.Text += furiName;
+            }
         }
 
         private void txtBank_TextChanged(object sender, EventArgs e)
@@ -1025,7 +1041,11 @@ namespace posting
 
         private void txtBank_KeyDown(object sender, KeyEventArgs e)
         {
-            txtBankFuri.Text = MyTextKana.TextKana.textBox_KeyDown(txtBank, sender, e);
+            // 2019/03/16
+            string furi = MyTextKana.TextKana.textBox_KeyDown(txtBank, sender, e);
+
+            // 2019/03/16
+            txtBankFuri.Text += furi;
         }
 
         private void txtShiten_TextChanged(object sender, EventArgs e)
@@ -1038,7 +1058,11 @@ namespace posting
 
         private void txtShiten_KeyDown(object sender, KeyEventArgs e)
         {
-            txtShitenFuri.Text = MyTextKana.TextKana.textBox_KeyDown(txtShiten, sender, e);
+            // 2019/03/16
+            string furi = MyTextKana.TextKana.textBox_KeyDown(txtShiten, sender, e);
+
+            // 2019/03/16
+            txtShitenFuri.Text += furi;
         }
 
         private void textBoxID_Validated(object sender, EventArgs e)

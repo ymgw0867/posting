@@ -15520,6 +15520,8 @@ namespace posting {
             
             private global::System.Data.DataColumn column郵便番号CSVパス;
             
+            private global::System.Data.DataColumn column受注確定書入力シートパス;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public 会社情報DataTable() {
@@ -15763,6 +15765,14 @@ namespace posting {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 受注確定書入力シートパスColumn {
+                get {
+                    return this.column受注確定書入力シートパス;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -15823,7 +15833,8 @@ namespace posting {
                         int 配布フラグ, 
                         System.DateTime 登録年月日, 
                         System.DateTime 変更年月日, 
-                        string 郵便番号CSVパス) {
+                        string 郵便番号CSVパス, 
+                        string 受注確定書入力シートパス) {
                 会社情報Row row会社情報Row = ((会社情報Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -15851,7 +15862,8 @@ namespace posting {
                         配布フラグ,
                         登録年月日,
                         変更年月日,
-                        郵便番号CSVパス};
+                        郵便番号CSVパス,
+                        受注確定書入力シートパス};
                 row会社情報Row.ItemArray = columnValuesArray;
                 this.Rows.Add(row会社情報Row);
                 return row会社情報Row;
@@ -15907,6 +15919,7 @@ namespace posting {
                 this.column登録年月日 = base.Columns["登録年月日"];
                 this.column変更年月日 = base.Columns["変更年月日"];
                 this.column郵便番号CSVパス = base.Columns["郵便番号CSVパス"];
+                this.column受注確定書入力シートパス = base.Columns["受注確定書入力シートパス"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15964,6 +15977,8 @@ namespace posting {
                 base.Columns.Add(this.column変更年月日);
                 this.column郵便番号CSVパス = new global::System.Data.DataColumn("郵便番号CSVパス", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column郵便番号CSVパス);
+                this.column受注確定書入力シートパス = new global::System.Data.DataColumn("受注確定書入力シートパス", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column受注確定書入力シートパス);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -16018,6 +16033,8 @@ namespace posting {
                 this.column変更年月日.AllowDBNull = false;
                 this.column郵便番号CSVパス.AllowDBNull = false;
                 this.column郵便番号CSVパス.MaxLength = 2147483647;
+                this.column受注確定書入力シートパス.AllowDBNull = false;
+                this.column受注確定書入力シートパス.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26481,6 +26498,17 @@ namespace posting {
                 }
                 set {
                     this[this.table会社情報.郵便番号CSVパスColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 受注確定書入力シートパス {
+                get {
+                    return ((string)(this[this.table会社情報.受注確定書入力シートパスColumn]));
+                }
+                set {
+                    this[this.table会社情報.受注確定書入力シートパスColumn] = value;
                 }
             }
         }
@@ -45867,10 +45895,11 @@ where 無効 = 0 and 精算額 < 0
             tableMapping.ColumnMappings.Add("登録年月日", "登録年月日");
             tableMapping.ColumnMappings.Add("変更年月日", "変更年月日");
             tableMapping.ColumnMappings.Add("郵便番号CSVパス", "郵便番号CSVパス");
+            tableMapping.ColumnMappings.Add("受注確定書入力シートパス", "受注確定書入力シートパス");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[会社情報] WHERE (([ID] = @Original_ID) AND ([会社名] = @Original_会社名) AND ([代表者氏名] = @Original_代表者氏名) AND ([役職名] = @Original_役職名) AND ([電話番号] = @Original_電話番号) AND ([FAX番号] = @Original_FAX番号) AND ([住所1] = @Original_住所1) AND ([住所2] = @Original_住所2) AND ([郵便番号] = @Original_郵便番号) AND ([メールアドレス] = @Original_メールアドレス) AND ([部署名] = @Original_部署名) AND ([担当者名] = @Original_担当者名) AND ([特記事項1] = @Original_特記事項1) AND ([特記事項2] = @Original_特記事項2) AND ([依頼人コード] = @Original_依頼人コード) AND ([依頼人名] = @Original_依頼人名) AND ([金融機関コード] = @Original_金融機関コード) AND ([金融機関名] = @Original_金融機関名) AND ([支店コード] = @Original_支店コード) AND ([支店名] = @Original_支店名) AND ([口座種別] = @Original_口座種別) AND ([口座番号] = @Original_口座番号) AND ([配布フラグ] = @Original_配布フラグ) AND ([登録年月日] = @Original_登録年月日) AND ([変更年月日] = @Original_変更年月日))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[会社情報] WHERE (([ID] = @Original_ID) AND ([会社名] = @Original_会社名) AND ([代表者氏名] = @Original_代表者氏名) AND ([役職名] = @Original_役職名) AND ([電話番号] = @Original_電話番号) AND ([FAX番号] = @Original_FAX番号) AND ([住所1] = @Original_住所1) AND ([住所2] = @Original_住所2) AND ([郵便番号] = @Original_郵便番号) AND ([メールアドレス] = @Original_メールアドレス) AND ([部署名] = @Original_部署名) AND ([担当者名] = @Original_担当者名) AND ([特記事項1] = @Original_特記事項1) AND ([特記事項2] = @Original_特記事項2) AND ([依頼人コード] = @Original_依頼人コード) AND ([依頼人名] = @Original_依頼人名) AND ([金融機関コード] = @Original_金融機関コード) AND ([金融機関名] = @Original_金融機関名) AND ([支店コード] = @Original_支店コード) AND ([支店名] = @Original_支店名) AND ([口座種別] = @Original_口座種別) AND ([口座番号] = @Original_口座番号) AND ([配布フラグ] = @Original_配布フラグ) AND ([登録年月日] = @Original_登録年月日) AND ([変更年月日] = @Original_変更年月日) AND ([受注確定書入力シートパス] = @Original_受注確定書入力シートパス))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_会社名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "会社名", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -45897,10 +45926,11 @@ where 無効 = 0 and 精算額 < 0
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_配布フラグ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "配布フラグ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_変更年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_受注確定書入力シートパス", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受注確定書入力シートパス", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[会社情報] ([会社名], [代表者氏名], [役職名], [電話番号], [FAX番号], [住所1], [住所2], [郵便番号], [メールアドレス], [部署名], [担当者名], [特記事項1], [特記事項2], [依頼人コード], [依頼人名], [金融機関コード], [金融機関名], [支店コード], [支店名], [口座種別], [口座番号], [配布フラグ], [登録年月日], [変更年月日], [郵便番号CSVパス]) VALUES (@会社名, @代表者氏名, @役職名, @電話番号, @FAX番号, @住所1, @住所2, @郵便番号, @メールアドレス, @部署名, @担当者名, @特記事項1, @特記事項2, @依頼人コード, @依頼人名, @金融機関コード, @金融機関名, @支店コード, @支店名, @口座種別, @口座番号, @配布フラグ, @登録年月日, @変更年月日, @郵便番号CSVパス);
-SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住所1, 住所2, 郵便番号, メールアドレス, 部署名, 担当者名, 特記事項1, 特記事項2, 依頼人コード, 依頼人名, 金融機関コード, 金融機関名, 支店コード, 支店名, 口座種別, 口座番号, 配布フラグ, 登録年月日, 変更年月日, 郵便番号CSVパス FROM 会社情報 WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[会社情報] ([会社名], [代表者氏名], [役職名], [電話番号], [FAX番号], [住所1], [住所2], [郵便番号], [メールアドレス], [部署名], [担当者名], [特記事項1], [特記事項2], [依頼人コード], [依頼人名], [金融機関コード], [金融機関名], [支店コード], [支店名], [口座種別], [口座番号], [配布フラグ], [登録年月日], [変更年月日], [郵便番号CSVパス], [受注確定書入力シートパス]) VALUES (@会社名, @代表者氏名, @役職名, @電話番号, @FAX番号, @住所1, @住所2, @郵便番号, @メールアドレス, @部署名, @担当者名, @特記事項1, @特記事項2, @依頼人コード, @依頼人名, @金融機関コード, @金融機関名, @支店コード, @支店名, @口座種別, @口座番号, @配布フラグ, @登録年月日, @変更年月日, @郵便番号CSVパス, @受注確定書入力シートパス);
+SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住所1, 住所2, 郵便番号, メールアドレス, 部署名, 担当者名, 特記事項1, 特記事項2, 依頼人コード, 依頼人名, 金融機関コード, 金融機関名, 支店コード, 支店名, 口座種別, 口座番号, 配布フラグ, 登録年月日, 変更年月日, 郵便番号CSVパス, 受注確定書入力シートパス FROM 会社情報 WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@会社名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "会社名", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@代表者氏名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "代表者氏名", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -45927,10 +45957,29 @@ SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住�
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@変更年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@郵便番号CSVパス", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "郵便番号CSVパス", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@受注確定書入力シートパス", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受注確定書入力シートパス", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[会社情報] SET [会社名] = @会社名, [代表者氏名] = @代表者氏名, [役職名] = @役職名, [電話番号] = @電話番号, [FAX番号] = @FAX番号, [住所1] = @住所1, [住所2] = @住所2, [郵便番号] = @郵便番号, [メールアドレス] = @メールアドレス, [部署名] = @部署名, [担当者名] = @担当者名, [特記事項1] = @特記事項1, [特記事項2] = @特記事項2, [依頼人コード] = @依頼人コード, [依頼人名] = @依頼人名, [金融機関コード] = @金融機関コード, [金融機関名] = @金融機関名, [支店コード] = @支店コード, [支店名] = @支店名, [口座種別] = @口座種別, [口座番号] = @口座番号, [配布フラグ] = @配布フラグ, [登録年月日] = @登録年月日, [変更年月日] = @変更年月日, [郵便番号CSVパス] = @郵便番号CSVパス WHERE (([ID] = @Original_ID) AND ([会社名] = @Original_会社名) AND ([代表者氏名] = @Original_代表者氏名) AND ([役職名] = @Original_役職名) AND ([電話番号] = @Original_電話番号) AND ([FAX番号] = @Original_FAX番号) AND ([住所1] = @Original_住所1) AND ([住所2] = @Original_住所2) AND ([郵便番号] = @Original_郵便番号) AND ([メールアドレス] = @Original_メールアドレス) AND ([部署名] = @Original_部署名) AND ([担当者名] = @Original_担当者名) AND ([特記事項1] = @Original_特記事項1) AND ([特記事項2] = @Original_特記事項2) AND ([依頼人コード] = @Original_依頼人コード) AND ([依頼人名] = @Original_依頼人名) AND ([金融機関コード] = @Original_金融機関コード) AND ([金融機関名] = @Original_金融機関名) AND ([支店コード] = @Original_支店コード) AND ([支店名] = @Original_支店名) AND ([口座種別] = @Original_口座種別) AND ([口座番号] = @Original_口座番号) AND ([配布フラグ] = @Original_配布フラグ) AND ([登録年月日] = @Original_登録年月日) AND ([変更年月日] = @Original_変更年月日));
-SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住所1, 住所2, 郵便番号, メールアドレス, 部署名, 担当者名, 特記事項1, 特記事項2, 依頼人コード, 依頼人名, 金融機関コード, 金融機関名, 支店コード, 支店名, 口座種別, 口座番号, 配布フラグ, 登録年月日, 変更年月日, 郵便番号CSVパス FROM 会社情報 WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[会社情報] SET [会社名] = @会社名, [代表者氏名] = @代表者氏名, [役職名] = @役職名, [電話番号] = @電" +
+                "話番号, [FAX番号] = @FAX番号, [住所1] = @住所1, [住所2] = @住所2, [郵便番号] = @郵便番号, [メールアドレス] = @" +
+                "メールアドレス, [部署名] = @部署名, [担当者名] = @担当者名, [特記事項1] = @特記事項1, [特記事項2] = @特記事項2, [依頼人コ" +
+                "ード] = @依頼人コード, [依頼人名] = @依頼人名, [金融機関コード] = @金融機関コード, [金融機関名] = @金融機関名, [支店コード] =" +
+                " @支店コード, [支店名] = @支店名, [口座種別] = @口座種別, [口座番号] = @口座番号, [配布フラグ] = @配布フラグ, [登録年月日]" +
+                " = @登録年月日, [変更年月日] = @変更年月日, [郵便番号CSVパス] = @郵便番号CSVパス, [受注確定書入力シートパス] = @受注確定書入力" +
+                "シートパス WHERE (([ID] = @Original_ID) AND ([会社名] = @Original_会社名) AND ([代表者氏名] = @O" +
+                "riginal_代表者氏名) AND ([役職名] = @Original_役職名) AND ([電話番号] = @Original_電話番号) AND ([F" +
+                "AX番号] = @Original_FAX番号) AND ([住所1] = @Original_住所1) AND ([住所2] = @Original_住所2)" +
+                " AND ([郵便番号] = @Original_郵便番号) AND ([メールアドレス] = @Original_メールアドレス) AND ([部署名] = " +
+                "@Original_部署名) AND ([担当者名] = @Original_担当者名) AND ([特記事項1] = @Original_特記事項1) AND" +
+                " ([特記事項2] = @Original_特記事項2) AND ([依頼人コード] = @Original_依頼人コード) AND ([依頼人名] = @Or" +
+                "iginal_依頼人名) AND ([金融機関コード] = @Original_金融機関コード) AND ([金融機関名] = @Original_金融機関名)" +
+                " AND ([支店コード] = @Original_支店コード) AND ([支店名] = @Original_支店名) AND ([口座種別] = @Orig" +
+                "inal_口座種別) AND ([口座番号] = @Original_口座番号) AND ([配布フラグ] = @Original_配布フラグ) AND ([登" +
+                "録年月日] = @Original_登録年月日) AND ([変更年月日] = @Original_変更年月日) AND ([受注確定書入力シートパス] = @" +
+                "Original_受注確定書入力シートパス));\r\nSELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住所1, 住所2, 郵便番" +
+                "号, メールアドレス, 部署名, 担当者名, 特記事項1, 特記事項2, 依頼人コード, 依頼人名, 金融機関コード, 金融機関名, 支店コード, 支店名, 口" +
+                "座種別, 口座番号, 配布フラグ, 登録年月日, 変更年月日, 郵便番号CSVパス, 受注確定書入力シートパス FROM 会社情報 WHERE (ID = @I" +
+                "D)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@会社名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "会社名", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@代表者氏名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "代表者氏名", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -45957,6 +46006,7 @@ SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住�
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@変更年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@郵便番号CSVパス", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "郵便番号CSVパス", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@受注確定書入力シートパス", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受注確定書入力シートパス", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_会社名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "会社名", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_代表者氏名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "代表者氏名", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -45982,6 +46032,7 @@ SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住�
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_配布フラグ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "配布フラグ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_変更年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_受注確定書入力シートパス", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受注確定書入力シートパス", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -46000,7 +46051,7 @@ SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住�
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住所1, 住所2, 郵便番号, メールアドレス, 部署名, 担当者名, 特記事項" +
                 "1, 特記事項2, 依頼人コード, 依頼人名, 金融機関コード, 金融機関名, 支店コード, 支店名, 口座種別, 口座番号, 配布フラグ, 登録年月日, 変更" +
-                "年月日, 郵便番号CSVパス FROM dbo.会社情報";
+                "年月日, 郵便番号CSVパス, 受注確定書入力シートパス FROM dbo.会社情報";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -46086,7 +46137,8 @@ SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住�
                     string Original_口座番号, 
                     int Original_配布フラグ, 
                     System.DateTime Original_登録年月日, 
-                    System.DateTime Original_変更年月日) {
+                    System.DateTime Original_変更年月日, 
+                    string Original_受注確定書入力シートパス) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_会社名 == null)) {
                 throw new global::System.ArgumentNullException("Original_会社名");
@@ -46212,6 +46264,12 @@ SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住�
             this.Adapter.DeleteCommand.Parameters[22].Value = ((int)(Original_配布フラグ));
             this.Adapter.DeleteCommand.Parameters[23].Value = ((System.DateTime)(Original_登録年月日));
             this.Adapter.DeleteCommand.Parameters[24].Value = ((System.DateTime)(Original_変更年月日));
+            if ((Original_受注確定書入力シートパス == null)) {
+                throw new global::System.ArgumentNullException("Original_受注確定書入力シートパス");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((string)(Original_受注確定書入力シートパス));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -46257,7 +46315,8 @@ SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住�
                     int 配布フラグ, 
                     System.DateTime 登録年月日, 
                     System.DateTime 変更年月日, 
-                    string 郵便番号CSVパス) {
+                    string 郵便番号CSVパス, 
+                    string 受注確定書入力シートパス) {
             if ((会社名 == null)) {
                 throw new global::System.ArgumentNullException("会社名");
             }
@@ -46388,6 +46447,12 @@ SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住�
             else {
                 this.Adapter.InsertCommand.Parameters[24].Value = ((string)(郵便番号CSVパス));
             }
+            if ((受注確定書入力シートパス == null)) {
+                throw new global::System.ArgumentNullException("受注確定書入力シートパス");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(受注確定書入力シートパス));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -46434,6 +46499,7 @@ SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住�
                     System.DateTime 登録年月日, 
                     System.DateTime 変更年月日, 
                     string 郵便番号CSVパス, 
+                    string 受注確定書入力シートパス, 
                     int Original_ID, 
                     string Original_会社名, 
                     string Original_代表者氏名, 
@@ -46459,6 +46525,7 @@ SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住�
                     int Original_配布フラグ, 
                     System.DateTime Original_登録年月日, 
                     System.DateTime Original_変更年月日, 
+                    string Original_受注確定書入力シートパス, 
                     int ID) {
             if ((会社名 == null)) {
                 throw new global::System.ArgumentNullException("会社名");
@@ -46590,132 +46657,144 @@ SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住�
             else {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(郵便番号CSVパス));
             }
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_ID));
+            if ((受注確定書入力シートパス == null)) {
+                throw new global::System.ArgumentNullException("受注確定書入力シートパス");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(受注確定書入力シートパス));
+            }
+            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_ID));
             if ((Original_会社名 == null)) {
                 throw new global::System.ArgumentNullException("Original_会社名");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_会社名));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_会社名));
             }
             if ((Original_代表者氏名 == null)) {
                 throw new global::System.ArgumentNullException("Original_代表者氏名");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_代表者氏名));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_代表者氏名));
             }
             if ((Original_役職名 == null)) {
                 throw new global::System.ArgumentNullException("Original_役職名");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_役職名));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_役職名));
             }
             if ((Original_電話番号 == null)) {
                 throw new global::System.ArgumentNullException("Original_電話番号");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_電話番号));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_電話番号));
             }
             if ((Original_FAX番号 == null)) {
                 throw new global::System.ArgumentNullException("Original_FAX番号");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_FAX番号));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_FAX番号));
             }
             if ((Original_住所1 == null)) {
                 throw new global::System.ArgumentNullException("Original_住所1");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_住所1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_住所1));
             }
             if ((Original_住所2 == null)) {
                 throw new global::System.ArgumentNullException("Original_住所2");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_住所2));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_住所2));
             }
             if ((Original_郵便番号 == null)) {
                 throw new global::System.ArgumentNullException("Original_郵便番号");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_郵便番号));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_郵便番号));
             }
             if ((Original_メールアドレス == null)) {
                 throw new global::System.ArgumentNullException("Original_メールアドレス");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_メールアドレス));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_メールアドレス));
             }
             if ((Original_部署名 == null)) {
                 throw new global::System.ArgumentNullException("Original_部署名");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_部署名));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_部署名));
             }
             if ((Original_担当者名 == null)) {
                 throw new global::System.ArgumentNullException("Original_担当者名");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_担当者名));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_担当者名));
             }
             if ((Original_特記事項1 == null)) {
                 throw new global::System.ArgumentNullException("Original_特記事項1");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_特記事項1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_特記事項1));
             }
             if ((Original_特記事項2 == null)) {
                 throw new global::System.ArgumentNullException("Original_特記事項2");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_特記事項2));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_特記事項2));
             }
             if ((Original_依頼人コード == null)) {
                 throw new global::System.ArgumentNullException("Original_依頼人コード");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_依頼人コード));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_依頼人コード));
             }
             if ((Original_依頼人名 == null)) {
                 throw new global::System.ArgumentNullException("Original_依頼人名");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_依頼人名));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_依頼人名));
             }
             if ((Original_金融機関コード == null)) {
                 throw new global::System.ArgumentNullException("Original_金融機関コード");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_金融機関コード));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_金融機関コード));
             }
             if ((Original_金融機関名 == null)) {
                 throw new global::System.ArgumentNullException("Original_金融機関名");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_金融機関名));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_金融機関名));
             }
             if ((Original_支店コード == null)) {
                 throw new global::System.ArgumentNullException("Original_支店コード");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_支店コード));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_支店コード));
             }
             if ((Original_支店名 == null)) {
                 throw new global::System.ArgumentNullException("Original_支店名");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_支店名));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_支店名));
             }
-            this.Adapter.UpdateCommand.Parameters[45].Value = ((int)(Original_口座種別));
+            this.Adapter.UpdateCommand.Parameters[46].Value = ((int)(Original_口座種別));
             if ((Original_口座番号 == null)) {
                 throw new global::System.ArgumentNullException("Original_口座番号");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_口座番号));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_口座番号));
             }
-            this.Adapter.UpdateCommand.Parameters[47].Value = ((int)(Original_配布フラグ));
-            this.Adapter.UpdateCommand.Parameters[48].Value = ((System.DateTime)(Original_登録年月日));
-            this.Adapter.UpdateCommand.Parameters[49].Value = ((System.DateTime)(Original_変更年月日));
-            this.Adapter.UpdateCommand.Parameters[50].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[48].Value = ((int)(Original_配布フラグ));
+            this.Adapter.UpdateCommand.Parameters[49].Value = ((System.DateTime)(Original_登録年月日));
+            this.Adapter.UpdateCommand.Parameters[50].Value = ((System.DateTime)(Original_変更年月日));
+            if ((Original_受注確定書入力シートパス == null)) {
+                throw new global::System.ArgumentNullException("Original_受注確定書入力シートパス");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_受注確定書入力シートパス));
+            }
+            this.Adapter.UpdateCommand.Parameters[52].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -46762,6 +46841,7 @@ SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住�
                     System.DateTime 登録年月日, 
                     System.DateTime 変更年月日, 
                     string 郵便番号CSVパス, 
+                    string 受注確定書入力シートパス, 
                     int Original_ID, 
                     string Original_会社名, 
                     string Original_代表者氏名, 
@@ -46786,8 +46866,9 @@ SELECT ID, 会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住�
                     string Original_口座番号, 
                     int Original_配布フラグ, 
                     System.DateTime Original_登録年月日, 
-                    System.DateTime Original_変更年月日) {
-            return this.Update(会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住所1, 住所2, 郵便番号, メールアドレス, 部署名, 担当者名, 特記事項1, 特記事項2, 依頼人コード, 依頼人名, 金融機関コード, 金融機関名, 支店コード, 支店名, 口座種別, 口座番号, 配布フラグ, 登録年月日, 変更年月日, 郵便番号CSVパス, Original_ID, Original_会社名, Original_代表者氏名, Original_役職名, Original_電話番号, Original_FAX番号, Original_住所1, Original_住所2, Original_郵便番号, Original_メールアドレス, Original_部署名, Original_担当者名, Original_特記事項1, Original_特記事項2, Original_依頼人コード, Original_依頼人名, Original_金融機関コード, Original_金融機関名, Original_支店コード, Original_支店名, Original_口座種別, Original_口座番号, Original_配布フラグ, Original_登録年月日, Original_変更年月日, Original_ID);
+                    System.DateTime Original_変更年月日, 
+                    string Original_受注確定書入力シートパス) {
+            return this.Update(会社名, 代表者氏名, 役職名, 電話番号, FAX番号, 住所1, 住所2, 郵便番号, メールアドレス, 部署名, 担当者名, 特記事項1, 特記事項2, 依頼人コード, 依頼人名, 金融機関コード, 金融機関名, 支店コード, 支店名, 口座種別, 口座番号, 配布フラグ, 登録年月日, 変更年月日, 郵便番号CSVパス, 受注確定書入力シートパス, Original_ID, Original_会社名, Original_代表者氏名, Original_役職名, Original_電話番号, Original_FAX番号, Original_住所1, Original_住所2, Original_郵便番号, Original_メールアドレス, Original_部署名, Original_担当者名, Original_特記事項1, Original_特記事項2, Original_依頼人コード, Original_依頼人名, Original_金融機関コード, Original_金融機関名, Original_支店コード, Original_支店名, Original_口座種別, Original_口座番号, Original_配布フラグ, Original_登録年月日, Original_変更年月日, Original_受注確定書入力シートパス, Original_ID);
         }
     }
     

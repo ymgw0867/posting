@@ -245,6 +245,11 @@ namespace posting
 
             Control.FreeSql fSql = new Control.FreeSql();
 
+            // 会社情報テーブルに「受注確定書入力シートパス」フィールドを追加する : 2019/03/06
+            sqlString = "";
+            sqlString += "ALTER TABLE 会社情報 add 受注確定書入力シートパス nvarchar(255) default '' NOT NULL";
+            fSql.Execute(sqlString);
+
             // 受注テーブルに「営業備考」フィールドを追加する : 2019/03/01
             sqlString = "";
             sqlString += "ALTER TABLE 受注 add 営業備考 nvarchar(255) default '' NOT NULL";

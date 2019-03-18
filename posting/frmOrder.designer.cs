@@ -706,6 +706,7 @@
             this.txtMai.Size = new System.Drawing.Size(122, 24);
             this.txtMai.TabIndex = 6;
             this.txtMai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtMai.TextChanged += new System.EventHandler(this.txtMai_TextChanged);
             this.txtMai.Enter += new System.EventHandler(this.txtEnter);
             this.txtMai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMai_KeyPress);
             this.txtMai.Leave += new System.EventHandler(this.txtLeave);
@@ -1306,6 +1307,7 @@
             this.txtHTanka.Size = new System.Drawing.Size(138, 24);
             this.txtHTanka.TabIndex = 11;
             this.txtHTanka.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtHTanka.TextChanged += new System.EventHandler(this.txtHTanka_TextChanged);
             this.txtHTanka.Enter += new System.EventHandler(this.txtEnter);
             this.txtHTanka.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTanka_KeyPress);
             this.txtHTanka.Leave += new System.EventHandler(this.txtLeave);

@@ -776,6 +776,9 @@ namespace posting
             if (sender == txtName1)
             {
                 objtxt = txtName1;
+
+                // 2019/03/16
+                MyTextKana.TextKana.textEnter(txtName1);
             }
 
             if (sender == txtFuri)
@@ -920,6 +923,9 @@ namespace posting
             if (sender == txtName1)
             {
                 objtxt = txtName1;
+
+                // 2019/03/16
+                MyTextKana.TextKana.textLeave(txtName1);
             }
 
             if (sender == txtFuri)
@@ -1363,7 +1369,14 @@ namespace posting
 
         private void txtName1_KeyDown(object sender, KeyEventArgs e)
         {
-            txtFuri.Text = MyTextKana.TextKana.textBox_KeyDown(txtName1, sender, e);
+            // 2019/03/14
+           string furi = MyTextKana.TextKana.textBox_KeyDown(txtName1, sender, e);
+
+            if (furi != "")
+            {
+                //txtFuri.Text = furi;  // 2019/03/16 ÉRÉÅÉìÉgâª
+                txtFuri.Text += furi;   // 2019/03/16
+            }
         }
 
         private void mtxtZipCode_TextChanged(object sender, EventArgs e)

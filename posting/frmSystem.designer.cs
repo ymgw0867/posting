@@ -80,16 +80,19 @@
             this.label23 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txtSheet = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnRtn
             // 
             this.btnRtn.BackColor = System.Drawing.SystemColors.Control;
             this.btnRtn.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnRtn.Location = new System.Drawing.Point(591, 498);
+            this.btnRtn.Location = new System.Drawing.Point(591, 508);
             this.btnRtn.Name = "btnRtn";
             this.btnRtn.Size = new System.Drawing.Size(89, 31);
-            this.btnRtn.TabIndex = 23;
+            this.btnRtn.TabIndex = 25;
             this.btnRtn.Text = "戻る(&R)";
             this.btnRtn.UseCompatibleTextRendering = true;
             this.btnRtn.UseVisualStyleBackColor = true;
@@ -99,10 +102,10 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.SystemColors.Control;
             this.btnUpdate.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnUpdate.Location = new System.Drawing.Point(496, 498);
+            this.btnUpdate.Location = new System.Drawing.Point(496, 508);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(89, 31);
-            this.btnUpdate.TabIndex = 22;
+            this.btnUpdate.TabIndex = 24;
             this.btnUpdate.Text = "更新(&U)";
             this.btnUpdate.UseCompatibleTextRendering = true;
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -127,7 +130,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Location = new System.Drawing.Point(10, 376);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 22);
+            this.label4.Size = new System.Drawing.Size(92, 23);
             this.label4.TabIndex = 18;
             this.label4.Text = "特記事項１";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -211,7 +214,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Location = new System.Drawing.Point(10, 351);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 22);
+            this.label5.Size = new System.Drawing.Size(92, 23);
             this.label5.TabIndex = 26;
             this.label5.Text = "口座番号";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -246,7 +249,7 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label6.Location = new System.Drawing.Point(10, 25);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 22);
+            this.label6.Size = new System.Drawing.Size(92, 23);
             this.label6.TabIndex = 28;
             this.label6.Text = "会社名";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -270,7 +273,7 @@
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label7.Location = new System.Drawing.Point(10, 50);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 22);
+            this.label7.Size = new System.Drawing.Size(92, 23);
             this.label7.TabIndex = 30;
             this.label7.Text = "代表者名";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -318,7 +321,7 @@
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.Location = new System.Drawing.Point(10, 75);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(92, 22);
+            this.label9.Size = new System.Drawing.Size(92, 23);
             this.label9.TabIndex = 34;
             this.label9.Text = "電話番号";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -366,7 +369,7 @@
             this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label11.Location = new System.Drawing.Point(10, 125);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(92, 22);
+            this.label11.Size = new System.Drawing.Size(92, 23);
             this.label11.TabIndex = 38;
             this.label11.Text = "住所１";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -390,7 +393,7 @@
             this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label12.Location = new System.Drawing.Point(10, 150);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 22);
+            this.label12.Size = new System.Drawing.Size(92, 23);
             this.label12.TabIndex = 40;
             this.label12.Text = "住所２";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -402,7 +405,7 @@
             this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label13.Location = new System.Drawing.Point(10, 100);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(92, 22);
+            this.label13.Size = new System.Drawing.Size(92, 23);
             this.label13.TabIndex = 42;
             this.label13.Text = "郵便番号";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -426,7 +429,7 @@
             this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label14.Location = new System.Drawing.Point(10, 175);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(92, 22);
+            this.label14.Size = new System.Drawing.Size(92, 23);
             this.label14.TabIndex = 44;
             this.label14.Text = "eMail";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -462,7 +465,7 @@
             this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label15.Location = new System.Drawing.Point(10, 200);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(92, 22);
+            this.label15.Size = new System.Drawing.Size(92, 23);
             this.label15.TabIndex = 47;
             this.label15.Text = "部署名";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -486,7 +489,7 @@
             this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label16.Location = new System.Drawing.Point(10, 225);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(92, 22);
+            this.label16.Size = new System.Drawing.Size(92, 23);
             this.label16.TabIndex = 49;
             this.label16.Text = "担当者名";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -510,7 +513,7 @@
             this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label17.Location = new System.Drawing.Point(10, 250);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(92, 22);
+            this.label17.Size = new System.Drawing.Size(92, 23);
             this.label17.TabIndex = 51;
             this.label17.Text = "依頼人コード";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -558,7 +561,7 @@
             this.label19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label19.Location = new System.Drawing.Point(10, 275);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(92, 22);
+            this.label19.Size = new System.Drawing.Size(92, 23);
             this.label19.TabIndex = 55;
             this.label19.Text = "銀行コード";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -582,7 +585,7 @@
             this.label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label20.Location = new System.Drawing.Point(10, 300);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(92, 22);
+            this.label20.Size = new System.Drawing.Size(92, 23);
             this.label20.TabIndex = 57;
             this.label20.Text = "支店コード";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -606,7 +609,7 @@
             this.label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label21.Location = new System.Drawing.Point(10, 401);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(92, 22);
+            this.label21.Size = new System.Drawing.Size(92, 23);
             this.label21.TabIndex = 59;
             this.label21.Text = "特記事項２";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -615,11 +618,11 @@
             // 
             this.txtFlg.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.txtFlg.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtFlg.Location = new System.Drawing.Point(101, 449);
+            this.txtFlg.Location = new System.Drawing.Point(101, 476);
             this.txtFlg.MaxLength = 1;
             this.txtFlg.Name = "txtFlg";
             this.txtFlg.Size = new System.Drawing.Size(80, 23);
-            this.txtFlg.TabIndex = 22;
+            this.txtFlg.TabIndex = 23;
             this.txtFlg.Enter += new System.EventHandler(this.txtEnter);
             this.txtFlg.Leave += new System.EventHandler(this.txtLeave);
             this.txtFlg.Validating += new System.ComponentModel.CancelEventHandler(this.txtFlg_Validating);
@@ -629,9 +632,9 @@
             this.label22.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.label22.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label22.Location = new System.Drawing.Point(10, 450);
+            this.label22.Location = new System.Drawing.Point(10, 476);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(92, 22);
+            this.label22.Size = new System.Drawing.Size(92, 23);
             this.label22.TabIndex = 61;
             this.label22.Text = "配布フラグ";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -640,7 +643,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(12, 498);
+            this.button1.Location = new System.Drawing.Point(12, 512);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 26);
             this.button1.TabIndex = 62;
@@ -658,6 +661,8 @@
             this.txtZipPath.Name = "txtZipPath";
             this.txtZipPath.Size = new System.Drawing.Size(528, 23);
             this.txtZipPath.TabIndex = 21;
+            this.txtZipPath.Enter += new System.EventHandler(this.txtEnter);
+            this.txtZipPath.Leave += new System.EventHandler(this.txtLeave);
             // 
             // label23
             // 
@@ -666,7 +671,7 @@
             this.label23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label23.Location = new System.Drawing.Point(10, 425);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(92, 22);
+            this.label23.Size = new System.Drawing.Size(92, 23);
             this.label23.TabIndex = 64;
             this.label23.Text = "郵便番号CSV";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -688,11 +693,51 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.Control;
+            this.button3.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button3.Location = new System.Drawing.Point(630, 450);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(50, 26);
+            this.button3.TabIndex = 66;
+            this.button3.Text = "参照";
+            this.button3.UseCompatibleTextRendering = true;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txtSheet
+            // 
+            this.txtSheet.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtSheet.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
+            this.txtSheet.Location = new System.Drawing.Point(136, 450);
+            this.txtSheet.MaxLength = 100;
+            this.txtSheet.Name = "txtSheet";
+            this.txtSheet.Size = new System.Drawing.Size(493, 23);
+            this.txtSheet.TabIndex = 22;
+            this.txtSheet.Enter += new System.EventHandler(this.txtEnter);
+            this.txtSheet.Leave += new System.EventHandler(this.txtLeave);
+            // 
+            // label24
+            // 
+            this.label24.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label24.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label24.Location = new System.Drawing.Point(10, 450);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(126, 23);
+            this.label24.TabIndex = 67;
+            this.label24.Text = "受注確定書入力シート";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 541);
+            this.ClientSize = new System.Drawing.Size(687, 549);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.txtSheet);
+            this.Controls.Add(this.label24);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtZipPath);
             this.Controls.Add(this.label23);
@@ -811,5 +856,8 @@
         private System.Windows.Forms.Label label23;
         internal System.Windows.Forms.Button button2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        internal System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtSheet;
+        private System.Windows.Forms.Label label24;
     }
 }

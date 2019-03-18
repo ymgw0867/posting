@@ -567,6 +567,14 @@ namespace posting
 
                     //チラシ名
                     oxlsSheet.Cells[10, 3] = dataGridView2[1, dataGridView2.SelectedRows[0].Index].Value.ToString();
+
+                    //配布エリア明細初期化：2019/03/18
+                    for (int iX = S_GYO; iX < (tempFixRows + S_GYO); iX++)
+                    {
+                        oxlsSheet.Cells[iX, 2] = string.Empty;
+                        oxlsSheet.Cells[iX, 3] = string.Empty;
+                        oxlsSheet.Cells[iX, 4] = string.Empty;
+                    }
                     
                     //配布エリア明細
                     i = 0;

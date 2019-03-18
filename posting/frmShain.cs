@@ -540,6 +540,9 @@ namespace posting
             if (sender == txtName)
             {
                 objtxt = txtName;
+
+                // 2019/03/16
+                MyTextKana.TextKana.textEnter(txtName);
             }
 
             if (sender == txtFuri)
@@ -698,7 +701,11 @@ namespace posting
 
         private void txtName_KeyDown(object sender, KeyEventArgs e)
         {
-            txtFuri.Text = MyTextKana.TextKana.textBox_KeyDown(txtName, sender, e);
+            // 2019/03/16
+            string furi = MyTextKana.TextKana.textBox_KeyDown(txtName, sender, e);
+
+            // 2019/03/16
+            txtFuri.Text += furi;
         }
 
     }

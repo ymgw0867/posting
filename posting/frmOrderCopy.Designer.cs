@@ -69,6 +69,8 @@
             this.txtChirashi = new System.Windows.Forms.TextBox();
             this.cmbGaichu2 = new System.Windows.Forms.ComboBox();
             this.cmbGaichu3 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtGyoushu = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // jDate
@@ -549,11 +551,35 @@
             this.cmbGaichu3.Size = new System.Drawing.Size(341, 27);
             this.cmbGaichu3.TabIndex = 200;
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.Font = new System.Drawing.Font("Meiryo UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.Location = new System.Drawing.Point(11, 314);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 30);
+            this.label2.TabIndex = 201;
+            this.label2.Text = "業種/仕様：";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtGyoushu
+            // 
+            this.txtGyoushu.Font = new System.Drawing.Font("Meiryo UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtGyoushu.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
+            this.txtGyoushu.Location = new System.Drawing.Point(113, 315);
+            this.txtGyoushu.Name = "txtGyoushu";
+            this.txtGyoushu.Size = new System.Drawing.Size(249, 26);
+            this.txtGyoushu.TabIndex = 202;
+            // 
             // frmOrderCopy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 450);
+            this.Controls.Add(this.txtGyoushu);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbGaichu3);
             this.Controls.Add(this.cmbGaichu2);
             this.Controls.Add(this.EndDate);
@@ -649,5 +675,7 @@
         private System.Windows.Forms.TextBox txtChirashi;
         private System.Windows.Forms.ComboBox cmbGaichu2;
         private System.Windows.Forms.ComboBox cmbGaichu3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtGyoushu;
     }
 }

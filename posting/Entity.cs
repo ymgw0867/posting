@@ -34,6 +34,7 @@ namespace posting
             public DateTime 登録年月日 { get; set; }
             public DateTime 変更年月日 { get; set; }
             public string 郵便番号CSVパス { get; set; } 
+            public string 受注確定書入力シートパス { get; set; }    // 2019/03/06
         }
 
         public class 事業所

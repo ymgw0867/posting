@@ -122,10 +122,10 @@ namespace posting
             //}
 
             // 営業原価外注先
-            if (s.外注先RowBy外注先_受注1 != null)
+            if (s.外注先RowBy外注先_受注11 != null)
             {
                 lblGaichu.BackColor = Color.White;
-                lblGaichu.Text = s.外注先RowBy外注先_受注1.名称;
+                lblGaichu.Text = s.外注先RowBy外注先_受注11.名称;
                 dteGaichuPay.Enabled = true;
             }
             else
@@ -136,11 +136,11 @@ namespace posting
             }
 
             // 外注先１
-            if (s.外注先RowBy外注先_受注11 != null)
+            if (s.外注先RowBy外注先_受注1 != null)
             {
                 lblGaichu1.BackColor = Color.White;
-                lblGaichu1.Text = s.外注先RowBy外注先_受注11.名称;
-                lblSD1.Text = "※" + s.外注先RowBy外注先_受注11.支払日 + "日";
+                lblGaichu1.Text = s.外注先RowBy外注先_受注1.名称;
+                lblSD1.Text = "※" + s.外注先RowBy外注先_受注1.支払日 + "日";
                 dtpGaichuPay.Enabled = true;
 
                 label4.Enabled = true;
@@ -222,6 +222,9 @@ namespace posting
                 //label12.Enabled = false;
                 //label9.Enabled = false;
             }
+
+            // 2019/03/05 業種・仕様欄
+            txtGyoushu.Text = s.業種;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -530,7 +533,8 @@ namespace posting
 
                 r.外注受け渡し担当者 = s.外注受け渡し担当者;
                 r.外注委託枚数 = s.外注委託枚数;
-                r.業種 = s.業種;
+                //r.業種 = s.業種;            // 2019/03/06 コメント化
+                r.業種 = txtGyoushu.Text;     // 2019/03/06
 
                 //r.外注先ID支払2 = s.外注先ID支払2; 2018/03/02
 

@@ -168,7 +168,7 @@ namespace posting
                     mySql += "(会社名,代表者氏名,役職名,電話番号,FAX番号,住所1,住所2,";
                     mySql += "郵便番号,メールアドレス,部署名,担当者名,特記事項1,特記事項2,";
                     mySql += "依頼人コード,依頼人名,金融機関コード,金融機関名,支店コード,支店名,";
-                    mySql += "口座種別,口座番号,配布フラグ,登録年月日,変更年月日,郵便番号CSVパス) ";
+                    mySql += "口座種別,口座番号,配布フラグ,登録年月日,変更年月日,郵便番号CSVパス, 受注確定書入力シートパス) ";
                     mySql += "values ('" + cKaisha.会社名 + "',";
                     mySql += "'" + cKaisha.代表者氏名 + "',";
                     mySql += "'" + cKaisha.役職名 + "',";
@@ -193,7 +193,8 @@ namespace posting
                     mySql += cKaisha.配布フラグ + ",";
                     mySql += "'" + cKaisha.登録年月日 + "',";
                     mySql += "'" + cKaisha.変更年月日 + "',";
-                    mySql += "'" + cKaisha.郵便番号CSVパス + "')";
+                    mySql += "'" + cKaisha.郵便番号CSVパス + "',";
+                    mySql += "'" + cKaisha.受注確定書入力シートパス + "')";
 
                     SCom.CommandText = mySql;
                     SCom.Connection = cn;
@@ -247,7 +248,8 @@ namespace posting
                     mySql += "口座番号 = '" + cKaisha.口座番号 + "',";
                     mySql += "配布フラグ = " + cKaisha.配布フラグ + ",";
                     mySql += "変更年月日 = '" + DateTime.Today + "',";
-                    mySql += "郵便番号CSVパス = '" + cKaisha.郵便番号CSVパス + "' ";
+                    mySql += "郵便番号CSVパス = '" + cKaisha.郵便番号CSVパス + "',";
+                    mySql += "受注確定書入力シートパス = '" + cKaisha.受注確定書入力シートパス + "' ";
                     mySql += "where ID = " + cKaisha.ID;
 
                     SCom.CommandText = mySql;
