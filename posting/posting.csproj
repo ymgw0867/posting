@@ -134,6 +134,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChargeName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChargeName.designer.cs">
+      <DependentUpon>frmChargeName.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClientByOrderGrpRep.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -386,6 +392,9 @@
     <EmbeddedResource Include="Form1.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChargeName.resx">
+      <DependentUpon>frmChargeName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientByOrderGrpRep.resx">
       <DependentUpon>frmClientByOrderGrpRep.cs</DependentUpon>

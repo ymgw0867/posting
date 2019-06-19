@@ -74,6 +74,17 @@ namespace posting
 
             // 郵便番号CSV読み込み
             Utility.zipCsvLoad(ref zipArray);
+
+            // 請求先・敬称、部署名セットツールボタン表示 2019/04/02
+            DateTime dt = new DateTime(2019, 04, 30);
+            if (DateTime.Today > dt)
+            {
+                button2.Visible = false;
+            }
+            else
+            {
+                button2.Visible = true;
+            }
         }
 
         /// -----------------------------------------------------------------------------------
@@ -417,6 +428,8 @@ namespace posting
                         fMode.ID = r.ID;    // 得意先ID
 
                         txtName1.Focus();
+
+                        button2.Enabled = false;
                     }
                     else
                     {
@@ -501,6 +514,8 @@ namespace posting
 
                 //txtCode.Focus();
                 txtName1.Focus();
+
+                button2.Enabled = true; // 2019/04/02
             }
 
             catch (Exception ex)
@@ -1462,6 +1477,14 @@ namespace posting
             {
                 cmbKeishoS.SelectedIndex = cmbKeisho.SelectedIndex;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmChargeName frm = new frmChargeName();
+            frm.ShowDialog();
+
+            this.Close();
         }
     }
 }

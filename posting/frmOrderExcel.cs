@@ -382,7 +382,7 @@ namespace posting
         private void frmOrderExcel_Load(object sender, EventArgs e)
         {
             // フォーム最大サイズ
-            Utility.WindowsMaxSize(this, this.Width, this.Height);
+            //Utility.WindowsMaxSize(this, this.Width, this.Height);
 
             // フォーム最小サイズ 
             Utility.WindowsMinSize(this, this.Width, this.Height);

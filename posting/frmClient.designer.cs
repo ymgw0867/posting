@@ -87,9 +87,6 @@
             this.label26 = new System.Windows.Forms.Label();
             this.txtNameSeikyu = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.得意先BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.darwinDataSet = new posting.darwinDataSet();
-            this.得意先TableAdapter = new posting.darwinDataSetTableAdapters.得意先TableAdapter();
             this.label25 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -102,6 +99,10 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.cmbKeishoS = new System.Windows.Forms.ComboBox();
+            this.得意先BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.darwinDataSet = new posting.darwinDataSet();
+            this.得意先TableAdapter = new posting.darwinDataSetTableAdapters.得意先TableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.得意先BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.darwinDataSet)).BeginInit();
@@ -829,20 +830,6 @@
             this.label24.Text = "請求先名称";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // 得意先BindingSource
-            // 
-            this.得意先BindingSource.DataMember = "得意先";
-            this.得意先BindingSource.DataSource = this.darwinDataSet;
-            // 
-            // darwinDataSet
-            // 
-            this.darwinDataSet.DataSetName = "darwinDataSet";
-            this.darwinDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // 得意先TableAdapter
-            // 
-            this.得意先TableAdapter.ClearBeforeFill = true;
-            // 
             // label25
             // 
             this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -993,11 +980,39 @@
             this.cmbKeishoS.Size = new System.Drawing.Size(80, 23);
             this.cmbKeishoS.TabIndex = 23;
             // 
+            // 得意先BindingSource
+            // 
+            this.得意先BindingSource.DataMember = "得意先";
+            this.得意先BindingSource.DataSource = this.darwinDataSet;
+            // 
+            // darwinDataSet
+            // 
+            this.darwinDataSet.DataSetName = "darwinDataSet";
+            this.darwinDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // 得意先TableAdapter
+            // 
+            this.得意先TableAdapter.ClearBeforeFill = true;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button2.Location = new System.Drawing.Point(15, 620);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(244, 31);
+            this.button2.TabIndex = 91;
+            this.button2.Text = "請求先・部署名、敬称をセットする";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // frmClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 660);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.cmbKeishoS);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.txtBushoS);
@@ -1155,5 +1170,6 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.ComboBox cmbKeishoS;
+        internal System.Windows.Forms.Button button2;
     }
 }
