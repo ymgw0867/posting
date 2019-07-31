@@ -568,9 +568,9 @@ namespace posting
 
                 txtChirashi.Text = t.チラシ名;
 
+                txtUri.Text = t.金額.ToString("#,##0");  // 単価、枚数より先に表示 2019/07/30
                 txtTanka.Text = t.単価.ToString("#,##0.00");
                 txtMai.Text = t.枚数.ToString("#,##0");
-                txtUri.Text = t.金額.ToString("#,##0");
                 txtNebiki.Text = t.値引額.ToString("#,##0");
 
                 // 値引後金額
@@ -894,6 +894,10 @@ namespace posting
                 {
                     orderEditStatus = true;
                 }
+
+                // 確実な粗利金額：2019/07/30
+                txteGaichuArari.Text = (Utility.strToInt(txtUri.Text) - Utility.strToInt(txteGaichuGenka.Text)).ToString("#,##0");
+
             }
 
             return true;
