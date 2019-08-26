@@ -2394,10 +2394,10 @@ namespace posting
         {
             TextBox objtxt = new TextBox();
 
-            decimal Kingaku;
-            decimal KingakuTax;
-            decimal KingakuZeikomi;
-            decimal KingakuTL;
+            decimal Kingaku = 0;
+            decimal KingakuTax = 0;
+            decimal KingakuZeikomi = 0;
+            decimal KingakuTL = 0;
             DateTime dt = DateTime.Today;
             string str;
             double d;
@@ -2430,7 +2430,8 @@ namespace posting
                     }
                     
                     // “ú•tæ“¾
-                    DateTime.TryParse(jDate.Value.ToShortDateString(), out dt);
+                    //DateTime.TryParse(jDate.Value.ToShortDateString(), out dt);  // 2019/08/26 ƒRƒƒ“ƒg‰»
+                    DateTime.TryParse(dtSeikyu.Value.ToShortDateString(), out dt);  // ¿‹’÷“ú 2019/08/26
 
                     // ’P‰¿æ“¾
                     str = Utility.strToDouble(txtTanka.Text).ToString();
@@ -2453,8 +2454,11 @@ namespace posting
                     decimal nebikigoKin = Kingaku - dNebiki;
                     txtNebikigo.Text = nebikigoKin.ToString("#,##0");
 
-                    // ‹àŠzŒvZ
-                    UriageSum(dt, nebikigoKin, out KingakuTax, out KingakuZeikomi, out KingakuTL);
+                    if (dtSeikyu.Checked)
+                    {
+                        // ‹àŠzŒvZ
+                        UriageSum(dt, nebikigoKin, out KingakuTax, out KingakuZeikomi, out KingakuTL);
+                    }
 
                     // ”„ã‹àŠz
                     txtUri.Text = Kingaku.ToString("#,##0");
@@ -3014,7 +3018,7 @@ namespace posting
         /// <summary>
         ///     ”„ã‹àŠz‚ğŒvZ‚·‚é </summary>
         /// <param name="tempDate">
-        ///     ”„ã“ú•t</param>
+        ///     ”„ã“ú•ti¿‹’÷“ú‚Æ‚·‚é 2019/08/26j</param>
         /// <param name="nebikigo">
         ///     ’lˆøŒã‹àŠz </param>
         /// <param name="KingakuTax">
@@ -3869,6 +3873,47 @@ namespace posting
             decimal genka = Math.Floor(dHTanka * Utility.strToDecimal(txtMai.Text.Replace(",","")));
 
             return genka;
+        }
+
+        private void dtSeikyu_ValueChanged(object sender, EventArgs e)
+        {
+            //
+            //  Á”ïÅZ’èŠî€“ú‚ğ¿‹’÷“ú‚Æ‚µ‚½ˆ—
+            //      “ú•t‚Ì•ÏX‚É”º‚¢Á”ïÅŠzAÅ‚İ‹àŠz‚ğ©“®•ÏX‚·‚é
+            //      2019-08-26
+            //
+
+            DateTime dt;
+
+            if (dtSeikyu.Checked)
+            {
+                if (!DateTime.TryParse(dtSeikyu.Value.ToShortDateString(), out dt))
+                {
+                    return;
+                }
+
+                decimal nebikigoKin = Utility.strToDecimal(txtNebikigo.Text);
+                decimal KingakuTax = 0;
+                decimal KingakuZeikomi = 0;
+                decimal KingakuTL = 0;
+
+                // ‹àŠzŒvZ
+                UriageSum(dt, nebikigoKin, out KingakuTax, out KingakuZeikomi, out KingakuTL);
+
+                // Á”ïÅŠzŒvZ               
+                txtTax.Text = KingakuTax.ToString("#,##0");
+
+                // Å‹àŠz
+                txtZeikomi.Text = KingakuZeikomi.ToString("#,##0");
+            }
+            else
+            {
+                // Á”ïÅŠzŒvZ               
+                txtTax.Text = global.FLGOFF.ToString();
+
+                // Å‹àŠz
+                txtZeikomi.Text = Utility.strToDecimal(txtNebikigo.Text).ToString("#,##0");
+            }
         }
     }
 }

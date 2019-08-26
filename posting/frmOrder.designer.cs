@@ -1376,6 +1376,7 @@
             this.dtSeikyu.ShowCheckBox = true;
             this.dtSeikyu.Size = new System.Drawing.Size(135, 24);
             this.dtSeikyu.TabIndex = 15;
+            this.dtSeikyu.ValueChanged += new System.EventHandler(this.dtSeikyu_ValueChanged);
             // 
             // label10
             // 
