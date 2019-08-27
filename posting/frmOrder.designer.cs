@@ -718,10 +718,9 @@
             this.txtUri.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.txtUri.Location = new System.Drawing.Point(99, 395);
             this.txtUri.MaxLength = 50;
-            this.txtUri.Multiline = true;
             this.txtUri.Name = "txtUri";
             this.txtUri.ReadOnly = true;
-            this.txtUri.Size = new System.Drawing.Size(122, 25);
+            this.txtUri.Size = new System.Drawing.Size(122, 24);
             this.txtUri.TabIndex = 8;
             this.txtUri.TabStop = false;
             this.txtUri.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -733,10 +732,9 @@
             this.txtTax.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.txtTax.Location = new System.Drawing.Point(98, 474);
             this.txtTax.MaxLength = 50;
-            this.txtTax.Multiline = true;
             this.txtTax.Name = "txtTax";
             this.txtTax.ReadOnly = true;
-            this.txtTax.Size = new System.Drawing.Size(123, 25);
+            this.txtTax.Size = new System.Drawing.Size(123, 24);
             this.txtTax.TabIndex = 9;
             this.txtTax.TabStop = false;
             this.txtTax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -761,10 +759,9 @@
             this.txtZeikomi.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.txtZeikomi.Location = new System.Drawing.Point(98, 500);
             this.txtZeikomi.MaxLength = 50;
-            this.txtZeikomi.Multiline = true;
             this.txtZeikomi.Name = "txtZeikomi";
             this.txtZeikomi.ReadOnly = true;
-            this.txtZeikomi.Size = new System.Drawing.Size(123, 25);
+            this.txtZeikomi.Size = new System.Drawing.Size(123, 24);
             this.txtZeikomi.TabIndex = 10;
             this.txtZeikomi.TabStop = false;
             this.txtZeikomi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1220,10 +1217,9 @@
             this.txtNebikigo.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.txtNebikigo.Location = new System.Drawing.Point(98, 448);
             this.txtNebikigo.MaxLength = 50;
-            this.txtNebikigo.Multiline = true;
             this.txtNebikigo.Name = "txtNebikigo";
             this.txtNebikigo.ReadOnly = true;
-            this.txtNebikigo.Size = new System.Drawing.Size(123, 25);
+            this.txtNebikigo.Size = new System.Drawing.Size(123, 24);
             this.txtNebikigo.TabIndex = 12;
             this.txtNebikigo.TabStop = false;
             this.txtNebikigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1248,7 +1244,6 @@
             this.txtNebiki.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.txtNebiki.Location = new System.Drawing.Point(99, 422);
             this.txtNebiki.MaxLength = 50;
-            this.txtNebiki.Multiline = true;
             this.txtNebiki.Name = "txtNebiki";
             this.txtNebiki.Size = new System.Drawing.Size(122, 24);
             this.txtNebiki.TabIndex = 7;
