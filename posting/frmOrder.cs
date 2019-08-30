@@ -898,6 +898,8 @@ namespace posting
                 // 確実な粗利金額：2019/07/30
                 txteGaichuArari.Text = (Utility.strToInt(txtUri.Text) - Utility.strToInt(txteGaichuGenka.Text)).ToString("#,##0");
 
+                // 確実な消費税額、税込み価格計算：2019/08/30
+                TaxKingakuUpdate();
             }
 
             return true;
@@ -3883,6 +3885,18 @@ namespace posting
             //      2019-08-26
             //
 
+            TaxKingakuUpdate();
+        }
+            
+
+        ///----------------------------------------------------------------------
+        /// <summary>
+        ///     消費税算定基準日を請求締日とした処理
+        //      日付の変更に伴い消費税額、税込み金額を自動変更する
+        //      2019-08-26  </summary>
+        ///----------------------------------------------------------------------
+        private void TaxKingakuUpdate()
+        {
             DateTime dt;
 
             if (dtSeikyu.Checked)
