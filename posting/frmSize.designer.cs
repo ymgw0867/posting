@@ -35,14 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSize));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.名称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.卸単価1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.卸単価2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.卸単価3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.備考DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.登録年月日DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.変更年月日DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.判型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.darwinDataSet = new posting.darwinDataSet();
             this.btnCsv = new System.Windows.Forms.Button();
@@ -61,6 +53,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTanka2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.名称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.卸単価1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.卸単価2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.卸単価3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.備考DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.登録年月日DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.変更年月日DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.判型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.darwinDataSet)).BeginInit();
@@ -72,9 +72,9 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -95,75 +95,6 @@
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "コード";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 名称DataGridViewTextBoxColumn
-            // 
-            this.名称DataGridViewTextBoxColumn.DataPropertyName = "名称";
-            this.名称DataGridViewTextBoxColumn.HeaderText = "名称";
-            this.名称DataGridViewTextBoxColumn.Name = "名称DataGridViewTextBoxColumn";
-            this.名称DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 卸単価1DataGridViewTextBoxColumn
-            // 
-            this.卸単価1DataGridViewTextBoxColumn.DataPropertyName = "卸単価1";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N1";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.卸単価1DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.卸単価1DataGridViewTextBoxColumn.HeaderText = "卸単価1";
-            this.卸単価1DataGridViewTextBoxColumn.Name = "卸単価1DataGridViewTextBoxColumn";
-            this.卸単価1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 卸単価2DataGridViewTextBoxColumn
-            // 
-            this.卸単価2DataGridViewTextBoxColumn.DataPropertyName = "卸単価2";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N1";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.卸単価2DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.卸単価2DataGridViewTextBoxColumn.HeaderText = "卸単価2";
-            this.卸単価2DataGridViewTextBoxColumn.Name = "卸単価2DataGridViewTextBoxColumn";
-            this.卸単価2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 卸単価3DataGridViewTextBoxColumn
-            // 
-            this.卸単価3DataGridViewTextBoxColumn.DataPropertyName = "卸単価3";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N1";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.卸単価3DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.卸単価3DataGridViewTextBoxColumn.HeaderText = "卸単価3";
-            this.卸単価3DataGridViewTextBoxColumn.Name = "卸単価3DataGridViewTextBoxColumn";
-            this.卸単価3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 備考DataGridViewTextBoxColumn
-            // 
-            this.備考DataGridViewTextBoxColumn.DataPropertyName = "備考";
-            this.備考DataGridViewTextBoxColumn.HeaderText = "備考";
-            this.備考DataGridViewTextBoxColumn.Name = "備考DataGridViewTextBoxColumn";
-            this.備考DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 登録年月日DataGridViewTextBoxColumn
-            // 
-            this.登録年月日DataGridViewTextBoxColumn.DataPropertyName = "登録年月日";
-            this.登録年月日DataGridViewTextBoxColumn.HeaderText = "登録年月日";
-            this.登録年月日DataGridViewTextBoxColumn.Name = "登録年月日DataGridViewTextBoxColumn";
-            this.登録年月日DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 変更年月日DataGridViewTextBoxColumn
-            // 
-            this.変更年月日DataGridViewTextBoxColumn.DataPropertyName = "変更年月日";
-            this.変更年月日DataGridViewTextBoxColumn.HeaderText = "変更年月日";
-            this.変更年月日DataGridViewTextBoxColumn.Name = "変更年月日DataGridViewTextBoxColumn";
-            this.変更年月日DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 判型BindingSource
             // 
@@ -251,8 +182,8 @@
             this.txtTanka3.Size = new System.Drawing.Size(63, 22);
             this.txtTanka3.TabIndex = 3;
             this.txtTanka3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtTanka3.Leave += new System.EventHandler(this.txtLeave);
             this.txtTanka3.Enter += new System.EventHandler(this.txtEnter);
+            this.txtTanka3.Leave += new System.EventHandler(this.txtLeave);
             // 
             // label2
             // 
@@ -277,8 +208,8 @@
             this.txtMemo.Name = "txtMemo";
             this.txtMemo.Size = new System.Drawing.Size(575, 22);
             this.txtMemo.TabIndex = 4;
-            this.txtMemo.Leave += new System.EventHandler(this.txtLeave);
             this.txtMemo.Enter += new System.EventHandler(this.txtEnter);
+            this.txtMemo.Leave += new System.EventHandler(this.txtLeave);
             // 
             // label4
             // 
@@ -307,8 +238,8 @@
             this.txtName1.Name = "txtName1";
             this.txtName1.Size = new System.Drawing.Size(575, 22);
             this.txtName1.TabIndex = 0;
-            this.txtName1.Leave += new System.EventHandler(this.txtLeave);
             this.txtName1.Enter += new System.EventHandler(this.txtEnter);
+            this.txtName1.Leave += new System.EventHandler(this.txtLeave);
             // 
             // label1
             // 
@@ -334,8 +265,8 @@
             this.txtTanka1.Size = new System.Drawing.Size(63, 22);
             this.txtTanka1.TabIndex = 1;
             this.txtTanka1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtTanka1.Leave += new System.EventHandler(this.txtLeave);
             this.txtTanka1.Enter += new System.EventHandler(this.txtEnter);
+            this.txtTanka1.Leave += new System.EventHandler(this.txtLeave);
             // 
             // label3
             // 
@@ -361,8 +292,8 @@
             this.txtTanka2.Size = new System.Drawing.Size(63, 22);
             this.txtTanka2.TabIndex = 2;
             this.txtTanka2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtTanka2.Leave += new System.EventHandler(this.txtLeave);
             this.txtTanka2.Enter += new System.EventHandler(this.txtEnter);
+            this.txtTanka2.Leave += new System.EventHandler(this.txtLeave);
             // 
             // label5
             // 
@@ -376,6 +307,75 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "卸単価２";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "コード";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 名称DataGridViewTextBoxColumn
+            // 
+            this.名称DataGridViewTextBoxColumn.DataPropertyName = "名称";
+            this.名称DataGridViewTextBoxColumn.HeaderText = "名称";
+            this.名称DataGridViewTextBoxColumn.Name = "名称DataGridViewTextBoxColumn";
+            this.名称DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 卸単価1DataGridViewTextBoxColumn
+            // 
+            this.卸単価1DataGridViewTextBoxColumn.DataPropertyName = "卸単価1";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.卸単価1DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.卸単価1DataGridViewTextBoxColumn.HeaderText = "卸単価1";
+            this.卸単価1DataGridViewTextBoxColumn.Name = "卸単価1DataGridViewTextBoxColumn";
+            this.卸単価1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 卸単価2DataGridViewTextBoxColumn
+            // 
+            this.卸単価2DataGridViewTextBoxColumn.DataPropertyName = "卸単価2";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.卸単価2DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.卸単価2DataGridViewTextBoxColumn.HeaderText = "卸単価2";
+            this.卸単価2DataGridViewTextBoxColumn.Name = "卸単価2DataGridViewTextBoxColumn";
+            this.卸単価2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 卸単価3DataGridViewTextBoxColumn
+            // 
+            this.卸単価3DataGridViewTextBoxColumn.DataPropertyName = "卸単価3";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.卸単価3DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.卸単価3DataGridViewTextBoxColumn.HeaderText = "卸単価3";
+            this.卸単価3DataGridViewTextBoxColumn.Name = "卸単価3DataGridViewTextBoxColumn";
+            this.卸単価3DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 備考DataGridViewTextBoxColumn
+            // 
+            this.備考DataGridViewTextBoxColumn.DataPropertyName = "備考";
+            this.備考DataGridViewTextBoxColumn.HeaderText = "備考";
+            this.備考DataGridViewTextBoxColumn.Name = "備考DataGridViewTextBoxColumn";
+            this.備考DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 登録年月日DataGridViewTextBoxColumn
+            // 
+            this.登録年月日DataGridViewTextBoxColumn.DataPropertyName = "登録年月日";
+            this.登録年月日DataGridViewTextBoxColumn.HeaderText = "登録年月日";
+            this.登録年月日DataGridViewTextBoxColumn.Name = "登録年月日DataGridViewTextBoxColumn";
+            this.登録年月日DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 変更年月日DataGridViewTextBoxColumn
+            // 
+            this.変更年月日DataGridViewTextBoxColumn.DataPropertyName = "変更年月日";
+            this.変更年月日DataGridViewTextBoxColumn.HeaderText = "変更年月日";
+            this.変更年月日DataGridViewTextBoxColumn.Name = "変更年月日DataGridViewTextBoxColumn";
+            this.変更年月日DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frmSize
             // 

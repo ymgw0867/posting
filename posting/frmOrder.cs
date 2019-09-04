@@ -898,8 +898,12 @@ namespace posting
                 // 確実な粗利金額：2019/07/30
                 txteGaichuArari.Text = (Utility.strToInt(txtUri.Text) - Utility.strToInt(txteGaichuGenka.Text)).ToString("#,##0");
 
-                // 確実な消費税額、税込み価格計算：2019/08/30
-                TaxKingakuUpdate();
+                //// 確実な消費税額、税込み価格計算：2019/08/30
+                //TaxKingakuUpdate();
+
+                // 消費税額、税込み価格：表示時は登録されている内容をそのまま表示する 2019/09/03
+                txtTax.Text = t.消費税.ToString("#,##0");
+                txtZeikomi.Text = t.税込金額.ToString("#,##0");
             }
 
             return true;
@@ -3412,7 +3416,7 @@ namespace posting
                 Utility.ComboSize Cmbs = new Utility.ComboSize();
                 Cmbs = (Utility.ComboSize)cmbSize.SelectedItem;
 
-                txtHTanka.Text = Cmbs.Tanka.ToString("#,##0.0");
+                txtHTanka.Text = Cmbs.Tanka.ToString("#,##0.00");
             }
         }
 

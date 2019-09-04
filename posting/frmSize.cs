@@ -234,9 +234,9 @@ namespace posting
                     //'データ値を取得
                     //txtCode.Text = cMaster.ID.ToString();
                     txtName1.Text = cMaster.名称;
-                    txtTanka1.Text = cMaster.卸単価1.ToString("##0.0");
-                    txtTanka2.Text = cMaster.卸単価2.ToString("##0.0");
-                    txtTanka3.Text = cMaster.卸単価3.ToString("##0.0");
+                    txtTanka1.Text = cMaster.卸単価1.ToString("##0.00");
+                    txtTanka2.Text = cMaster.卸単価2.ToString("##0.00");
+                    txtTanka3.Text = cMaster.卸単価3.ToString("##0.00");
                     txtMemo.Text = cMaster.備考;
 
                     //IDテキストボックスは編集不可とする
@@ -710,6 +710,5 @@ namespace posting
         {
 
         }
-
     }
 }
