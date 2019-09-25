@@ -2193,7 +2193,7 @@ namespace posting
                         dataGridView2[4, e.RowIndex].Value = dR["町名"].ToString();
                         dataGridView2[5, e.RowIndex].Value = dR["枝番記入"].ToString();
                         dataGridView2[6, e.RowIndex].Value = dR["町名ID"].ToString();
-                        dataGridView2[7, e.RowIndex].Value = Double.Parse(dR["配布単価"].ToString(),System.Globalization.NumberStyles.Any);
+                        dataGridView2[7, e.RowIndex].Value = Double.Parse(dR["配布単価"].ToString(),System.Globalization.NumberStyles.Any).ToString("#,##0.00");
                         dataGridView2[8, e.RowIndex].Value = int.Parse(dR["予定枚数"].ToString());
                         dataGridView2[10, e.RowIndex].Value = int.Parse(dR["実配布枚数"].ToString());
                         dataGridView2[12, e.RowIndex].Value = int.Parse(dR["完了区分"].ToString());    // 2015/07/15

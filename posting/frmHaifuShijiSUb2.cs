@@ -222,7 +222,7 @@ namespace posting
             lblfJyouken.Text = _fJyouken;
             lblfKeitai.Text = _fKeitai;
             lblAdd.Text = _Add;
-            txtTanka.Text = _Tanka.ToString("#,##0.0");
+            txtTanka.Text = _Tanka.ToString("#,##0.00");
             lblyMaisu.Text = _yMaisu.ToString("#,##0");
             txthMaisu.Text = _hMaisu.ToString("#,##0");
             

@@ -27,7 +27,6 @@ namespace posting
 
         private void form_Load(object sender, EventArgs e)
         {
-
             //ウィンドウズ最小サイズ
             Utility.WindowsMinSize(this, this.Size.Width, this.Size.Height);
 
@@ -421,7 +420,7 @@ namespace posting
                     txtID.Text = dr["ID"].ToString();
                     txtCName.Text = "";
                     label8.Text = int.Parse(dr["枚数"].ToString()).ToString("#,##0");
-                    label11.Text = double.Parse(dr["配布単価"].ToString(),System.Globalization.NumberStyles.Any).ToString("#,##0.0");
+                    label11.Text = double.Parse(dr["配布単価"].ToString(),System.Globalization.NumberStyles.Any).ToString("#,##0.00");
 
                     //得意先名
                     OleDbDataReader drt;

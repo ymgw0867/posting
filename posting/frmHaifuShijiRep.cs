@@ -256,7 +256,7 @@ namespace posting
                     tempDGV[5, iX].Value = dR["チラシ名"].ToString();
                     tempDGV[6, iX].Value = int.Parse(dR["町名コード"].ToString(), System.Globalization.NumberStyles.Any);
                     tempDGV[7, iX].Value = dR["町名名称"].ToString();
-                    tempDGV[8, iX].Value = double.Parse(dR["配布単価"].ToString(), System.Globalization.NumberStyles.Any);
+                    tempDGV[8, iX].Value = double.Parse(dR["配布単価"].ToString(), System.Globalization.NumberStyles.Any).ToString("#,##0.00");
                     tempDGV[9, iX].Value = int.Parse(dR["予定枚数"].ToString(), System.Globalization.NumberStyles.Any);
                     tempDGV[10, iX].Value = int.Parse(dR["実配布枚数"].ToString(), System.Globalization.NumberStyles.Any);
                     tempDGV[11, iX].Value = int.Parse(dR["交通費"].ToString(), System.Globalization.NumberStyles.Any);

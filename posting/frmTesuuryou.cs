@@ -476,7 +476,7 @@ namespace posting
                             tempDGV[4, iX].Value = DateTime.Parse(dR["配布日"].ToString()).ToShortDateString();
                             tempDGV[5, iX].Value = dR["チラシ名"].ToString();
                             tempDGV[6, iX].Value = dR["名称"].ToString() + "";
-                            tempDGV[7, iX].Value = double.Parse(dR["単価"].ToString());
+                            tempDGV[7, iX].Value = double.Parse(dR["単価"].ToString()).ToString("#,##0.00");
                             tempDGV[8, iX].Value = int.Parse(dR["実配布枚数"].ToString());
                             tempDGV[9, iX].Value = System.Math.Floor(double.Parse(dR["金額"].ToString()) + 0.5);
 
