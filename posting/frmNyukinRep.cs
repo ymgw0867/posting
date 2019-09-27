@@ -1007,11 +1007,13 @@ namespace posting
                         wrkOutputData += Entity.OutPutHeader.ks02 + ",";
                         wrkOutputData += Entity.OutPutHeader.ks06 + ",";
                         wrkOutputData += Entity.OutPutHeader.kr01 + ",";
+                        wrkOutputData += Entity.OutPutHeader.kr03 + ",";    // CSJS202（補助科目コード）の追加・・・固定値（0）2019/09/27
 
                         wrkOutputData += Entity.OutPutHeader.kr55 + ",";
                         wrkOutputData += Entity.OutPutHeader.ks52 + ",";
-                        wrkOutputData += Entity.OutPutHeader.ks53 + ",";
+                        //wrkOutputData += Entity.OutPutHeader.ks53 + ",";  // 2019/09/27 コメント化
                         wrkOutputData += Entity.OutPutHeader.ks54 + ",";
+                        wrkOutputData += Entity.OutPutHeader.ks56 + ",";    // CSJS322（税率種別）の追加・・・固定値（0：標準）2019/09/27
 
                         wrkOutputData += Entity.OutPutHeader.ks55 + ",";
                         wrkOutputData += Entity.OutPutHeader.ks04 + ",";
@@ -1038,10 +1040,21 @@ namespace posting
                     wrkOutputData += "501,";        // 貸方勘定科目コード
                     wrkOutputData += Utility.strToInt(g[5, i].Value.ToString()) + ",";    // 貸方本体金額
                     wrkOutputData += "20,";         // 借方部門コード
+                    wrkOutputData += "0,";          // CSJS202（補助科目コード）の追加・・・固定値（0）2019/09/27
                     wrkOutputData += (Utility.strToInt(g[0, i].Value.ToString()) + 990000000) + ",";      // 取引先コード
                     wrkOutputData += ",";       // 貸方補助科目コード
-                    wrkOutputData += "3,";      // 貸方税率区分コード
-                    wrkOutputData += "8,";      // 貸方税率
+                    //wrkOutputData += "3,";    // 貸方税率区分コード  2019/09/27 コメント化                   
+
+                    // 消費税率基準日 : 2019/09/27
+                    DateTime ddt = DateTime.Parse(DateTime.Today.ToShortDateString());
+                    DateTime.TryParse(g[4, i].Value.ToString(), out ddt);
+
+                    //税率取得 : 2019/09/27
+                    wrkOutputData += Utility.GetTaxRT(ddt) + ",";   // 貸方税率
+
+                    //wrkOutputData += "8,";   // 貸方税率 2019/09/27 コメント化
+
+                    wrkOutputData += "0,";      // 税率種別　2019/02/27
                     wrkOutputData += "2,";      // 貸方消費税計算
                     wrkOutputData += "2,";      // 貸方端数処理
                     wrkOutputData += g[2, i].Value.ToString().Replace(",","") + ",";        // 摘要

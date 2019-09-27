@@ -894,6 +894,7 @@ namespace posting
 
                         wrkOutputData += Entity.OutPutHeader.ks01 + ",";
                         wrkOutputData += Entity.OutPutHeader.ks02 + ",";
+                        wrkOutputData += Entity.OutPutHeader.ks52 + ",";    // 貸方補助科目コード・・・固定値（0） 2019/09/27
                         wrkOutputData += Entity.OutPutHeader.ks03 + ",";
                         wrkOutputData += Entity.OutPutHeader.ks04 + ",";
                         wrkOutputData += Entity.OutPutHeader.ks05 + ",";
@@ -927,6 +928,7 @@ namespace posting
                     wrkOutputData += Utility.strToInt(g[colNyukin, i].Value.ToString()) + ",";    // 借方本体金額
                     wrkOutputData += "20,";     // 貸方部門コード
                     wrkOutputData += "135,";    // 貸方勘定科目コード
+                    wrkOutputData += "0,";      // 貸方補助科目コード    2019/09/27
                     wrkOutputData += "4,";      // 貸方事業区分コード
                     wrkOutputData += "2,";      // 貸方端数処理
                     wrkOutputData += (Utility.strToInt(g[colClientID, i].Value.ToString()) + 990000000) + ",";      // 取引先コード

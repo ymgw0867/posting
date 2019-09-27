@@ -2312,7 +2312,7 @@ namespace posting
 
             public const string ks01 = @"""CSJS300""";  // 貸方部門コード
             public const string ks02 = @"""CSJS301""";  // 貸方勘定科目コード
-            public const string ks52 = @"""CSJS302""";  // 貸方補助科目コード
+            public const string ks52 = @"""CSJS302""";  // 貸方補助科目コード・・・固定値（0） 2019/09/27
             public const string ks53 = @"""CSJS304""";  // 貸方税率区分コード
             public const string ks03 = @"""CSJS305""";  // 貸方事業区分コード
             public const string ks55 = @"""CSJS306""";  // 貸方消費税計算
@@ -2320,8 +2320,10 @@ namespace posting
             public const string ks05 = @"""CSJS308""";  // 貸方取引先コード
             public const string ks06 = @"""CSJS313""";  // 貸方本体金額
             public const string ks54 = @"""CSJS320""";  // 貸方税率
+            public const string ks56 = @"""CSJS322""";  // 税率種別 ・・・固定値（0：標準） 2019/09/27
 
             public const string tk01 = @"""CSJS100""";  // 摘要
+            
         }
 
 
