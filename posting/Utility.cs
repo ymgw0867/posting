@@ -467,6 +467,43 @@ namespace posting
                     MessageBox.Show(ex.Message, "ログインタイプヘッダ コンボボックスロード");
                 }
             }
+
+
+            ///-------------------------------------------------------------
+            /// <summary>
+            ///     ログインタイプヘッダコンボボックスitemロード </summary>
+            /// <param name="cmbObj">
+            ///     コンボボックスオブジェクト</param>
+            ///-------------------------------------------------------------
+            public static void itemLoad(CheckedListBox lstObj)
+            {
+                try
+                {
+                    darwinDataSet dts = new darwinDataSet();
+                    darwinDataSetTableAdapters.ログインタイプヘッダTableAdapter adp = new darwinDataSetTableAdapters.ログインタイプヘッダTableAdapter();
+                    adp.Fill(dts.ログインタイプヘッダ);
+
+                    comboLogintype[] sList = null;
+                    int iX = 0;
+
+                    foreach (var t in dts.ログインタイプヘッダ)
+                    {
+                        Array.Resize(ref sList, iX + 1);
+                        sList[iX] = new comboLogintype();
+                        sList[iX].ID = t.Id;
+                        sList[iX].Name = t.名称;
+                        iX++;
+                    }
+
+                    lstObj.DataSource = sList;
+                    lstObj.DisplayMember = "Name";
+                    lstObj.ValueMember = "ID";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "ログインタイプヘッダ コンボボックスロード");
+                }
+            }
         }
 
         ///------------------------------------------------------------

@@ -245,26 +245,53 @@ namespace posting
 
             Control.FreeSql fSql = new Control.FreeSql();
 
-            // 会社情報テーブルに「受注確定書入力シートパス」フィールドを追加する : 2019/03/06
+            // 受注テーブルに「編集ロック」フィールドを追加する : 2019/10/03
             sqlString = "";
-            sqlString += "ALTER TABLE 会社情報 add 受注確定書入力シートパス nvarchar(255) default '' NOT NULL";
+            sqlString += "ALTER TABLE 受注 add 編集ロック int default 0 NOT NULL";
             fSql.Execute(sqlString);
 
-            // 受注テーブルに「営業備考」フィールドを追加する : 2019/03/01
+            // 受注テーブルに「注文書受領済み」フィールドを追加する : 2019/10/03
             sqlString = "";
-            sqlString += "ALTER TABLE 受注 add 営業備考 nvarchar(255) default '' NOT NULL";
+            sqlString += "ALTER TABLE 受注 add 注文書受領済み int default 0 NOT NULL";
             fSql.Execute(sqlString);
 
-            // 得意先テーブルに「請求先・部署名」「請求先・敬称」フィールドを追加する : 2019/02/19
+            // ログインタイプヘッダテーブルに「受注個別ロック権限」フィールドを追加する : 2019/10/03
             sqlString = "";
-            sqlString += "ALTER TABLE 得意先 add 請求先部署名 nvarchar(50) default '' NOT NULL";
+            sqlString += "ALTER TABLE ログインタイプヘッダ add 受注個別ロック権限 int default 0 NOT NULL";
             fSql.Execute(sqlString);
 
+            // ログインタイプヘッダテーブルに「受注個別制限」フィールドを追加する : 2019/10/03
             sqlString = "";
-            sqlString += "ALTER TABLE 得意先 add 請求先敬称 nvarchar(5) default '' NOT NULL";
+            sqlString += "ALTER TABLE ログインタイプヘッダ add 受注個別制限 int default 0 NOT NULL";
+            fSql.Execute(sqlString);
+
+            // ログインタイプヘッダテーブルに「注文書受領済み権限」フィールドを追加する : 2019/10/03
+            sqlString = "";
+            sqlString += "ALTER TABLE ログインタイプヘッダ add 注文書受領済み権限 int default 0 NOT NULL";
             fSql.Execute(sqlString);
 
             fSql.Close();
+
+            //// 会社情報テーブルに「受注確定書入力シートパス」フィールドを追加する : 2019/03/06
+            //sqlString = "";
+            //sqlString += "ALTER TABLE 会社情報 add 受注確定書入力シートパス nvarchar(255) default '' NOT NULL";
+            //fSql.Execute(sqlString);
+
+            //// 受注テーブルに「営業備考」フィールドを追加する : 2019/03/01
+            //sqlString = "";
+            //sqlString += "ALTER TABLE 受注 add 営業備考 nvarchar(255) default '' NOT NULL";
+            //fSql.Execute(sqlString);
+
+            //// 得意先テーブルに「請求先・部署名」「請求先・敬称」フィールドを追加する : 2019/02/19
+            //sqlString = "";
+            //sqlString += "ALTER TABLE 得意先 add 請求先部署名 nvarchar(50) default '' NOT NULL";
+            //fSql.Execute(sqlString);
+
+            //sqlString = "";
+            //sqlString += "ALTER TABLE 得意先 add 請求先敬称 nvarchar(5) default '' NOT NULL";
+            //fSql.Execute(sqlString);
+
+            //fSql.Close();
             
 
             // 以下、コメント化 2019/02/19
@@ -758,6 +785,14 @@ namespace posting
         {
             this.Hide();
             frmNouhinRep frm = new frmNouhinRep();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void button35_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmEditLock frm = new frmEditLock();
             frm.ShowDialog();
             this.Show();
         }

@@ -35,6 +35,7 @@
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button34 = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
@@ -76,7 +77,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.button34 = new System.Windows.Forms.Button();
+            this.button35 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -155,6 +156,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(218, 490);
             this.panel1.TabIndex = 1;
+            // 
+            // button34
+            // 
+            this.button34.Font = new System.Drawing.Font("メイリオ", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button34.Location = new System.Drawing.Point(18, 339);
+            this.button34.Margin = new System.Windows.Forms.Padding(4);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(179, 44);
+            this.button34.TabIndex = 6;
+            this.button34.Tag = "49";
+            this.button34.Text = "納品書発行";
+            this.toolTip1.SetToolTip(this.button34, "営業担当者別受注一覧を画面表示・印刷します");
+            this.button34.UseVisualStyleBackColor = true;
+            this.button34.Click += new System.EventHandler(this.button34_Click);
             // 
             // button33
             // 
@@ -695,19 +710,15 @@
             this.lblLogin.Text = "ログイン中ユーザー：不明";
             this.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button34
+            // button35
             // 
-            this.button34.Font = new System.Drawing.Font("メイリオ", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button34.Location = new System.Drawing.Point(18, 339);
-            this.button34.Margin = new System.Windows.Forms.Padding(4);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(179, 44);
-            this.button34.TabIndex = 6;
-            this.button34.Tag = "49";
-            this.button34.Text = "納品書発行";
-            this.toolTip1.SetToolTip(this.button34, "営業担当者別受注一覧を画面表示・印刷します");
-            this.button34.UseVisualStyleBackColor = true;
-            this.button34.Click += new System.EventHandler(this.button34_Click);
+            this.button35.Location = new System.Drawing.Point(524, 555);
+            this.button35.Name = "button35";
+            this.button35.Size = new System.Drawing.Size(67, 36);
+            this.button35.TabIndex = 31;
+            this.button35.Text = "button35";
+            this.button35.UseVisualStyleBackColor = true;
+            this.button35.Click += new System.EventHandler(this.button35_Click);
             // 
             // Form1
             // 
@@ -715,6 +726,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(897, 604);
+            this.Controls.Add(this.button35);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.label5);
@@ -800,6 +812,7 @@
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button button33;
         private System.Windows.Forms.Button button34;
+        private System.Windows.Forms.Button button35;
     }
 }
 
