@@ -41,7 +41,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(507, 391);
+            this.button1.Location = new System.Drawing.Point(507, 383);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 35);
             this.button1.TabIndex = 7;
@@ -51,7 +51,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(604, 391);
+            this.button3.Location = new System.Drawing.Point(604, 383);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(91, 35);
             this.button3.TabIndex = 10;
@@ -64,7 +64,7 @@
             this.checkedListBox1.CheckOnClick = true;
             this.checkedListBox1.Font = new System.Drawing.Font("Meiryo UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(19, 42);
+            this.checkedListBox1.Location = new System.Drawing.Point(19, 34);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(319, 172);
             this.checkedListBox1.TabIndex = 28;
@@ -74,7 +74,7 @@
             this.checkedListBox2.CheckOnClick = true;
             this.checkedListBox2.Font = new System.Drawing.Font("Meiryo UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(360, 42);
+            this.checkedListBox2.Location = new System.Drawing.Point(360, 34);
             this.checkedListBox2.Name = "checkedListBox2";
             this.checkedListBox2.Size = new System.Drawing.Size(335, 172);
             this.checkedListBox2.TabIndex = 29;
@@ -83,7 +83,7 @@
             // 
             this.checkedListBox3.Font = new System.Drawing.Font("Meiryo UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.checkedListBox3.FormattingEnabled = true;
-            this.checkedListBox3.Location = new System.Drawing.Point(19, 254);
+            this.checkedListBox3.Location = new System.Drawing.Point(19, 246);
             this.checkedListBox3.Name = "checkedListBox3";
             this.checkedListBox3.Size = new System.Drawing.Size(319, 172);
             this.checkedListBox3.TabIndex = 30;
@@ -92,7 +92,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Meiryo UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(19, 233);
+            this.label4.Location = new System.Drawing.Point(19, 225);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(303, 18);
             this.label4.TabIndex = 31;
@@ -102,7 +102,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Meiryo UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(19, 21);
+            this.label5.Location = new System.Drawing.Point(19, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(296, 18);
             this.label5.TabIndex = 32;
@@ -112,7 +112,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Meiryo UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(360, 21);
+            this.label6.Location = new System.Drawing.Point(360, 13);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(289, 18);
             this.label6.TabIndex = 33;
@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 442);
+            this.ClientSize = new System.Drawing.Size(714, 428);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);

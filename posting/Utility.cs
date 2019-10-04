@@ -431,6 +431,9 @@ namespace posting
         {
             public int ID { get; set; }
             public string Name { get; set; }
+            public int Lock { get; set; }
+            public int seigen { get; set; }
+            public int Jyuryo { get; set; }
 
             ///-------------------------------------------------------------
             /// <summary>
@@ -455,6 +458,7 @@ namespace posting
                         sList[iX] = new comboLogintype();
                         sList[iX].ID = t.Id;
                         sList[iX].Name = t.名称;
+
                         iX++;
                     }
 
@@ -492,16 +496,21 @@ namespace posting
                         sList[iX] = new comboLogintype();
                         sList[iX].ID = t.Id;
                         sList[iX].Name = t.名称;
+                        sList[iX].Lock = t.受注個別ロック権限;
+                        sList[iX].seigen = t.受注個別制限;
+                        sList[iX].Jyuryo = t.注文書受領済み権限;
+
                         iX++;
                     }
 
                     lstObj.DataSource = sList;
                     lstObj.DisplayMember = "Name";
                     lstObj.ValueMember = "ID";
+                    
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "ログインタイプヘッダ コンボボックスロード");
+                    MessageBox.Show(ex.Message, "ログインタイプヘッダ チェックリストボックスロード");
                 }
             }
         }

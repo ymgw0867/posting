@@ -242,6 +242,8 @@
             this.受注TableAdapter = new posting.darwinDataSetTableAdapters.受注TableAdapter();
             this.label79 = new System.Windows.Forms.Label();
             this.txtSalesMemo = new System.Windows.Forms.TextBox();
+            this.chkJyuryo = new System.Windows.Forms.CheckBox();
+            this.chkLock = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.受注BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.darwinDataSet)).BeginInit();
@@ -1672,7 +1674,7 @@
             this.groupBox3.Controls.Add(this.rBtnOrderNum1);
             this.groupBox3.Location = new System.Drawing.Point(12, 608);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(398, 47);
+            this.groupBox3.Size = new System.Drawing.Size(419, 47);
             this.groupBox3.TabIndex = 32;
             this.groupBox3.TabStop = false;
             // 
@@ -1680,9 +1682,9 @@
             // 
             this.lblOrderNum.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblOrderNum.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblOrderNum.Location = new System.Drawing.Point(291, 16);
+            this.lblOrderNum.Location = new System.Drawing.Point(299, 16);
             this.lblOrderNum.Name = "lblOrderNum";
-            this.lblOrderNum.Size = new System.Drawing.Size(97, 25);
+            this.lblOrderNum.Size = new System.Drawing.Size(107, 25);
             this.lblOrderNum.TabIndex = 166;
             this.lblOrderNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1703,7 +1705,7 @@
             // btnOrderNum
             // 
             this.btnOrderNum.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnOrderNum.Location = new System.Drawing.Point(241, 15);
+            this.btnOrderNum.Location = new System.Drawing.Point(249, 15);
             this.btnOrderNum.Name = "btnOrderNum";
             this.btnOrderNum.Size = new System.Drawing.Size(50, 26);
             this.btnOrderNum.TabIndex = 165;
@@ -2771,7 +2773,7 @@
             this.lnkCopy.AutoSize = true;
             this.lnkCopy.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lnkCopy.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.lnkCopy.Location = new System.Drawing.Point(11, 658);
+            this.lnkCopy.Location = new System.Drawing.Point(13, 660);
             this.lnkCopy.Name = "lnkCopy";
             this.lnkCopy.Size = new System.Drawing.Size(153, 13);
             this.lnkCopy.TabIndex = 176;
@@ -2881,11 +2883,37 @@
             this.txtSalesMemo.Size = new System.Drawing.Size(436, 59);
             this.txtSalesMemo.TabIndex = 185;
             // 
+            // chkJyuryo
+            // 
+            this.chkJyuryo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkJyuryo.AutoSize = true;
+            this.chkJyuryo.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.chkJyuryo.Location = new System.Drawing.Point(320, 656);
+            this.chkJyuryo.Name = "chkJyuryo";
+            this.chkJyuryo.Size = new System.Drawing.Size(117, 21);
+            this.chkJyuryo.TabIndex = 186;
+            this.chkJyuryo.Text = "注文書受領済み";
+            this.chkJyuryo.UseVisualStyleBackColor = true;
+            // 
+            // chkLock
+            // 
+            this.chkLock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkLock.AutoSize = true;
+            this.chkLock.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.chkLock.Location = new System.Drawing.Point(200, 656);
+            this.chkLock.Name = "chkLock";
+            this.chkLock.Size = new System.Drawing.Size(79, 21);
+            this.chkLock.TabIndex = 187;
+            this.chkLock.Text = "編集ロック";
+            this.chkLock.UseVisualStyleBackColor = true;
+            // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 683);
+            this.Controls.Add(this.chkLock);
+            this.Controls.Add(this.chkJyuryo);
             this.Controls.Add(this.txtSalesMemo);
             this.Controls.Add(this.label79);
             this.Controls.Add(this.sDt);
@@ -3227,5 +3255,7 @@
         private System.Windows.Forms.TextBox txtaUri;
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.TextBox txtSalesMemo;
+        private System.Windows.Forms.CheckBox chkJyuryo;
+        private System.Windows.Forms.CheckBox chkLock;
     }
 }

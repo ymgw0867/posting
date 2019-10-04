@@ -4,6 +4,10 @@
 
     public partial class darwinDataSet
     {
+        partial class ログインタイプヘッダDataTable
+        {
+        }
+
         partial class 受注1DataTable
         {
         }
@@ -25,9 +29,12 @@
         }
     }
 }
-namespace posting.darwinDataSetTableAdapters {
-    
-    
+namespace posting.darwinDataSetTableAdapters
+{
+    partial class ログインタイプヘッダTableAdapter
+    {
+    }
+
     public partial class 受注TableAdapter {
     }
 }

@@ -52,20 +52,53 @@ namespace posting
 
             // ログインタイプヘッダコンボボックスアイテムロード
             Utility.comboLogintype.itemLoad(checkedListBox1);
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            {
+                Utility.comboLogintype ss = (Utility.comboLogintype)checkedListBox1.Items[i];
+                if (ss.Lock == global.FLGON || ss.ID == global.adminID)
+                {
+                    checkedListBox1.SetItemChecked(i, true);
+                }
+                else
+                {
+                    checkedListBox1.SetItemChecked(i, false);
+                }
+            }
+
+            // ログインタイプヘッダコンボボックスアイテムロード
             Utility.comboLogintype.itemLoad(checkedListBox2);
+            for (int i = 0; i < checkedListBox2.Items.Count; i++)
+            {
+                Utility.comboLogintype ss = (Utility.comboLogintype)checkedListBox2.Items[i];
+                if (ss.seigen == global.FLGON)
+                {
+                    checkedListBox2.SetItemChecked(i, true);
+                }
+                else
+                {
+                    checkedListBox2.SetItemChecked(i, false);
+                }
+            }
+
+            // ログインタイプヘッダコンボボックスアイテムロード
             Utility.comboLogintype.itemLoad(checkedListBox3);
+            for (int i = 0; i < checkedListBox3.Items.Count; i++)
+            {
+                Utility.comboLogintype ss = (Utility.comboLogintype)checkedListBox3.Items[i];
+                if (ss.Jyuryo == global.FLGON || ss.ID == global.adminID)
+                {
+                    checkedListBox3.SetItemCheckState(i, CheckState.Checked);
+                }
+                else
+                {
+                    checkedListBox3.SetItemCheckState(i, CheckState.Unchecked);
+                }
+            }
 
             checkedListBox1.SelectedIndex = -1;
-
-            //// データグリッドビューの定義
-            //gridSetting(dataGridView1);
-
-            //// データグリッドビューデータ表示
-            //gridShow(dataGridView1);
-
-            // 受注データ保守コンボ
-            //cmbOrderSet();
-
+            checkedListBox2.SelectedIndex = -1;
+            checkedListBox3.SelectedIndex = -1;
+            
             // 画面初期化
             dispClear();
         }
@@ -91,21 +124,11 @@ namespace posting
         private void button1_Click(object sender, EventArgs e)
         {
             // 確認メッセージ
-            if (fMode.Mode == 0)
+            if (MessageBox.Show("データを登録します。よろしいですか？", "確認", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
             {
-                if (MessageBox.Show("データを新規登録します。よろしいですか？","確認",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
-                {
-                    return;
-                }
+                return;
             }
-            else if (fMode.Mode == 1)
-            {
-                if (MessageBox.Show("データを更新します。よろしいですか？", "確認", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
-                {
-                    return;
-                }
-            }
-
+            
             // エラーチェック
             if (!errCheck(fMode.Mode))
             {
@@ -115,11 +138,8 @@ namespace posting
             // 登録・更新処理
             dataUpdate(fMode.Mode, fMode.ID);
 
-            //// グリッド表示
-            //gridShow(dataGridView1);
-
-            // 画面初期化
-            dispClear();
+            // 閉じる
+            Close();
         }
 
         /// -------------------------------------------------------------------------
@@ -132,6 +152,32 @@ namespace posting
         /// -------------------------------------------------------------------------
         private bool errCheck(int sMode)
         {
+            bool val = true;
+
+            foreach (int item in checkedListBox1.CheckedIndices)
+            {
+                Utility.comboLogintype cc = (Utility.comboLogintype)checkedListBox1.Items[item];
+                //c/*c.ID;*/
+
+                foreach (int t in checkedListBox2.CheckedIndices)
+                {
+                    Utility.comboLogintype ss = (Utility.comboLogintype)checkedListBox2.Items[t];
+                    if (ss.ID == cc.ID)
+                    {
+                        string msg = "ロック権限を有する「" + cc.Name + "」を編集制限を受ける設定にはできません";  
+                        MessageBox.Show(msg, "チェック確認", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        val = false;
+                        break;
+                    }
+                }
+
+                if (!val)
+                {
+                    break;
+                }
+            }
+
+
             // 新規登録のとき
             //if (sMode == 0)
             //{
@@ -197,7 +243,7 @@ namespace posting
             //    return false;
             //}
 
-            return true;
+            return val;
         }
         
         /// -------------------------------------------------------------------------
@@ -210,43 +256,86 @@ namespace posting
         /// -------------------------------------------------------------------------
         private void dataUpdate(int sMode, int sID)
         {
-            //// 新規登録
-            //if (sMode == 0)
-            //{
-            //    // ヘッダ
-            //    darwinDataSet.ログインユーザーRow r = dts.ログインユーザー.NewログインユーザーRow();
-            //    r.ログインユーザー = txtName.Text;
-            //    r.パスワード = txtPassword.Text;
-            //    r.ログインタイプ = int.Parse(cmbType.SelectedValue.ToString());
-            //    r.備考 = txtMemo.Text;
-            //    r.受注案件保守 = comboBox1.SelectedIndex;
-            //    r.登録ユーザー = global.loginUserID;
-            //    r.登録年月日 = DateTime.Now;
-            //    r.更新年月日 = DateTime.Now;
-            //    dts.ログインユーザー.AddログインユーザーRow(r);                
-            //}
-            //else if (sMode == 1)    // 更新
-            //{
-            //    // ヘッダ
-            //    darwinDataSet.ログインユーザーRow r = dts.ログインユーザー.Single(a => a.ID == sID);
+            Cursor = Cursors.WaitCursor;
 
-            //    if (txtPassword.Visible)
-            //    {
-            //        r.パスワード = txtPassword.Text;
-            //    }
+            try
+            {
+                // 受注個別制限ロック権限更新
+                for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                {
+                    Utility.comboLogintype ls = (Utility.comboLogintype)checkedListBox1.Items[i];
+                    int pID = Utility.strToInt(ls.ID.ToString());
+                    int pLock;
 
-            //    r.ログインタイプ = int.Parse(cmbType.SelectedValue.ToString());
-            //    r.備考 = txtMemo.Text;
-            //    r.受注案件保守 = comboBox1.SelectedIndex;
-            //    r.登録ユーザー = global.loginUserID;
-            //    r.更新年月日 = DateTime.Now;
-            //}
-            
-            //// データベース更新
-            //uAdp.Update(dts.ログインユーザー);
+                    if (checkedListBox1.GetItemChecked(i))
+                    {
+                        // 権限有り
+                        pLock = global.FLGON;
+                    }
+                    else
+                    {
+                        // 権限なし
+                        pLock = global.FLGOFF;
+                    }
 
-            //// データ読み込み
-            //uAdp.Fill(dts.ログインユーザー);
+                    // ログインタイプヘッダデータ更新
+                    hAdp.UpdateLock(DateTime.Now, pLock, pID);
+                }
+
+                // 受注個別制限更新
+                for (int i = 0; i < checkedListBox2.Items.Count; i++)
+                {
+                    Utility.comboLogintype ls = (Utility.comboLogintype)checkedListBox2.Items[i];
+                    int pID = Utility.strToInt(ls.ID.ToString());
+                    int pLock;
+
+                    if (checkedListBox2.GetItemChecked(i))
+                    {
+                        // 制限有り
+                        pLock = global.FLGON;
+                    }
+                    else
+                    {
+                        // 制限なし
+                        pLock = global.FLGOFF;
+                    }
+
+                    // ログインタイプヘッダデータ更新
+                    hAdp.UpdateSeigen(DateTime.Now, pLock, pID);
+                }
+
+                // 注文書受領済み権限更新
+                for (int i = 0; i < checkedListBox3.Items.Count; i++)
+                {
+                    Utility.comboLogintype ls = (Utility.comboLogintype)checkedListBox3.Items[i];
+                    int pID = Utility.strToInt(ls.ID.ToString());
+                    int pLock;
+
+                    if (checkedListBox3.GetItemChecked(i))
+                    {
+                        // 権限有り
+                        pLock = global.FLGON;
+                    }
+                    else
+                    {
+                        // 権限なし
+                        pLock = global.FLGOFF;
+                    }
+
+                    // ログインタイプヘッダデータ更新
+                    hAdp.UpdateJyuryo(DateTime.Now, pLock, pID);
+                }
+
+                MessageBox.Show("終了しました", "編集制限設定", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
         }
         
 

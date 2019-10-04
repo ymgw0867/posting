@@ -24,6 +24,7 @@ namespace posting
         darwinDataSetTableAdapters.社員TableAdapter sAdp = new darwinDataSetTableAdapters.社員TableAdapter();
         darwinDataSetTableAdapters.新請求書TableAdapter rAdp = new darwinDataSetTableAdapters.新請求書TableAdapter();
         darwinDataSetTableAdapters.配布エリアTableAdapter hAdp = new darwinDataSetTableAdapters.配布エリアTableAdapter();
+        darwinDataSetTableAdapters.ログインタイプヘッダTableAdapter gAdp = new darwinDataSetTableAdapters.ログインタイプヘッダTableAdapter();
 
         // 2016/07/07
         darwinDataSetTableAdapters.受注編集制限TableAdapter lAdp = new darwinDataSetTableAdapters.受注編集制限TableAdapter();
@@ -60,6 +61,9 @@ namespace posting
 
             //// 2017/01/27
             //hAdp.Fill(dts.配布エリア);
+
+            // 2019/10/04
+            gAdp.Fill(dts.ログインタイプヘッダ);
 
             // 指定受注番号
             _orderNum = orderNum;
@@ -828,6 +832,15 @@ namespace posting
                     txtGyoushu.Text = string.Empty;
                 }
 
+                // 編集ロックチェックボックス：2019/10/04
+                chkLock.Checked = Convert.ToBoolean(t.編集ロック);
+
+                // 注文書受領済みチェックボックス：2019/10/04
+                chkJyuryo.Checked = Convert.ToBoolean(t.注文書受領済み);
+
+
+
+
                 // 入力完了の受注確定書は編集ロックする 2016/07/19
                 if (t.新請求書Row != null && t.新請求書Row.入金完了 == global.FLGON)
                 {
@@ -1113,6 +1126,35 @@ namespace posting
 
                 lblClientShimebi.Text = string.Empty;   // 2018/01/04
                 lnkCopy.Visible = false;    // 2018/01/05
+
+                // 編集ロックチェックボックス：2019/10/04
+                chkLock.Checked = false;
+                foreach (var item in dts.ログインタイプヘッダ.Where(a => a.Id == global.loginType))
+                {
+                    if (item.受注個別ロック権限 == global.FLGON)
+                    {
+                        chkLock.Enabled = true;
+                    }
+                    else
+                    {
+                        chkLock.Enabled = false;
+                    }
+                }
+
+                // 注文書受領済みチェックボックス編集権限：2019/10/04
+                chkJyuryo.Checked = false;
+                foreach (var item in dts.ログインタイプヘッダ.Where(a => a.Id == global.loginType))
+                {
+                    if (item.注文書受領済み権限 == global.FLGON)
+                    {
+                        chkJyuryo.Enabled = true;
+                    }
+                    else
+                    {
+                        chkJyuryo.Enabled = false;
+                    }
+                }
+
             }
 
             catch (Exception ex)

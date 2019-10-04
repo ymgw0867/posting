@@ -22,5 +22,8 @@ namespace posting
 
         // 受注編集ロックテーブルキー
         public const int lockKey = 1;
+
+        // 管理者権限
+        public const int adminID = 999;
     }
 }
