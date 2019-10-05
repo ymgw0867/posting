@@ -34,9 +34,10 @@ namespace posting
 
         Int64 _orderNum = 0;
 
-        int sLoginTag = 0;                    // 受注確定書編集設定@編集可能ログインタグ
-        DateTime dtLock = DateTime.Today;     // 請求書発行日期限
-        bool orderEditStatus = true;          // 受注確定書編集設定
+        int sLoginTag = 0;                      // 受注確定書編集設定@編集可能ログインタグ
+        DateTime dtLock = DateTime.Today;       // 請求書発行日期限
+        bool orderEditStatus = true;            // 受注確定書編集設定
+        bool LockSeigen = false;                // 編集制限がかかっているログインタイプステータス
 
         Utility.comboGaichuUser[] cg = null;
 
@@ -837,12 +838,13 @@ namespace posting
 
                 // 注文書受領済みチェックボックス：2019/10/04
                 chkJyuryo.Checked = Convert.ToBoolean(t.注文書受領済み);
-
-
-
-
-                // 入力完了の受注確定書は編集ロックする 2016/07/19
-                if (t.新請求書Row != null && t.新請求書Row.入金完了 == global.FLGON)
+                
+                // 編集ロックされている受注確定書は個別ロック制御されているログインタイプは編集不可とする：2019/10/05
+                if (LockSeigen && t.編集ロック == global.FLGON)
+                {
+                    orderEditStatus = false;
+                }
+                else if (t.新請求書Row != null && t.新請求書Row.入金完了 == global.FLGON)
                 {
                     orderEditStatus = false;
                     label52.Text = "既に入金が完了しているため編集は出来ません";
@@ -1127,10 +1129,11 @@ namespace posting
                 lblClientShimebi.Text = string.Empty;   // 2018/01/04
                 lnkCopy.Visible = false;    // 2018/01/05
 
-                // 編集ロックチェックボックス：2019/10/04
+                // ログインタイプステータス取得：2019/10/04
                 chkLock.Checked = false;
                 foreach (var item in dts.ログインタイプヘッダ.Where(a => a.Id == global.loginType))
                 {
+                    // 編集ロックチェックボックス：2019/10/04
                     if (item.受注個別ロック権限 == global.FLGON)
                     {
                         chkLock.Enabled = true;
@@ -1139,12 +1142,18 @@ namespace posting
                     {
                         chkLock.Enabled = false;
                     }
-                }
 
-                // 注文書受領済みチェックボックス編集権限：2019/10/04
-                chkJyuryo.Checked = false;
-                foreach (var item in dts.ログインタイプヘッダ.Where(a => a.Id == global.loginType))
-                {
+                    // 編集ロック制限のステータス取得：2019/10/05
+                    if (item.受注個別制限 == global.FLGON)
+                    {
+                        LockSeigen = true;
+                    }
+                    else
+                    {
+                        LockSeigen = false;
+                    }
+
+                    // 注文書受領済みチェックボックス編集権限：2019/10/04
                     if (item.注文書受領済み権限 == global.FLGON)
                     {
                         chkJyuryo.Enabled = true;
@@ -1154,7 +1163,6 @@ namespace posting
                         chkJyuryo.Enabled = false;
                     }
                 }
-
             }
 
             catch (Exception ex)
@@ -2287,6 +2295,20 @@ namespace posting
                 cMaster.外注委託枚数3 = Utility.strToInt(txtGaichuMaisu3.Text);   // 2016/10/15
 
                 cMaster.業種 = txtGyoushu.Text;
+
+                // 編集ロック：2019/10/05
+                cMaster.編集ロック = Convert.ToInt32(chkLock.Checked);
+                //if (chkLock.Enabled == true)
+                //{
+                //    cMaster.編集ロック = Convert.ToInt32(chkLock.Checked);
+                //}
+
+                // 注文書受領済み：2019/10/05
+                cMaster.注文書受領済み = Convert.ToInt32(chkJyuryo.Checked);
+                //if (chkJyuryo.Enabled == true)
+                //{
+                //    cMaster.注文書受領済み = Convert.ToInt32(chkJyuryo.Checked);
+                //}
 
                 return true;
             }

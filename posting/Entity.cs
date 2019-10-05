@@ -375,6 +375,10 @@ namespace posting
             public int 外注委託枚数3 { get; set; }     // 2016/10/15
             public string 業種 { get; set; }         // 2015/09/20      
             public string 営業備考 { get; set; }   // 2019/03/01
+
+            public int 編集ロック { get; set; }      // 2019/10/05
+
+            public int 注文書受領済み { get; set; }    // 2019/10/05
         }
 
         public class 受注種別

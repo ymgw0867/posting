@@ -531,7 +531,7 @@ namespace posting
                     mySql += "外注受け渡し担当者,外注委託枚数,業種,";
                     mySql += "外注先ID支払2,外注支払日支払2,外注原価支払2,外注先ID支払3,外注支払日支払3,外注原価支払3,";
                     mySql += "外注依頼日支払2,外注依頼日支払3,外注委託枚数2,外注委託枚数3,外注渡し日2,外注渡し日3,外注受け渡し担当者2,外注受け渡し担当者3,";
-                    mySql += "営業備考) ";
+                    mySql += "営業備考, 編集ロック, 注文書受領済み) ";
                     mySql += "values (";
                     mySql += cJyuchu.ID + ",";
                     mySql += cJyuchu.事業所ID + ",";
@@ -760,7 +760,9 @@ namespace posting
 
                     mySql += "'" + cJyuchu.外注受け渡し担当者2 + "',";
                     mySql += "'" + cJyuchu.外注受け渡し担当者3 + "',";
-                    mySql += "'" + cJyuchu.営業備考 + "')";     // 2019/03/01
+                    mySql += "'" + cJyuchu.営業備考 + ",";       // 2019/03/01
+                    mySql += cJyuchu.編集ロック + ",";           // 2019/10/05
+                    mySql += cJyuchu.注文書受領済み + "')";      // 2019/10/05
 
                     //System.Windows.Forms.MessageBox.Show(mySql);
 
@@ -1023,7 +1025,9 @@ namespace posting
 
                     mySql += "外注受け渡し担当者2 = '" + cJyuchu.外注受け渡し担当者2 + "',";
                     mySql += "外注受け渡し担当者3 = '" + cJyuchu.外注受け渡し担当者3 + "',";
-                    mySql += "営業備考 = '" + cJyuchu.営業備考 + "' ";
+                    mySql += "営業備考 = '" + cJyuchu.営業備考 + "',";
+                    mySql += "編集ロック = " + cJyuchu.編集ロック + ",";
+                    mySql += "注文書受領済み = " + cJyuchu.注文書受領済み + " ";
 
                     mySql += "where ID = " + cJyuchu.ID;
 
