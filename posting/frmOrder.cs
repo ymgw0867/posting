@@ -1131,6 +1131,8 @@ namespace posting
 
                 // ログインタイプステータス取得：2019/10/04
                 chkLock.Checked = false;
+                chkJyuryo.Checked = false;
+
                 foreach (var item in dts.ログインタイプヘッダ.Where(a => a.Id == global.loginType))
                 {
                     // 編集ロックチェックボックス：2019/10/04

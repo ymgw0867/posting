@@ -50,6 +50,7 @@
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -257,6 +258,7 @@
             this.tableLayoutPanel1.Controls.Add(this.button14, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.button17, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.button18, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.button19, 3, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -267,6 +269,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(734, 304);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
@@ -346,6 +349,18 @@
             this.button18.UseVisualStyleBackColor = true;
             this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
+            // button19
+            // 
+            this.button19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button19.Location = new System.Drawing.Point(552, 123);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(179, 54);
+            this.button19.TabIndex = 18;
+            this.button19.Tag = "50";
+            this.button19.Text = "受注確定書個別ロック権限・制限設定";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
             // frmMenuMST
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -388,5 +403,6 @@
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button19;
     }
 }

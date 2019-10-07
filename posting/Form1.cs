@@ -788,13 +788,5 @@ namespace posting
             frm.ShowDialog();
             this.Show();
         }
-
-        private void button35_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmEditLock frm = new frmEditLock();
-            frm.ShowDialog();
-            this.Show();
-        }
     }
 }

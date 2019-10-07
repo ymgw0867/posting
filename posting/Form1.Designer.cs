@@ -77,7 +77,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.button35 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -710,23 +709,12 @@
             this.lblLogin.Text = "ログイン中ユーザー：不明";
             this.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button35
-            // 
-            this.button35.Location = new System.Drawing.Point(524, 555);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(67, 36);
-            this.button35.TabIndex = 31;
-            this.button35.Text = "button35";
-            this.button35.UseVisualStyleBackColor = true;
-            this.button35.Click += new System.EventHandler(this.button35_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(897, 604);
-            this.Controls.Add(this.button35);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.label5);
@@ -812,7 +800,6 @@
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button button33;
         private System.Windows.Forms.Button button34;
-        private System.Windows.Forms.Button button35;
     }
 }
 

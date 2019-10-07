@@ -94,9 +94,9 @@
             this.label4.Font = new System.Drawing.Font("Meiryo UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label4.Location = new System.Drawing.Point(19, 225);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(303, 18);
+            this.label4.Size = new System.Drawing.Size(289, 18);
             this.label4.TabIndex = 31;
-            this.label4.Text = "注文書受領済みチェック権限を有するログインタイプ：";
+            this.label4.Text = "注文書受領済みチェック権限を有するログインタイプ";
             // 
             // label5
             // 
@@ -104,9 +104,9 @@
             this.label5.Font = new System.Drawing.Font("Meiryo UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label5.Location = new System.Drawing.Point(19, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(296, 18);
+            this.label5.Size = new System.Drawing.Size(246, 18);
             this.label5.TabIndex = 32;
-            this.label5.Text = "受注確定書個別ロック権限を有するログインタイプ：";
+            this.label5.Text = "編集ロックを行う権限を有するログインタイプ";
             // 
             // label6
             // 
@@ -114,9 +114,9 @@
             this.label6.Font = new System.Drawing.Font("Meiryo UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label6.Location = new System.Drawing.Point(360, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(289, 18);
+            this.label6.Size = new System.Drawing.Size(222, 18);
             this.label6.TabIndex = 33;
-            this.label6.Text = "受注確定書の編集の制限を受けるログインタイプ：";
+            this.label6.Text = "編集ロックの制限を受けるログインタイプ";
             // 
             // frmEditLock
             // 
@@ -136,7 +136,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmEditLock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "編集ロック権限登録";
+            this.Text = "受注確定書編集ロック権限登録";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLoginType_FormClosing);
             this.Load += new System.EventHandler(this.frmLoginType_Load);
             this.ResumeLayout(false);

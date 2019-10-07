@@ -760,9 +760,9 @@ namespace posting
 
                     mySql += "'" + cJyuchu.外注受け渡し担当者2 + "',";
                     mySql += "'" + cJyuchu.外注受け渡し担当者3 + "',";
-                    mySql += "'" + cJyuchu.営業備考 + ",";       // 2019/03/01
-                    mySql += cJyuchu.編集ロック + ",";           // 2019/10/05
-                    mySql += cJyuchu.注文書受領済み + "')";      // 2019/10/05
+                    mySql += "'" + cJyuchu.営業備考 + "',";       // 2019/03/01
+                    mySql += cJyuchu.編集ロック + ",";            // 2019/10/05
+                    mySql += cJyuchu.注文書受領済み + ")";         // 2019/10/05
 
                     //System.Windows.Forms.MessageBox.Show(mySql);
 

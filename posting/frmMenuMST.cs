@@ -205,6 +205,7 @@ namespace posting
             Utility.getMenuTittle(button16, _cm);
             Utility.getMenuTittle(button17, _cm);
             Utility.getMenuTittle(button18, _cm);
+            Utility.getMenuTittle(button19, _cm);
 
             // メニューボタン表示状態初期化
             button11.Enabled = false;
@@ -224,6 +225,7 @@ namespace posting
             button16.Enabled = false;
             button17.Enabled = false;
             button18.Enabled = false;
+            button19.Enabled = false;
 
             // ログインユーザーごとのメニュー制御
             darwinDataSet dts = new darwinDataSet();
@@ -253,6 +255,7 @@ namespace posting
                     if (menuButtonStatus(button16, item.tag)) continue;
                     if (menuButtonStatus(button17, item.tag)) continue;
                     if (menuButtonStatus(button18, item.tag)) continue;
+                    if (menuButtonStatus(button19, item.tag)) continue;
                 }
             }
         }
@@ -288,6 +291,14 @@ namespace posting
         {
             this.Hide();
             frmOrderLock frm = new frmOrderLock();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmEditLock frm = new frmEditLock();
             frm.ShowDialog();
             this.Show();
         }
