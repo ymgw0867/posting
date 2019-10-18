@@ -838,6 +838,12 @@ namespace posting
 
                 // 注文書受領済みチェックボックス：2019/10/04
                 chkJyuryo.Checked = Convert.ToBoolean(t.注文書受領済み);
+
+                // 外注発注書回収チェックボックス：2019/10/18
+                chkGaichuFlg.Checked = Convert.ToBoolean(t.外注発注書回収フラグ);
+
+                // 配布完了報告書提出チェックボックス：2019/10/18
+                chkHaifuKanryoFlg.Checked = Convert.ToBoolean(t.配布完了報告書提出済フラグ);
                 
                 // 編集ロックされている受注確定書は個別ロック制御されているログインタイプは編集不可とする：2019/10/05
                 if (LockSeigen && t.編集ロック == global.FLGON)
@@ -1132,6 +1138,8 @@ namespace posting
                 // ログインタイプステータス取得：2019/10/04
                 chkLock.Checked = false;
                 chkJyuryo.Checked = false;
+                chkGaichuFlg.Checked = false;           // 2019/10/18
+                chkHaifuKanryoFlg.Checked = false;      // 2019/10/18
 
                 foreach (var item in dts.ログインタイプヘッダ.Where(a => a.Id == global.loginType))
                 {
@@ -1159,11 +1167,15 @@ namespace posting
                     if (item.注文書受領済み権限 == global.FLGON)
                     {
                         chkJyuryo.Enabled = true;
+                        chkGaichuFlg.Enabled = true;        // 2019/10/18
+                        chkHaifuKanryoFlg.Enabled = true;    // 2019/10/18
                     }
                     else
                     {
                         chkJyuryo.Enabled = false;
-                    }
+                        chkGaichuFlg.Enabled = false;        // 2019/10/18
+                        chkHaifuKanryoFlg.Enabled = false;   // 2019/10/18
+                    }                    
                 }
             }
 
@@ -2300,17 +2312,9 @@ namespace posting
 
                 // 編集ロック：2019/10/05
                 cMaster.編集ロック = Convert.ToInt32(chkLock.Checked);
-                //if (chkLock.Enabled == true)
-                //{
-                //    cMaster.編集ロック = Convert.ToInt32(chkLock.Checked);
-                //}
-
-                // 注文書受領済み：2019/10/05
-                cMaster.注文書受領済み = Convert.ToInt32(chkJyuryo.Checked);
-                //if (chkJyuryo.Enabled == true)
-                //{
-                //    cMaster.注文書受領済み = Convert.ToInt32(chkJyuryo.Checked);
-                //}
+                cMaster.注文書受領済み = Convert.ToInt32(chkJyuryo.Checked);   
+                cMaster.外注発注書回収フラグ = Convert.ToInt32(chkGaichuFlg.Checked);     // 2019/10/18
+                cMaster.配布完了報告書提出フラグ = Convert.ToInt32(chkHaifuKanryoFlg.Checked);  // 2019/10/18
 
                 return true;
             }

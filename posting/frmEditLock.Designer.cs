@@ -41,7 +41,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(507, 383);
+            this.button1.Location = new System.Drawing.Point(507, 394);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 35);
             this.button1.TabIndex = 7;
@@ -51,7 +51,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(604, 383);
+            this.button3.Location = new System.Drawing.Point(604, 394);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(91, 35);
             this.button3.TabIndex = 10;
@@ -83,7 +83,7 @@
             // 
             this.checkedListBox3.Font = new System.Drawing.Font("Meiryo UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.checkedListBox3.FormattingEnabled = true;
-            this.checkedListBox3.Location = new System.Drawing.Point(19, 246);
+            this.checkedListBox3.Location = new System.Drawing.Point(19, 257);
             this.checkedListBox3.Name = "checkedListBox3";
             this.checkedListBox3.Size = new System.Drawing.Size(319, 172);
             this.checkedListBox3.TabIndex = 30;
@@ -92,11 +92,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Meiryo UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(19, 225);
+            this.label4.Location = new System.Drawing.Point(16, 220);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(289, 18);
+            this.label4.Size = new System.Drawing.Size(360, 36);
             this.label4.TabIndex = 31;
-            this.label4.Text = "注文書受領済みチェック権限を有するログインタイプ";
+            this.label4.Text = "注文書受領済み、外注発注書回収、配布完了報告書提出済\r\nチェック権限を有するログインタイプ";
             // 
             // label5
             // 
@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 428);
+            this.ClientSize = new System.Drawing.Size(714, 443);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);

@@ -245,6 +245,17 @@ namespace posting
 
             Control.FreeSql fSql = new Control.FreeSql();
 
+            // 受注テーブルに「外注発注書回収フラグ」フィールドを追加する : 2019/10/18
+            sqlString = "";
+            sqlString += "ALTER TABLE 受注 add 外注発注書回収フラグ int default 0 NOT NULL";
+            fSql.Execute(sqlString);
+
+            // 受注テーブルに「配布完了報告書提出済フラグ」フィールドを追加する : 2019/10/18
+            sqlString = "";
+            sqlString += "ALTER TABLE 受注 add 配布完了報告書提出済フラグ int default 0 NOT NULL";
+            fSql.Execute(sqlString);
+
+
             // 受注テーブルに「編集ロック」フィールドを追加する : 2019/10/03
             sqlString = "";
             sqlString += "ALTER TABLE 受注 add 編集ロック int default 0 NOT NULL";

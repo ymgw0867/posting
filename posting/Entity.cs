@@ -379,6 +379,8 @@ namespace posting
             public int 編集ロック { get; set; }      // 2019/10/05
 
             public int 注文書受領済み { get; set; }    // 2019/10/05
+            public int 外注発注書回収フラグ { get; set; }    // 2019/10/18
+            public int 配布完了報告書提出フラグ { get; set; }    // 2019/10/18
         }
 
         public class 受注種別

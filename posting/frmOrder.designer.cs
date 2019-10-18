@@ -244,6 +244,8 @@
             this.txtSalesMemo = new System.Windows.Forms.TextBox();
             this.chkJyuryo = new System.Windows.Forms.CheckBox();
             this.chkLock = new System.Windows.Forms.CheckBox();
+            this.chkGaichuFlg = new System.Windows.Forms.CheckBox();
+            this.chkHaifuKanryoFlg = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.受注BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.darwinDataSet)).BeginInit();
@@ -261,9 +263,9 @@
             this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDel.BackColor = System.Drawing.SystemColors.Control;
             this.btnDel.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnDel.Location = new System.Drawing.Point(551, 644);
+            this.btnDel.Location = new System.Drawing.Point(638, 645);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(85, 31);
+            this.btnDel.Size = new System.Drawing.Size(65, 32);
             this.btnDel.TabIndex = 34;
             this.btnDel.Text = "削除(&D)";
             this.btnDel.UseVisualStyleBackColor = true;
@@ -274,9 +276,9 @@
             this.btnClr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClr.BackColor = System.Drawing.SystemColors.Control;
             this.btnClr.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnClr.Location = new System.Drawing.Point(638, 644);
+            this.btnClr.Location = new System.Drawing.Point(703, 645);
             this.btnClr.Name = "btnClr";
-            this.btnClr.Size = new System.Drawing.Size(85, 31);
+            this.btnClr.Size = new System.Drawing.Size(65, 32);
             this.btnClr.TabIndex = 35;
             this.btnClr.Text = "取消(&C)";
             this.btnClr.UseVisualStyleBackColor = true;
@@ -287,9 +289,9 @@
             this.btnRtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRtn.BackColor = System.Drawing.SystemColors.Control;
             this.btnRtn.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnRtn.Location = new System.Drawing.Point(939, 644);
+            this.btnRtn.Location = new System.Drawing.Point(963, 645);
             this.btnRtn.Name = "btnRtn";
-            this.btnRtn.Size = new System.Drawing.Size(85, 31);
+            this.btnRtn.Size = new System.Drawing.Size(65, 32);
             this.btnRtn.TabIndex = 41;
             this.btnRtn.Text = "戻る(&R)";
             this.btnRtn.UseVisualStyleBackColor = true;
@@ -1272,9 +1274,9 @@
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.SystemColors.Control;
             this.button2.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(725, 644);
+            this.button2.Location = new System.Drawing.Point(768, 645);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 31);
+            this.button2.Size = new System.Drawing.Size(100, 32);
             this.button2.TabIndex = 36;
             this.button2.Text = "発注書作成(&R)";
             this.button2.UseVisualStyleBackColor = true;
@@ -1285,9 +1287,9 @@
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackColor = System.Drawing.SystemColors.Control;
             this.button3.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button3.Location = new System.Drawing.Point(832, 644);
+            this.button3.Location = new System.Drawing.Point(869, 645);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 31);
+            this.button3.Size = new System.Drawing.Size(94, 32);
             this.button3.TabIndex = 37;
             this.button3.Text = "入庫管理表(&K)";
             this.button3.UseVisualStyleBackColor = true;
@@ -1656,9 +1658,9 @@
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnUpdate.Location = new System.Drawing.Point(465, 644);
+            this.btnUpdate.Location = new System.Drawing.Point(573, 645);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(84, 31);
+            this.btnUpdate.Size = new System.Drawing.Size(65, 32);
             this.btnUpdate.TabIndex = 33;
             this.btnUpdate.Text = "更新(&U)";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -1831,7 +1833,7 @@
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label52.ForeColor = System.Drawing.Color.Red;
-            this.label52.Location = new System.Drawing.Point(469, 627);
+            this.label52.Location = new System.Drawing.Point(785, 626);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(244, 12);
             this.label52.TabIndex = 172;
@@ -2888,10 +2890,10 @@
             // 
             this.chkJyuryo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chkJyuryo.AutoSize = true;
-            this.chkJyuryo.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.chkJyuryo.Location = new System.Drawing.Point(320, 656);
+            this.chkJyuryo.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.chkJyuryo.Location = new System.Drawing.Point(321, 659);
             this.chkJyuryo.Name = "chkJyuryo";
-            this.chkJyuryo.Size = new System.Drawing.Size(117, 21);
+            this.chkJyuryo.Size = new System.Drawing.Size(109, 19);
             this.chkJyuryo.TabIndex = 186;
             this.chkJyuryo.Text = "注文書受領済み";
             this.chkJyuryo.UseVisualStyleBackColor = true;
@@ -2900,19 +2902,45 @@
             // 
             this.chkLock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chkLock.AutoSize = true;
-            this.chkLock.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.chkLock.Location = new System.Drawing.Point(200, 656);
+            this.chkLock.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.chkLock.Location = new System.Drawing.Point(238, 659);
             this.chkLock.Name = "chkLock";
-            this.chkLock.Size = new System.Drawing.Size(79, 21);
+            this.chkLock.Size = new System.Drawing.Size(74, 19);
             this.chkLock.TabIndex = 187;
             this.chkLock.Text = "編集ロック";
             this.chkLock.UseVisualStyleBackColor = true;
+            // 
+            // chkGaichuFlg
+            // 
+            this.chkGaichuFlg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkGaichuFlg.AutoSize = true;
+            this.chkGaichuFlg.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.chkGaichuFlg.Location = new System.Drawing.Point(438, 637);
+            this.chkGaichuFlg.Name = "chkGaichuFlg";
+            this.chkGaichuFlg.Size = new System.Drawing.Size(110, 19);
+            this.chkGaichuFlg.TabIndex = 188;
+            this.chkGaichuFlg.Text = "外注発注書回収";
+            this.chkGaichuFlg.UseVisualStyleBackColor = true;
+            // 
+            // chkHaifuKanryoFlg
+            // 
+            this.chkHaifuKanryoFlg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkHaifuKanryoFlg.AutoSize = true;
+            this.chkHaifuKanryoFlg.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.chkHaifuKanryoFlg.Location = new System.Drawing.Point(438, 659);
+            this.chkHaifuKanryoFlg.Name = "chkHaifuKanryoFlg";
+            this.chkHaifuKanryoFlg.Size = new System.Drawing.Size(134, 19);
+            this.chkHaifuKanryoFlg.TabIndex = 189;
+            this.chkHaifuKanryoFlg.Text = "配布完了報告書提出";
+            this.chkHaifuKanryoFlg.UseVisualStyleBackColor = true;
             // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 683);
+            this.Controls.Add(this.chkHaifuKanryoFlg);
+            this.Controls.Add(this.chkGaichuFlg);
             this.Controls.Add(this.chkLock);
             this.Controls.Add(this.chkJyuryo);
             this.Controls.Add(this.txtSalesMemo);
@@ -3258,5 +3286,7 @@
         private System.Windows.Forms.TextBox txtSalesMemo;
         private System.Windows.Forms.CheckBox chkJyuryo;
         private System.Windows.Forms.CheckBox chkLock;
+        private System.Windows.Forms.CheckBox chkGaichuFlg;
+        private System.Windows.Forms.CheckBox chkHaifuKanryoFlg;
     }
 }

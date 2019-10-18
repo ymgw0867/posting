@@ -409,19 +409,20 @@ namespace posting
             // 画面初期化
             dispClear();
 
-            // 受注確定書入力シートパスを取得：2019/03/06
-            var s = dts.会社情報.Where(a => a.ID == 1);
-            foreach (var t in s)
-            {
-                sheetPath = t.受注確定書入力シートパス;
-            }
+            // 2019/10/18 処理撤廃のため、コメント化
+            //// 受注確定書入力シートパスを取得：2019/03/06
+            //var s = dts.会社情報.Where(a => a.ID == 1);
+            //foreach (var t in s)
+            //{
+            //    sheetPath = t.受注確定書入力シートパス;
+            //}
 
-            // 2019/03/06
-            if (sheetPath == string.Empty)
-            {
-                string msg = "出力先シートが未登録のため、受注確定書入力シートにデータ出力は行われません" + Environment.NewLine + "会社情報画面で出力先となる受注確定書入力シートパスを登録してください";
-                MessageBox.Show(msg, "出力シート未登録", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+            //// 2019/03/06
+            //if (sheetPath == string.Empty)
+            //{
+            //    string msg = "出力先シートが未登録のため、受注確定書入力シートにデータ出力は行われません" + Environment.NewLine + "会社情報画面で出力先となる受注確定書入力シートパスを登録してください";
+            //    MessageBox.Show(msg, "出力シート未登録", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //}
         }
 
         // 配布条件コンボ設定
@@ -1349,14 +1350,15 @@ namespace posting
             // 受注確定書作成
             kakuteishoReport();
 
-            // 受注確定書入力シートへの書き込み：2019/03/07
-            if (sheetPath != string.Empty)
-            {
-                if (MessageBox.Show("受注確定書入力シートへの書き込みを行いますか？", "確認", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-                {
-                    setData2Sheet();
-                }
-            }
+            // 2019/10/18 処理撤廃のため、コメント化
+            //// 受注確定書入力シートへの書き込み：2019/03/07
+            //if (sheetPath != string.Empty)
+            //{
+            //    if (MessageBox.Show("受注確定書入力シートへの書き込みを行いますか？", "確認", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            //    {
+            //        setData2Sheet();
+            //    }
+            //}
 
             // 受注データに受注確定書発行フラグを書き込む
             if (MessageBox.Show("受注データに受注確定書発行フラグを書き込みます。よろしいですか？", "確認", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
